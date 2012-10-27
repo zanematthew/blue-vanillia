@@ -14,6 +14,8 @@ function blue_vanillia_custom_header_setup() {
     );
 
     add_theme_support( 'custom-header', $args );
+    add_theme_support( 'post-thumbnails' );
+    add_image_size( 'blue-small', 108, 74 );
 }
 add_action( 'after_setup_theme', 'blue_vanillia_custom_header_setup' );
 
@@ -199,3 +201,20 @@ function blue_vanillia_assets_init() {
     wp_enqueue_style( 'zm-ui-tabs-style', get_template_directory_uri() . '/vendor/jquery-ui/development-bundle/themes/ui-lightness/jquery.ui.tabs.css' );
 }
 add_action( 'wp_enqueue_scripts', 'blue_vanillia_assets_init' );
+
+function blue_vanillia_pagination(){
+    global $wp_query;
+
+    $big = 999999999; // need an unlikely integer
+
+    $links = paginate_links(
+        array(
+        'base' => str_replace( $big, '%#%', esc_url( get_pagenum_link( $big ) ) ),
+        'format' => '?paged=%#%',
+        'current' => max( 1, get_query_var('paged') ),
+        'total' => $wp_query->max_num_pages
+        )
+    );
+
+    print '<div class="pagination-container">' . $links . '</div>';
+}

@@ -1,22 +1,14 @@
 <!-- Upcoming Events -->
 <?php
 
+$event_obj = new Events;
+$current_events = $event_obj->getMonth();
+
 $plus_one_month = date( 'M', strtotime( date( "Y-m-d", strtotime( date("Y-m-d") ) ) . "+1 month" ) );
-$plus_two_month = date( 'M', strtotime( date( "Y-m-d", strtotime( date("Y-m-d") ) ) . "+2 month" ) );
+$next_month_events = $event_obj->getMonth( $plus_one_month );
 
-$current_month_event_obj = new Events;
-$current_events = $current_month_event_obj->getMonth();
-
-// print '<pre>';
-// print_r( $current_events );
-// die('template coding');
-
-// $next_month_event_obj = new Events;
-// $next_month_events = $next_month_event_obj->getMonth( date( 'm', strtotime( $plus_one_month ) ) );
-
-
-// $next_next_month_obj = new Events;
-// $next_next_month_events = $next_next_month_obj->getMonth( date( 'm', strtotime( $plus_two_month ) ) );
+$plus_three_month = date( 'M', strtotime( date( "Y-m-d", strtotime( date("Y-m-d") ) ) . "+2 month" ) );
+$three_months_out = $event_obj->getMonth( $plus_three_month );
 ?>
 <div class="row">
     <h2 class="title">Upcoming Events</h2>
@@ -24,32 +16,77 @@ $current_events = $current_month_event_obj->getMonth();
         <ul>
             <li><a href="#locals-current-month"><?php print date('M'); ?> <span class="count"><?php print $current_events['count']; ?></span></a></li>
             <li><a href="#locals-next-month"><?php print $plus_one_month; ?> <span class="count"><?php print $next_month_events['count']; ?></span></a></li>
+            <?php if ( $three_months_out ) : ?><li><a href="#locals-next-next-month"><?php print $plus_three_month; ?> <span class="count"><?php print $three_months_out['count']; ?></span></a></li><?php endif; ?>
         </ul>
-        <div id="locals-current-month">
-            <div class="row-container">
-                <?php if ( $current_events ) : ?>
-                    <?php foreach( $current_events as $post ) : setup_postdata($post); ?>
+        <?php if ( $current_events ) : ?>
+            <div id="locals-current-month">
+                <div class="row-container">
+                    <?php foreach( $current_events['items'] as $post ) : setup_postdata($post); ?>
                         <div class="row">
                             <div class="image-container">
-                                <a href="<?php the_permalink(); ?>"><img src="" /></a>
+                                <a href="<?php the_permalink(); ?>">
+                                    <?php the_post_thumbnail('blue-small'); ?>
+                                </a>
                             </div>
                             <div class="title">
-                                <a href="<?php the_permalink(); ?>"><?php the_ID(); ?> <?php the_title(); ?></a>
+                                <a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
                             </div>
                             <div class="date">
-                                <a href="<?php the_permalink(); ?>"><?php print  Events::getDate(); ?></a>
+                                <a href="<?php the_permalink(); ?>"><?php print date('F j, Y', strtotime( Events::getDate() ) ); ?></a>
                             </div>
-                            <span class="meta"><?php Events::getTrackTitle( $post->ID ); ?> in <?php print Venues::getState(); ?></span>
+                            <span class="meta"><em><?php Events::getTrackTitle( $post->ID ); ?></em> in <em><?php print Venues::getState(); ?></em></span>
                         </div>
                     <?php endforeach; wp_reset_postdata(); ?>
-                <?php endif; ?>
+                </div>
             </div>
-        </div>
-        <div id="locals-next-month">
-            <div class="row-container">
-                here
+        <?php endif; ?>
+
+        <?php if ( $next_month_events ) : ?>
+            <div id="locals-next-month">
+                <div class="row-container">
+                    <?php foreach( $next_month_events['items'] as $post ) : setup_postdata($post); ?>
+                        <div class="row">
+                            <div class="image-container">
+                                <a href="<?php the_permalink(); ?>">
+                                    <?php the_post_thumbnail('blue-small'); ?>
+                                </a>
+                            </div>
+                            <div class="title">
+                                <a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
+                            </div>
+                            <div class="date">
+                                <a href="<?php the_permalink(); ?>"><?php print date('F j, Y', strtotime( Events::getDate() ) ); ?></a>
+                            </div>
+                            <span class="meta"><em><?php Events::getTrackTitle( $post->ID ); ?></em> in <em><?php print Venues::getState(); ?></em></span>
+                        </div>
+                    <?php endforeach; wp_reset_postdata(); ?>
+                </div>
             </div>
-        </div>
+        <?php endif; ?>
+
+        <?php if ( $three_months_out ) : ?>
+            <div id="locals-next-next-month">
+                <div class="row-container">
+                    <?php foreach( $three_months_out['items'] as $post ) : setup_postdata($post); ?>
+                        <div class="row">
+                            <div class="image-container">
+                                <a href="<?php the_permalink(); ?>">
+                                    <?php the_post_thumbnail('blue-small'); ?>
+                                </a>
+                            </div>
+                            <div class="title">
+                                <a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
+                            </div>
+                            <div class="date">
+                                <a href="<?php the_permalink(); ?>"><?php print date('F j, Y', strtotime( Events::getDate() ) ); ?></a>
+                            </div>
+                            <span class="meta"><em><?php Events::getTrackTitle( $post->ID ); ?></em> in <em><?php print Venues::getState(); ?></em></span>
+                        </div>
+                    <?php endforeach; wp_reset_postdata(); ?>
+                </div>
+            </div>
+        <?php endif; ?>
+
     </div>
 </div>
 <!-- End Upcoming Events -->

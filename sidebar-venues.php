@@ -23,6 +23,7 @@
         <?php if ( get_option('zm_ev_version') && is_single() ) : ?>
             <div class="row">
                 <h2 class="title">Venue Information</h2>
+                <?php if ( get_option('zm_gmaps_version') ) zm_gmaps_mini(); ?>
                 <?php zm_ev_venue_info_pane( $post->ID ); ?>
             </div>
         <?php endif; ?>

@@ -35,6 +35,7 @@
                             </div>
                         </div>
                     </div>
+                    <?php blue_vanillia_pagination(); ?>
                 </div>
             </div>
 
