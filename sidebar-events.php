@@ -1,5 +1,6 @@
 <div class="sidebar-wide-container">
     <div class="row-container">
+
         <div class="row">
             <h2 class="title">Venue Information</h2>
             <?php if ( get_option('zm_gmaps_version') ) zm_gmaps_mini(); ?>
@@ -7,11 +8,13 @@
                 <?php zm_ev_venue_info_pane( $post->ID ); ?>
             <?php endif; ?>
         </div>
-        <div class="row">
-            <?php if ( get_option('zm_weather_version') ) : ?>
+
+        <?php if ( get_option('zm_weather_version') ) : ?>
+            <div class="row">
                 <?php zm_weather_venue_target( Venues::getCity() . ',' . Venues::getState() ); ?>
-            <?php endif; ?>
-        </div>
+            </div>
+        <?php endif; ?>
+
         <?php get_template_part('events','upcoming'); ?>
     </div>
 </div>
