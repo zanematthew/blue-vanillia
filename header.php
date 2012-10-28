@@ -38,15 +38,8 @@
     </div>
     <!-- -->
     <div class="right">
-        <?php if ( is_user_logged_in() ) : ?>
-            <?php if ( get_option('zm_attend_button_version') ) zm_attend_button_nav(); ?>
-        <?php else : ?>
-            <div class="zm-action-box">
-                <a href="#" class="register-handle">Register</a><span class="bar">|</span>
-                <a href="#" class="login-handle" data-template="views/shared/login.html.php">Login</a>
-            </div>
-        <?php endif; ?>
-        <?php //load_template( VIEWS_DIR . 'shared/register.php' ); ?>
+        <?php if ( get_option('zm_attend_button_version') ) zm_attend_button_nav(); ?>
+        <?php if ( get_option('zm_login_register_version') ) zm_login_register_nav(); ?>
     </div>
     <!-- -->
 </div>
