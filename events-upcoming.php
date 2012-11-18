@@ -34,7 +34,7 @@ $three_months_out = $event_obj->getMonth( $plus_three_month );
                             <div class="date">
                                 <a href="<?php the_permalink(); ?>"><?php print date('F j, Y', strtotime( Events::getDate() ) ); ?></a>
                             </div>
-                            <span class="meta"><em><?php Events::getTrackTitle( $post->ID ); ?></em> in <em><?php print Venues::getState(); ?></em></span>
+                            <span class="meta"><em><?php Events::getTrackTitle( $post->ID ); ?></em> in <em><?php Venues::getAttribute( array( 'key'=> 'state', 'echo' => true ) ); ?></em></span>
                         </div>
                     <?php endforeach; wp_reset_postdata(); ?>
                 </div>

@@ -2,12 +2,7 @@
 <div class="events-container">
     <div class="single-container">
         <div class="W-C">
-            <div class="sidebar-container">
-                <div class="padding">
-                    sidebar
-                </div>
-            </div>
-
+            <?php get_sidebar(); ?>
             <div class="main-container">
                 <div class="padding">
                     <?php dynamic_sidebar( 'main-column-top' ); ?>
@@ -27,7 +22,8 @@
                                             <h2><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h2>
                                         </div>
                                         <span class="meta">
-                                            <?php print Venues::getCity(); ?>, <?php print Venues::getState(); ?>
+                                            <?php print Venues::getAttribute( array( 'key' => 'city' ) ); ?>,
+                                            <?php print Venues::getAttribute( array( 'key' => 'state' ) ); ?>
                                         </span>
                                     </div>
                                     <!-- -->

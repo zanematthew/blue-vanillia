@@ -2,11 +2,20 @@
     <div class="row-container">
         <div class="row">
             <h2 class="title">Contact Info</h2>
-            <strong>Email</strong> <a href="mailto:<?php Venues::getMetaField('email'); ?>"><?php print Venues::getMetaField('email'); ?></a>
+
+            <strong>Email</strong>
+            <a href="mailto:<?php Venues::getAttribute( array( 'key' => 'email', 'echo' => true ) ); ?>">
+            <?php Venues::getAttribute( array( 'key' => 'email', 'echo' => true ) ); ?></a>
             <br />
-            <strong>Primary Contact</strong> <?php print Venues::getMetaField('primary_contact'); ?>
+
+            <strong>Primary Contact</strong>
+            <?php Venues::getAttribute( array( 'key' => 'phone', 'echo' => true ) ); ?>
             <br />
-            <strong>Website</strong> <a href="<?php print Venues::getWebsite(); ?>" target="_blank"><?php print Venues::getWebsite( $post->ID ); ?></a>
+
+            <strong>Website</strong>
+            <a href="<?php Venues::getAttribute( array( 'key' => 'website', 'echo' => true ) ); ?>" target="_blank">
+            <?php Venues::getAttribute( array( 'key' => 'website', 'echo' => true ) ); ?></a>
+
         </div>
 
         <!-- Share -->
@@ -33,7 +42,7 @@
         <?php if ( get_option('zm_weather_version') ) : ?>
             <div class="row">
                 <h2 class="title">Weather Conditions</h2>
-                <?php zm_weather_venue_target( Venues::getCity() . ',' . Venues::getState() ); ?>
+                <?php zm_weather_venue_target( Venues::getAttribute( array( 'key' => 'city' ) ) . ',' . Venues::getAttribute( array( 'key' => 'state' ) ) ); ?>
             </div>
         <?php endif; ?>
         <!-- -->

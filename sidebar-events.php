@@ -11,7 +11,7 @@
 
         <?php if ( get_option('zm_weather_version') ) : ?>
             <div class="row">
-                <?php zm_weather_venue_target( Venues::getCity() . ',' . Venues::getState() ); ?>
+                <?php zm_weather_venue_target( Venues::getAttribute( array( 'key' => 'city' ) ) . ', ' . Venues::getAttribute( array( 'key' => 'state' ) ) ); ?>
             </div>
         <?php endif; ?>
 

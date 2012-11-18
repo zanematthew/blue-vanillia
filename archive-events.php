@@ -2,12 +2,7 @@
 <div class="events-container">
     <div class="single-container">
         <div class="W-C">
-            <div class="sidebar-container">
-                <div class="padding">
-                    sidebar
-                </div>
-            </div>
-
+            <?php get_sidebar(); ?>
             <div class="main-container">
                 <div class="padding">
                     <?php dynamic_sidebar( 'main-column-top' ); ?>
@@ -27,10 +22,11 @@
                                             <h2><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h2>
                                         </div>
                                         <div class="date">
-                                            <?php the_date(); ?>
+                                            <?php Events::getDate(); ?>
                                         </div>
                                         <span class="meta">
-                                            PLACEHOLDER Chesapeake BMX in Maryland
+                                            <?php Venues::getAttribute( array( 'key' => 'title', 'echo' => true ) ); ?>
+                                            in <?php Venues::getAttribute( array( 'key' => 'state', 'echo' => true ) ); ?>
                                         </span>
                                     </div>
                                     <!-- -->
