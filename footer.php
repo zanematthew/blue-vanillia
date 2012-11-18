@@ -14,19 +14,13 @@
             </nav>
         </div>
         <div class="right">
-            <div class="copy">
-                <div class="large">
-                    <?php dynamic_sidebar( 'footer-row-1' ); ?>
-                </div>
-            </div>
+            <?php dynamic_sidebar( 'footer-row-1' ); ?>
             <div class="peach"></div>
-            <div class="box-container">
-                <?php dynamic_sidebar( 'footer-row-2' ); ?>
-            </div>
+
+            <?php dynamic_sidebar( 'footer-row-2' ); ?>
             <div class="peach"></div>
-            <div class="info">
-              <?php dynamic_sidebar( 'footer-row-3' ); ?>
-            </div>
+
+            <?php dynamic_sidebar( 'footer-row-3' ); ?>
             <br />
         </div>
     </div>

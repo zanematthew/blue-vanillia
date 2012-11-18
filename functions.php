@@ -156,8 +156,8 @@ function blue_vanillia_widgets_init() {
     register_sidebar(array(
         'name' => __( 'Footer Row 1', 'blue_vanillia' ),
         'id' => 'footer-row-1',
-        'before_widget' => '<aside class="widget-3">',
-        'after_widget' => '</aside>',
+        'before_widget' => '<div class="copy"><div class="large"><aside class="widget-3">',
+        'after_widget' => '</aside></div></div>',
         'before_title' => '<h3 class="widget-title"><span>',
         'after_title' => '</span></h3>'
     ) );
@@ -165,8 +165,8 @@ function blue_vanillia_widgets_init() {
     register_sidebar(array(
         'name' => __( 'Footer Row 2', 'blue_vanillia' ),
         'id' => 'footer-row-2',
-        'before_widget' => '<aside class="widget-3">',
-        'after_widget' => '</aside>',
+        'before_widget' => '<div class="box-container"><aside class="widget-3">',
+        'after_widget' => '</aside></div>',
         'before_title' => '<h3 class="widget-title"><span>',
         'after_title' => '</span></h3>'
     ) );
@@ -174,8 +174,8 @@ function blue_vanillia_widgets_init() {
     register_sidebar(array(
         'name' => __( 'Footer Row 3', 'blue_vanillia' ),
         'id' => 'footer-row-3',
-        'before_widget' => '<aside class="widget-3">',
-        'after_widget' => '</aside>',
+        'before_widget' => '<div class="info"><aside class="widget-3">',
+        'after_widget' => '</aside></div>',
         'before_title' => '<h3 class="widget-title"><span>',
         'after_title' => '</span></h3>'
     ) );
