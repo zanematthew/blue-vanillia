@@ -920,6 +920,7 @@ a {
 
 .comments-container p {
     padding: 10px;
+    margin: 0;
     }
 
 .comments-container .content {
