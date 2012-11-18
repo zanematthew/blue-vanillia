@@ -35,10 +35,8 @@
 <div class="footer-container meta">
   <em>Disclaimer &ndash; Please contact your local track for official date, location and additional information.</em><br />
     &copy; <?php print date('Y'); ?> <?php bloginfo('name'); ?> &ndash; <?php bloginfo('description'); ?>
-        <?php if ( function_exists('zm_events_count') ) : ?>
-            &bull; Listing <strong><?php zm_events_count(); ?> events</strong>
-            at <strong><?php zm_venues_count(); ?> tracks</strong>.
-        <?php endif; ?>
+    &bull; Listing <strong><?php Events::eventCount(); ?></strong>
+    at <strong><?php Venues::venueCount(); ?></strong>.
     <br /><a href="/contact">Contact</a>
 </div>
 

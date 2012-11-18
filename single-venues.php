@@ -20,6 +20,10 @@
                             </div>
                             <!-- -->
 
+
+<?php Venues::staticMap( $post->ID, 'medium' ); ?>
+<?php Venues::staticMap( $post->ID, 'small' ); ?>
+
                             <?php
                             global $post;
                             $venues = new Venues;

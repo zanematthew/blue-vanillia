@@ -2,11 +2,7 @@
 <div class="events-container">
     <div class="single-container">
         <div class="W-C">
-            <div class="sidebar-container">
-                <div class="padding">
-                    sidebar
-                </div>
-            </div>
+            <?php get_sidebar(); ?>
 
             <div class="main-container">
                 <div class="padding">
@@ -14,11 +10,7 @@
                 </div>
             </div>
 
-            <div class="sidebar-wide-container">
-                <div class="row-container">
-                    other sidebar
-                </div>
-            </div>
+            <?php get_sidebar( 'wide' ); ?>
         </div>
     </div>
 </div>

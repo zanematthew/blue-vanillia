@@ -30,7 +30,7 @@
                                             <?php the_date(); ?>
                                         </div>
                                         <span class="meta">
-                                            Chesapeake BMX in Maryland
+                                            PLACEHOLDER Chesapeake BMX in Maryland
                                         </span>
                                     </div>
                                     <!-- -->

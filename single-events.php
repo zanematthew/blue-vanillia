@@ -10,8 +10,8 @@
                     <?php dynamic_sidebar( 'main-column-top' ); ?>
                     <!-- -->
 
-                    <div class="row-container">
                     <?php if ( have_posts() ) while ( have_posts() ) : the_post(); ?>
+                        <div <?php post_class('row-container'); ?>>
 
                         <!-- Event -->
                         <div class="row">
@@ -48,8 +48,8 @@
                         <?php endif; ?>
                         <!-- -->
 
-                    <?php endwhile; ?>
                     </div>
+                    <?php endwhile; ?>
                 </div>
             </div>
             <?php get_sidebar( 'events' ); ?>
