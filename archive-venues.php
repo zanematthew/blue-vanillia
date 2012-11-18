@@ -13,20 +13,7 @@
                         <div id="locals-current-month">
                             <div class="row-container">
                                 <?php if ( have_posts() ) while ( have_posts() ) : the_post(); ?>
-                                    <!-- Event -->
-                                    <div <?php post_class('result row')?>>
-                                        <div class="image-container">
-                                            <a href="<?php the_permalink(); ?>"><?php the_post_thumbnail(); ?></a>
-                                        </div>
-                                        <div class="title">
-                                            <h2><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h2>
-                                        </div>
-                                        <span class="meta">
-                                            <?php print Venues::getAttribute( array( 'key' => 'city' ) ); ?>,
-                                            <?php print Venues::getAttribute( array( 'key' => 'state' ) ); ?>
-                                        </span>
-                                    </div>
-                                    <!-- -->
+                                    <?php get_template_part( 'content', $post->post_type ); ?>
                                 <?php endwhile; ?>
                             </div>
                         </div>

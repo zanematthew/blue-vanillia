@@ -2850,6 +2850,11 @@ body.home .image-background .info {
     line-height: 1em;
     margin-bottom: 10px;
     }
+
+body.home .main-container .image-container {
+    float: left;
+    margin: 0 10px 0 0;
+    }
 /*= End home
 -------------------------------------------------------------- */
 
