@@ -3,8 +3,7 @@
 
         <?php if ( get_option('zm_weather_version') ) : ?>
             <div class="zm-base-list-terms-container">
-                <h2 class="zm-base-title">Local Weather</h2>
-                <?php zm_weather_target(); ?>
+                <?php zm_weather_local_target(); ?>
             </div>
         <?php endif; ?>
 
