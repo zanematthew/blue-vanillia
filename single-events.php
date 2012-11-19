@@ -15,18 +15,16 @@
 
                         <!-- Event -->
                         <div class="row">
-                            <h2 class="title">Event <?php edit_post_link(); ?></h2>
+                            <h2 class="title"><?php edit_post_link(); ?></h2>
                             <div class="image-container">
                                 <?php the_post_thumbnail( 'medium' ); ?>
                             </div>
                             <div <?php post_class('result')?>>
                                 <?php do_action( 'fancy_date', $post->ID ); ?>
                                 <h1><?php the_title(); ?></h1>
-
-<div class="entry-container">
-    <span class="currency-symbol">$</span><span class="fee"><?php print get_post_meta( $post->ID, 'events_fee', true ); ?></span>
-</div>
-
+                                <div class="entry-container">
+                                    <span class="currency-symbol">$</span><span class="fee"><?php print get_post_meta( $post->ID, 'events_fee', true ); ?></span>
+                                </div>
                                 <?php the_content(); ?>
                             </div>
                         </div>
