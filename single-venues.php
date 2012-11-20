@@ -13,7 +13,11 @@
                                     <h2 class="title"><?php edit_post_link(); ?></h2>
                                     <h1><?php the_title(); ?></h1>
                                     <div class="image-container">
-                                        <?php the_post_thumbnail( 'medium' ); ?>
+                                        <?php if ( has_post_thumbnail() ) : ?>
+                                            <?php the_post_thumbnail( 'medium' ); ?>
+                                        <?php else : ?>
+                                            <?php Venues::staticMap( $post->ID, 'medium' ); ?>
+                                        <?php endif; ?>
                                     </div>
                                     <?php the_content(); ?>
                                 </div>
