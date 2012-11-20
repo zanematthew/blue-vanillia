@@ -10,7 +10,7 @@
                             <!-- Venue -->
                             <div class="row">
                                 <div <?php post_class()?>>
-                                    <h2 class="title">Venue <?php edit_post_link(); ?></h2>
+                                    <h2 class="title"><?php edit_post_link(); ?></h2>
                                     <h1><?php the_title(); ?></h1>
                                     <div class="image-container">
                                         <?php the_post_thumbnail( 'medium' ); ?>
@@ -19,10 +19,6 @@
                                 </div>
                             </div>
                             <!-- -->
-
-
-<?php Venues::staticMap( $post->ID, 'medium' ); ?>
-<?php Venues::staticMap( $post->ID, 'small' ); ?>
 
                             <?php
                             global $post;
