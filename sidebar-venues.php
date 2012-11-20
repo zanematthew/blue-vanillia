@@ -22,8 +22,8 @@
         <?php if ( get_option( 'zm_social_version' ) ) : ?>
             <div class="row">
                 <h2 class="title">Share</h2>
-                <?php do_action('zm_social_twitter_button'); ?>
-                <?php do_action('zm_social_facebook_button'); ?>
+                <?php zm_social_twitter_button( $post->post_title, get_permalink() ); ?>
+                <?php zm_social_facebook_button( get_permalink() ); ?>
             </div>
         <?php endif; ?>
         <!-- -->
