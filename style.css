@@ -865,6 +865,10 @@ a {
     line-height: 1.2em;
     margin: 10px 0;
     }
+
+.hentry .comments-container p {
+    font-size: 12px;
+}
 /*= End
 -------------------------------------------------------------- */
 
