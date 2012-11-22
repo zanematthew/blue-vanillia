@@ -1,4 +1,5 @@
 <?php get_header(); ?>
+<span class="zm_ev_venue_zip" style="display: none;"><?php Venues::getAttribute( array( 'key' => 'zip', 'echo' => true ) ); ?></span>
 <div class="events-container">
     <div class="single-container">
         <div class="W-C">
