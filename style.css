@@ -509,10 +509,6 @@ ul.zm-base li {
 .main-container .container .row-container *:last-child {
     border-bottom: 0;
     }
-
-.main-container img {
-    max-width: 100%;
-    }
 /*= End Main
 -------------------------------------------------------------- */
 
@@ -2931,3 +2927,8 @@ body.home .main-container .image-container {
     }
 .entry-container .currency-symbol {}
 .entry-container .entry-fee {}
+
+.loop .image-container img {
+    width: 125px;
+    height: 82px;
+    }
