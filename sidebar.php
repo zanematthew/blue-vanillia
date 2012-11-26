@@ -32,7 +32,8 @@
             <div class="zm-base-list-terms-container">
                 <div class="zm-base-title">Venues</div>
                 <?php foreach( $tmp->getVenueByRegion( $region ) as $venue ): ?>
-                    <div class="zm-base-item"><a href="<?php print get_permalink( $venue->ID ); ?>"><?php print $venue->post_title; ?></a><br /></div>
+                    <?php if ( get_query_var('name') == $venue->post_name ) $class = 'current'; else $class = null; ?>
+                    <div class="zm-base-item"><a href="<?php print get_permalink( $venue->ID ); ?>" class="<?php print $class; ?>"><?php print $venue->post_title; ?></a><br /></div>
                 <?php endforeach; ?>
             </div>
         <?php endif; ?>
