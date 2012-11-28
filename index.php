@@ -4,9 +4,13 @@
             <?php get_sidebar(); ?>
             <div class="main-container">
                 <div class="row-container loop">
-                    <?php  foreach( get_posts( array( 'post_type' => array( 'events', 'venues' ), 'post_status' => 'publish' ) ) as $post ) : setup_postdata( $post ); ?>
-                        <?php get_template_part( 'content', $post->post_type ); ?>
-                    <?php endforeach; ?>
+
+
+<?php  foreach( get_posts( array( 'post_type' => array( 'events', 'venues' ), 'post_status' => 'publish' ) ) as $post ) : setup_postdata( $post ); ?>
+    <?php get_template_part( 'content', $post->post_type ); ?>
+<?php endforeach; ?>
+
+
                 </div>
                 <?php blue_vanillia_pagination(); ?>
             </div>

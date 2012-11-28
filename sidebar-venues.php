@@ -13,7 +13,7 @@
             <br />
 
             <strong>Website</strong>
-            <a href="<?php Venues::getAttribute( array( 'key' => 'website', 'echo' => true ) ); ?>" target="_blank">
+            <a href="<?php print Venues::getAttribute( array( 'key' => 'website' ) ); ?>" target="_blank">
             <?php Venues::getAttribute( array( 'key' => 'website', 'echo' => true ) ); ?></a>
 
         </div>
