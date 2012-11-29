@@ -23,10 +23,10 @@
             <?php
 
             global $post;
-            $region = get_post_meta( $post->ID, 'venues_state', true );
-
-            if ( empty( $region ) ){
+            if ( empty( $post ) ){
                 $region = "MD";
+            } else {
+                $region = get_post_meta( $post->ID, 'venues_state', true );
             }
             $tmp = new Venues; if ( $tmp->getVenueByRegion() ) : ?>
             <div class="zm-base-list-terms-container">
