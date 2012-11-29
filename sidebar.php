@@ -23,12 +23,21 @@
             <?php
 
             global $post;
+
             if ( empty( $post ) ){
                 $region = "MD";
             } else {
-                $region = get_post_meta( $post->ID, 'venues_state', true );
+                if ( $post->post_type == 'venues' ){
+                    $region = get_post_meta( $post->ID, 'venues_state', true );
+                } else {
+                    $venues_id = get_post_meta( $post->ID, 'venues_id', true );
+                    $region = get_post_meta( $venues_id, 'venues_state', true );
+                }
             }
-            $tmp = new Venues; if ( $tmp->getVenueByRegion() ) : ?>
+
+            $tmp = new Venues;
+
+            if ( $tmp->getVenueByRegion( $region ) ) : ?>
             <div class="zm-base-list-terms-container">
                 <div class="zm-base-title">Venues</div>
                 <?php foreach( $tmp->getVenueByRegion( $region ) as $venue ): ?>
