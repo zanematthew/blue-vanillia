@@ -43,6 +43,7 @@ body {
 img {
     border: 0;
 }
+
 .center {
     text-align: center;
     }
@@ -160,13 +161,17 @@ a.high {
     }
 
 button.cancel,
-a.exit { color: red; }
+a.exit {
+    color: red;
+    }
 
 ul.inline {
     list-style-type: none;
     }
 
-ul.inline li { float: left; }
+ul.inline li {
+    float: left;
+    }
 
 .date,
 .date a {
@@ -467,12 +472,16 @@ ul.zm-base li {
     background-image: none;
     }
 
+.main-container th.attending {
+    width: 7%;
+    }
+
 .main-container th.date {
-    width: 14%;
+    width: 9%;
     }
 
 .main-container th.title {
-    width: 30%;
+    width: 13%;
     }
 
 .main-container th.track {
@@ -812,7 +821,7 @@ a {
     }
 
 .single-container .comments-container {
-    margin-top: -10px;
+/*    margin-top: -10px;*/
     }
 
 .single-container .main-container {
@@ -2685,24 +2694,12 @@ fieldset.datetime-end-container input {
 -------------------------------------------------------------- */
 
 /*Venues*/
-.main-container th.date {
-    width: 14%;
-    }
-
-.main-container th.title {
-    width: 30%;
-    }
-
 .main-container th.track {
     width: 22%;
     }
 
 .main-container th.state {
     width: 12%;
-    }
-
-.main-container th.attending {
-    width: 18%;
     }
 
 .main-container td.attending {
@@ -2876,7 +2873,6 @@ body.archive .loop .image-container img {}
 
 .main-container .zm-social-twitter-button {
     float: left;
-    margin-bottom: 10px;
     width: 85px;
     }
 
@@ -2937,4 +2933,14 @@ body.archive .loop .image-container img {}
 .loop .image-container img {
     width: 125px;
     height: 82px;
+    }
+
+#mini_map_target {
+    height: 240px;
+    width: 450px;
+    border: 1px solid #ddd;
+    }
+
+.sidebar-wide-container #mini_map_target {
+    width: 300px;
     }

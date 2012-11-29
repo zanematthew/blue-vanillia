@@ -4,7 +4,7 @@
             <h2 class="title">Contact Info</h2>
 
             <strong>Email</strong>
-            <a href="mailto:<?php Venues::getAttribute( array( 'key' => 'email', 'echo' => true ) ); ?>">
+            <a href="mailto:<?php print Venues::getAttribute( array( 'key' => 'email' ) ); ?>">
             <?php Venues::getAttribute( array( 'key' => 'email', 'echo' => true ) ); ?></a>
             <br />
 
@@ -18,15 +18,6 @@
 
         </div>
 
-        <!-- Share -->
-        <?php if ( get_option( 'zm_social_version' ) ) : ?>
-            <div class="row">
-                <h2 class="title">Share</h2>
-                <?php zm_social_twitter_button( $post->post_title, get_permalink() ); ?>
-                <?php zm_social_facebook_button( get_permalink() ); ?>
-            </div>
-        <?php endif; ?>
-        <!-- -->
 
         <!-- Info Pane -->
         <?php if ( get_option('zm_ev_version') && is_single() ) : ?>

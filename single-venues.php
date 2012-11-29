@@ -25,6 +25,15 @@
                             </div>
                             <!-- -->
 
+                            <!-- Share -->
+                            <?php if ( get_option( 'zm_social_version' ) ) : ?>
+                                <div class="row">
+                                    <?php zm_social_twitter_button( $post->post_title, get_permalink() ); ?>
+                                    <?php zm_social_facebook_button( get_permalink() ); ?>
+                                </div>
+                            <?php endif; ?>
+                            <!-- -->
+
                             <?php
                             global $post;
                             $venues = new Venues;

@@ -11,21 +11,26 @@
                     <!-- -->
 
                     <?php if ( have_posts() ) while ( have_posts() ) : the_post(); ?>
-                        <div <?php post_class('row-container'); ?>>
+                        <div class="row-container">
 
                         <!-- Event -->
                         <div class="row">
                             <h2 class="title"><?php edit_post_link(); ?></h2>
+                            <div <?php post_class(); ?>><h1><?php the_title(); ?></h1></div>
+                            <?php if ( get_option('zm_gmaps_version') ) zm_gmaps_mini(); ?>
+                            <?php if ( get_option('zm_ev_version') ) zm_ev_venue_info_pane( $post->ID ); ?>
+
                             <div class="image-container">
                                 <?php the_post_thumbnail( 'medium' ); ?>
                             </div>
+
                             <div <?php post_class('result')?>>
                                 <?php do_action( 'fancy_date', $post->ID ); ?>
-                                <h1><?php the_title(); ?></h1>
+
                                 <div class="entry-container">
                                     <span class="currency-symbol">$</span><span class="fee"><?php print get_post_meta( $post->ID, 'events_fee', true ); ?></span>
                                 </div>
-                                <?php the_content(); ?>
+                                <div <?php post_class(); ?>><?php the_content(); ?></div>
                             </div>
                         </div>
                         <!-- -->
