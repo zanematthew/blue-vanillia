@@ -17,7 +17,6 @@ $three_months_out = $event_obj->getMonth( $plus_three_month );
 
         <ul>
             <li><a href="#locals-current-month"><?php print date('M'); ?> <span class="count"><?php print $current_events['count']; ?></span></a></li>
-            <li><a href="#demo">demo</a></li>
             <?php if ( $next_month_events ) : ?><li><a href="#locals-next-month"><?php print $plus_one_month; ?> <span class="count"><?php print $next_month_events['count']; ?></span></a></li><?php endif; ?>
             <?php if ( $three_months_out ) : ?><li><a href="#locals-next-next-month"><?php print $plus_three_month; ?> <span class="count"><?php print $three_months_out['count']; ?></span></a></li><?php endif; ?>
         </ul>
