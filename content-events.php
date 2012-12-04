@@ -13,7 +13,7 @@
         in <?php Venues::getAttribute( array( 'key' => 'state', 'echo' => true ) ); ?>
         <br /><?php print date( 'M d, Y', strtotime( Events::getDate() ) ); ?>
     </span>
-<?php if ( get_option('zm_attend_button_version') ) : ?>
-    <?php zm_attending_button_container( $post->ID ); ?>
-<?php endif; ?>
+    <?php if ( get_option('zm_attend_button_version') ) : ?>
+        <?php zm_attend_button_load_template( $post->ID ); ?>
+    <?php endif; ?>
 </div>
