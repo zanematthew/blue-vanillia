@@ -35,14 +35,46 @@
                 }
             }
 
-            $tmp = new Venues;
+            $venues = new Venues;
 
-            if ( $tmp->getVenueByRegion( $region ) ) : ?>
+            $auto_expando = 7;
+            $i = 0;
+            $len = count( $venues->getVenueByRegion( $region ) );
+            $trigger = 6; // Number to trigger "auto expando"
+
+            if ( $venues->getVenueByRegion( $region ) ) : ?>
             <div class="zm-base-list-terms-container">
                 <div class="zm-base-title">Venues</div>
-                <?php foreach( $tmp->getVenueByRegion( $region ) as $venue ): ?>
+                <?php foreach( $venues->getVenueByRegion( $region ) as $venue ): ?>
                     <?php if ( get_query_var('name') == $venue->post_name ) $class = 'current'; else $class = null; ?>
+
+                    <?php
+                    // Open our wrapper on the number from auto expando
+                    if ( $len >= $trigger ) {
+                        $tmp = $auto_expando - 1;
+
+                        if ( $i == $tmp ) {
+                            print '<div class="auto-expando-container">';
+                            print '<div class="auto-expando-target" style="display: none;">';
+                        }
+                    }
+                    ?>
+
                     <div class="zm-base-item"><a href="<?php print get_permalink( $venue->ID ); ?>" class="<?php print $class; ?>"><?php print $venue->post_title; ?></a><br /></div>
+
+                    <?php
+                    // auto expando and last add closing div
+                    if ( $len >= $trigger ) {
+                        if ( $i == $len - 1 ) {
+                            print '</div>';
+                            print '<a href="#" class="auto-expando-handle">More</a>';
+                            print '<span class="arrow"></span>';
+                            print '</div>';
+                        }
+                    }
+                    $i++;
+                    ?>
+
                 <?php endforeach; ?>
             </div>
         <?php endif; ?>

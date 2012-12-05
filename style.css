@@ -2887,3 +2887,29 @@ body.archive .loop .image-container {
     width: 125px;
     height: 82px;
     }
+
+/*= Start Auto-expando
+-------------------------------------------------------------- */
+.auto-expando-handle {
+    font-weight: bold;
+    float: left;
+    }
+
+.auto-expando-target {
+    display: block;
+    float: left;
+    width: 100%;
+    }
+
+.auto-expando-container .arrow {
+    background: url('images/arrow_down.png') center center no-repeat;
+    cursor: pointer;
+    padding: 8px;
+    float: left;
+    }
+
+.auto-expando-container .arrow-up {
+    -webkit-transform: scaleY(-1);
+    }
+/*= End Auto-expando
+-------------------------------------------------------------- */
