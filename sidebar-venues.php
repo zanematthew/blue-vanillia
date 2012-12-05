@@ -3,18 +3,31 @@
         <div class="row">
             <h2 class="title">Contact Info</h2>
 
-            <strong>Email</strong>
-            <a href="mailto:<?php print Venues::getAttribute( array( 'key' => 'email' ) ); ?>">
-            <?php Venues::getAttribute( array( 'key' => 'email', 'echo' => true ) ); ?></a>
-            <br />
 
-            <strong>Primary Contact</strong>
-            <?php Venues::getAttribute( array( 'key' => 'phone', 'echo' => true ) ); ?>
-            <br />
+<?php
+$venues = New Venues();
+$email = $venues->getAttribute( array( 'key' => 'email' ) );
+$contact = $venues->getAttribute( array( 'key' => 'phone' ) );
+$website = $venues->getAttribute( array( 'key' => 'website' ) );
+?>
+            <?php if ( ! empty( $email ) ) : ?>
+                <strong>Email</strong>
+                <a href="mailto:<?php print $email; ?>">
+                <?php print $email; ?></a>
+                <br />
+            <?php endif; ?>
 
-            <strong>Website</strong>
-            <a href="<?php print Venues::getAttribute( array( 'key' => 'website' ) ); ?>" target="_blank">
-            <?php Venues::getAttribute( array( 'key' => 'website', 'echo' => true ) ); ?></a>
+            <?php if ( ! empty( $contact ) ) : ?>
+                <strong>Primary Contact</strong>
+                <?php print $contact; ?>
+                <br />
+            <?php endif; ?>
+
+            <?php if ( ! empty( $website ) ) : ?>
+                <strong>Website</strong>
+                <a href="<?php print $website; ?>" target="_blank">
+                <?php print $website; ?></a>
+            <?php endif; ?>
 
         </div>
 

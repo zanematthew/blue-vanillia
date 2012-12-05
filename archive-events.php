@@ -21,7 +21,6 @@
                     <?php blue_vanillia_pagination(); ?>
                 </div>
             </div>
-
             <?php get_sidebar( 'wide' ); ?>
         </div>
     </div>

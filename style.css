@@ -15,7 +15,6 @@
  *
  */
 
-
 /*= Reset
 -------------------------------------------------------------- */
 *:focus{outline:none;}body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,code,form,fieldset,legend,input,button,textarea,p,blockquote,th,td{margin:0;padding:0;}button,input,legend,textarea,select,optgroup,option{font-family:inherit;font-size:inherit;font-style:inherit;font-weight:inherit;}table{border-collapse:collapse;border-spacing:0; }sup,sub{vertical-align:baseline; }html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,em,font,img,ins,kbd,q,s,samp,small,strike,strong,sub,sup,tt,var,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,textarea,caption,table,tbody,tfoot,thead,tr,th,td{font-family:inherit;font-size:inherit;}
@@ -43,6 +42,10 @@ body {
 img {
     border: 0;
 }
+
+label {
+    font-size: 13px;
+    }
 
 .center {
     text-align: center;
@@ -200,6 +203,7 @@ ul.inline li {
     padding: 1px;
     border: 1px solid #CCC;
     }
+
 /*= Base Page styling
 -------------------------------------------------------------- */
 .page-content h1 {
@@ -299,24 +303,6 @@ ul.inline li {
     box-shadow: 0 1px 0 #fff;
     color: #fff;
     padding: 0px 6px;
-    }
-
-ul.zm-base {
-    margin: 0 0 0 -15px;
-    }
-
-ul.zm-base li.title {
-    color: #000;
-    font-size: 14px;
-    list-style-type: none;
-    font-weight: bold;
-    text-shadow: 0px 1px 0px #fff;
-    text-transform: capitalize;
-    }
-
-ul.zm-base li {
-    list-style-type: square;
-    margin: 0 0 15px 15px;
     }
 
 .sidebar-container .zm-base-title {
@@ -863,8 +849,6 @@ a {
     padding: 0 0 0 15px;
     }
 
-.hentry li {}
-
 .hentry .post-excerpt {
     font-size: 13px;
     line-height: 1.2em;
@@ -874,6 +858,10 @@ a {
 .hentry .comments-container p {
     font-size: 12px;
 }
+
+.hentry form p {
+    margin: 0 0 5px 0;
+    }
 /*= End
 -------------------------------------------------------------- */
 
@@ -1605,33 +1593,6 @@ input[disabled],
 -------------------------------------------------------------- */
 
 
-/*= Auto Expando
--------------------------------------------------------------- */
-/*.arrow {
-    background: url('/images/arrow_down.png') center center no-repeat;
-    cursor: pointer;
-    padding: 8px;
-    float: left;
-    }
-
-.arrow-up {
-    -webkit-transform: scaleY(-1);
-    }
-
-.auto-expando-handle {
-    font-weight: bold;
-    float: left;
-    }
-
-.auto-expando-target {
-    display: block;
-    float: left;
-    width: 100%;
-    }*/
-/*= End Auto Expando
--------------------------------------------------------------- */
-
-
 /*= User panel
 -------------------------------------------------------------- */
 .user-panel-arrow-container {
@@ -1684,6 +1645,12 @@ input[disabled],
 
 .map-container address { margin-bottom: 10px;}
 .map-container .left { width: 64%; height: 240px; background: ghostwhite; }
+
+#mini_map_target {
+    height: 240px;
+    width: 450px;
+    border: 1px solid #ddd;
+    }
 
 .search-results-container .title a {
     font-size: 16px;
@@ -1956,10 +1923,142 @@ body,
     width: 100%;
     }
 
+.tabs-container a {
+    text-decoration: none;
+    }
+
+.tabs-container .row-container .row .title h2 a {
+    font-size: 15px;
+    font-weight: normal;
+    margin: 0 0 2px;
+    }
+
+.tabs-container .row-container .row .date {
+    font-weight: 300;
+    font-size: 13px;
+    }
+
+.tabs-container .row-container .row .image-container {
+    float: left;
+    margin: 0 10px 0 0;
+    }
+
+.tabs-container .row-container .row .state {
+    text-transform: uppercase;
+    }
+
+.tabs-container .row-container .row {
+    padding: 20px 10px;
+    width: 96%;
+    -webkit-transition-property: background;
+    -moz-transition-property: background;
+    -o-transition-property: background;
+    -ms-transition-property: background;
+    transition-property: background;
+    -webkit-transition-duration: 0.3s;
+    -moz-transition-duration: 0.3s;
+    -o-transition-duration: 0.3s;
+    -ms-transition-duration: 0.3s;
+    transition-duration: 0.3s;
+    -webkit-transition-timing-function: linear;
+    -moz-transition-timing-function: linear;
+    -o-transition-timing-function: linear;
+    -ms-transition-timing-function: linear;
+    transition-timing-function: linear;
+    }
+
+.tabs-container .row-container .row:hover {
+    background: #fff;
+    box-shadow: 0px 0px 10px #CFCFCF;
+    }
+
+.tabs-container .row-container .row .title {
+    margin: 0 0 2px 0;
+    }
+
+.tabs-container .row-container .row .meta,
+.tabs-container .row-container .row .meta .title {
+    display: block;
+    width: 100%;
+    margin: 0 0 10px;
+    font-size: 12px;
+    }
+
+.tabs-container .row-container .row .meta a .title {
+    text-decoration: none;
+    }
+
+.tabs-container .row-container .row:hover .meta a {
+    background: #FFFFD0;
+    }
+/*= End Tabs
+-------------------------------------------------------------- */
+
+
+/*= Start Event Count
+-------------------------------------------------------------- */
+.event-count-horizontal {
+    float: left;
+    margin: 0 15px 0 0;
+    width: 56px;
+    text-align: center;
+    position: relative;
+    }
+
+.event-count-horizontal .title {
+    font-weight: bold;
+    font-size: 11px;
+    text-transform: uppercase;
+    padding: 7px 0 0;
+    letter-spacing: .125em;
+    }
+
+.event-count-horizontal .count {
+    background: white;
+    display: block;
+    padding: 14px 0px;
+    font-size: 28px;
+    box-shadow: 1px 1px 6px #EEE inset;
+    border: 1px solid #E6DEDE;
+    border-radius: 5px;
+    font-weight: bold;
+    text-shadow: 1px 1px 0 white;
+    }
+
+.event-count-horizontal .arrow-bottom {
+    float: left;
+    border-color: white rgba(255, 255, 255, 0) transparent transparent;
+    border-width: 8px;
+    border-style: solid;
+    position: absolute;
+    left: 20px;
+    top: 45px;
+    height: 0;
+    width: 0;
+    z-index: 2;
+    }
+
+.event-count-horizontal .arrow-shadow {
+    float: left;
+    border-color: #DFDFDF transparent transparent;
+    border-width: 9px;
+    border-style: solid;
+    position: absolute;
+    left: 19px;
+    top: 45px;
+    height: 0;
+    width: 0;
+    z-index: 1;
+    }
+/*= End Event Count
+-------------------------------------------------------------- */
+
+
+/*= Start ui
+-------------------------------------------------------------- */
 .tabs-container .ui-tabs-nav {
     border-bottom: 1px solid #DDD;
     }
-
 
 .tabs-container .ui-tabs-nav .count {
     background: white;
@@ -2029,6 +2128,10 @@ body,
     color: black;
     }
 
+.tabs-container .ui-tabs-panel {
+    padding: 10px 0 0 0;
+    }
+
 .tabs-container .ui-tabs-panel ul {
     list-style-type: none;
     }
@@ -2042,149 +2145,12 @@ body,
     float: left;
     width: 100%;
     }
-
-.tabs-container .ui-tabs-panel {
-    padding: 10px 0 0 0;
-    }
-
-.tabs-container .ui-tabs-panel a {
-    text-decoration: none;
-    }
-
-.tabs-container .ui-tabs-panel .image-container {
-    float: left;
-    margin: 0 10px 0 0;
-    }
-
-.tabs-container .ui-tabs-panel .row-container .row .image-container img {
-    border-radius: 0;
-    height: 70px;
-    width: 104px;
-    }
-
-.tmp-events-container {
-    float: left;
-margin: 0 15px 0 0;
-width: 56px;
-text-align: center;
-position: relative;
-    }
-
-.tmp-events-container .title {
-    font-weight: bold;
-font-size: 11px;
-text-transform: uppercase;
-padding: 7px 0 0;
-letter-spacing: .125em;
-}
-
-.tmp-events-container .count {
-    background: white;
-display: block;
-padding: 14px 0px;
-font-size: 28px;
-box-shadow: 1px 1px 6px #EEE inset;
-border: 1px solid #E6DEDE;
-border-radius: 5px;
-font-weight: bold;
-text-shadow: 1px 1px 0 white;
-    }
-
-.tmp-events-container .arrow-bottom {
-    float: left;
-border-color: white rgba(255, 255, 255, 0) transparent transparent;
-border-width: 8px;
-border-style: solid;
-position: absolute;
-left: 20px;
-top: 45px;
-height: 0;
-width: 0;
-z-index: 2;
-    }
-
-.tmp-events-container .arrow-shadow {
-float: left;
-border-color: #DFDFDF transparent transparent;
-border-width: 9px;
-border-style: solid;
-position: absolute;
-left: 19px;
-top: 45px;
-height: 0;
-width: 0;
-z-index: 1;
-}
-
-/*.tabs-container .ui-tabs-panel .title a {
-    font-weight: bold;
-    font-size: 13px;
-    }
-*/
-.tabs-container .ui-tabs-panel .title h2 a {
-    font-size: 15px;
-    font-weight: normal;
-    margin: 0 0 2px;
-    }
-
-.tabs-container .ui-tabs-panel .date {
-    font-weight: 300;
-    font-size: 13px;
-    }
-
-/*.tabs-container .ui-tabs-panel .date a {
-    font-size: 12px;
-    }
-*/
-.tabs-container .ui-tabs-panel .row-container .row {
-    padding: 20px 10px;
-    width: 96%;
-    -webkit-transition-property: background;
-    -moz-transition-property: background;
-    -o-transition-property: background;
-    -ms-transition-property: background;
-    transition-property: background;
-    -webkit-transition-duration: 0.3s;
-    -moz-transition-duration: 0.3s;
-    -o-transition-duration: 0.3s;
-    -ms-transition-duration: 0.3s;
-    transition-duration: 0.3s;
-    -webkit-transition-timing-function: linear;
-    -moz-transition-timing-function: linear;
-    -o-transition-timing-function: linear;
-    -ms-transition-timing-function: linear;
-    transition-timing-function: linear;
-    }
-
-.count {}
-.tabs-container .ui-tabs-panel .row-container .row:hover {
-    background: #fff;
-    box-shadow: 0px 0px 10px #CFCFCF;
-    }
-
-.tabs-container .ui-tabs-panel .title {
-    margin: 0 0 2px 0;
-    }
-
-.tabs-container .ui-tabs-panel .meta,
-.tabs-container .ui-tabs-panel .meta .title {
-    display: block;
-    width: 100%;
-    margin: 0 0 10px;
-    font-size: 12px;
-    }
-
-.tabs-container .ui-tabs-panel .meta a .title {
-    text-decoration: none;
-    }
-
-.row-container .row:hover .meta a {
-    background: #FFFFD0;
-    }
-/*= End Tabs
+/*= End ui
 -------------------------------------------------------------- */
 
 
+/*= Start Datepicker
+-------------------------------------------------------------- */
 .ui-datepicker {
     background: white;
     padding: 10px;
@@ -2216,15 +2182,6 @@ z-index: 1;
     content: "\00bb";
     }
 
-.ui-datepicker .ui-datepicker-header .ui-datepicker-title .ui-datepicker-month {}
-.ui-datepicker .ui-datepicker-header .ui-datepicker-title .ui-datepicker-year {}
-.ui-datepicker .ui-datepicker-calendar .ui-datepicker-week-end {}
-.ui-datepicker .ui-datepicker-calendar .ui-datepicker-other-month {}
-.ui-datepicker .ui-datepicker-calendar .ui-datepicker-buttonpane {}
-.ui-datepicker .ui-datepicker-calendar .ui-datepicker-buttonpane .ui-datepicker-current {}
-.ui-datepicker .ui-datepicker-calendar .ui-datepicker-buttonpane .ui-datepicker-close {}
-
-
 .ui-datepicker .ui-state-hover {
     background: #F0F0F0;
     }
@@ -2239,6 +2196,9 @@ z-index: 1;
     background: #EBEBEB;
     box-shadow: 1px 1px 0 #CCC;
     }
+/*= End Datepicker
+-------------------------------------------------------------- */
+
 
 /*= Sidebar Wide tabs
 -------------------------------------------------------------- */
@@ -2288,6 +2248,10 @@ z-index: 1;
 .sidebar-wide-container .zm-social-twitter-button {
     float: left;
     width: 85px;
+    }
+
+.sidebar-wide-container #mini_map_target {
+    width: 300px;
     }
 /*= End
 -------------------------------------------------------------- */
@@ -2511,6 +2475,8 @@ z-index: 1;
     margin: 10px 100% 20px 0;
     }
 
+/*= zM frame work (?)
+-------------------------------------------------------------- */
 .zm-action-box {
     background: #333;
     padding: 5px 15px;
@@ -2520,8 +2486,6 @@ z-index: 1;
     box-shadow: 1px 1px 0px black;
     }
 
-/*= zM frame work (?)
--------------------------------------------------------------- */
 h1.zm-large {
     font-size: 26px;
     font-weight: 300;
@@ -2561,8 +2525,27 @@ h1.zm-large {
     width: 100%;
     margin: 10px 0;
     }
+
+ul.zm-base {
+    margin: 0 0 0 -15px;
+    }
+
+ul.zm-base li.title {
+    color: #000;
+    font-size: 14px;
+    list-style-type: none;
+    font-weight: bold;
+    text-shadow: 0px 1px 0px #fff;
+    text-transform: capitalize;
+    }
+
+ul.zm-base li {
+    list-style-type: square;
+    margin: 0 0 15px 15px;
+    }
 /*= End
 -------------------------------------------------------------- */
+
 
 /*This is yor css file for the events model/controller */
 /*= Create Event
@@ -2629,105 +2612,11 @@ h1.zm-large {
     margin-right: 10px;
     width: 120px;
     }
-/*= End Form
--------------------------------------------------------------- */
 
-
-/*= Directions Panel
--------------------------------------------------------------- */
-#directionsPanel {
-    background: white;
-    border: 1px solid #ddd;
-    box-shadow: -5px 0px 20px -10px rgba( 0, 0, 0, 0.5) inset;
-    width: 215px;
-    float: left;
-    height: 242px;
-    overflow-y: hidden;
-    overflow-x: hidden;
-    }
-
-#directionsPanel {
-    position: absolute;
-    }
-
-#directionsPanel .adp-step,
-#directionsPanel .adp-substep {
-    border-top: 1px solid #e6e6e6;
-    }
-
-#directionsPanel .adp-placemark {
-    background: transparent;
-    }
-
-#directionsPanel .adp-summary {
-    color: #A6A6A6;
-    padding: 10px 0 0 10px;
-    float: left;
-    margin: -30px 0 0 33px;
-    }
-
-#directionsPanel .adp-distance {
-    color: #A6A6A6;
-    }
-
-#directionsPanel .adp-legal {
-    color: #A6A6A6;
-    float: left;
-    padding: 10px;
-    }
-
-#directionsPanel table.adp-directions {
-    width: 400px;
-    }
-
-#directionsPanel table.adp-directions tr {
-    background: none;
-    }
-
-#directionsPanel table.adp-placemark tr {
-    background: none;
-    }
-
-#directionsPanel table tr td.adp-text {
-    vertical-align: middle;
-    margin: 0;
-    padding:0;
-    }
-
-#directionsPanel table.adp-placemark {
-    border: 0;
-    margin: 0;
-    }
-/*= End Directions Panel
--------------------------------------------------------------- */
-
-
-/*= Edit Details
--------------------------------------------------------------- */
-.bmx-rs-edit-details-container label:empty {
+.new-events-container .button-container .exit {
     display: none;
     }
-
-.bmx-rs-edit-details-container fieldset.city-container,
-.bmx-rs-edit-details-container fieldset.state-container,
-.bmx-rs-edit-details-container fieldset.track-container,
-.bmx-rs-edit-details-container fieldset.point-scale-container {
-    width: 120px;
-    margin-bottom: 10px;
-    }
-
-.bmx-rs-edit-details-container fieldset.city-container select,
-.bmx-rs-edit-details-container fieldset.state-container select,
-.bmx-rs-edit-details-container fieldset.track-container select,
-.bmx-rs-edit-details-container fieldset.point-scale-container select {
-    float: left;
-    width: 110px;
-    }
-
-.bmx-rs-edit-details-container fieldset.bmx_rs_tag-container select {
-    width: 515px;
-    }
-/*= End Details
+/*= End Form
 -------------------------------------------------------------- */
 
 
@@ -2769,14 +2658,6 @@ fieldset.datetime-end-container input {
 /*= End
 -------------------------------------------------------------- */
 
-
-/*= New Events page
--------------------------------------------------------------- */
-.new-events-container .button-container .exit {
-    display: none;
-    }
-/*= End
--------------------------------------------------------------- */
 
 /*Venues*/
 .main-container th.track {
@@ -2831,7 +2712,9 @@ h2.site-description {
     width: 900px;
     }
 
-/*Login, Register Page*/
+
+/*= Login, Register
+-------------------------------------------------------------- */
 .hentry .zm-register-container .fb-login-container,
 .hentry .zm-login-container .fb-login-container {
     text-align: center;
@@ -2879,18 +2762,9 @@ h2.site-description {
 .hentry .zm-login-container .button-container .cancel {
     display: none;
     }
-/*End login, register*/
+/*= End Login, Register
+-------------------------------------------------------------- */
 
-
-/*Default hentry*/
-label {
-    font-size: 13px;
-    }
-
-.hentry form p {
-    margin: 0 0 5px 0;
-    }
-/*End default hentry*/
 
 /*= Home
 -------------------------------------------------------------- */
@@ -2946,7 +2820,6 @@ body.archive .loop .image-container {
     margin: 0 10px 0 0;
     }
 
-body.archive .loop .image-container img {}
 
 /*= Plugin code
  * @todo possibly just add CSS in the theme customizer
@@ -2997,9 +2870,6 @@ body.archive .loop .image-container img {}
     box-shadow: 0px 0px 5px #e0e0e0;
     }
 
-.pagination-container .prev {}
-.pagination-container .dots {}
-.pagination-container .next {}
 .pagination-container .current {
     font-size: 14px;
     font-weight: bold;
@@ -3012,20 +2882,8 @@ body.archive .loop .image-container img {}
     line-height: 1.2em;
     margin-bottom: 10px;
     }
-.entry-container .currency-symbol {}
-.entry-container .entry-fee {}
 
 .loop .image-container img {
     width: 125px;
     height: 82px;
-    }
-
-#mini_map_target {
-    height: 240px;
-    width: 450px;
-    border: 1px solid #ddd;
-    }
-
-.sidebar-wide-container #mini_map_target {
-    width: 300px;
     }
