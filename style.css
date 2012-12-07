@@ -802,45 +802,56 @@ a {
 
 /*= Single
 -------------------------------------------------------------- */
-.single-container .title {
+.single .title {
     font-size: 14px;
     margin: 0 0 10px;
     text-shadow: 1px 1px 0 #fff;
     }
 
-.single-container .comments-container {
+.single .comments-container {
 /*    margin-top: -10px;*/
     }
 
-.single-container .main-container {
+.single-venues .venues-address-pane {
+    background: #fff;
+    border: solid #ddd;
+    border-width: 1px;
+    margin-bottom: 10px;
+    margin-top: -1px;
     float: left;
-    width: 780px;
+    width: 100%;
     }
 
-.single-container .main-container .right {
+.single-venues .venues-address-pane .content {
+    padding: 10px;
+    }
+
+.single .main-container {
+    float: left;
+    }
+
+.single .main-container .right {
     /*width: 465px;*/
     }
 
-.single-container .main-container .map-container .right {
+.single .main-container .map-container .right {
     float: right;
     width: 211px;
     }
 
-.single-container .main-container .venue-links-pane {
+.single .main-container .venue-links-pane {
     float: left;
     }
 
-.single-container .main-container .venue-links-pane ul {
+.single .main-container .venue-links-pane ul {
     list-style-type: none;
-}
-.single-container .main-container .venue-links-pane ul li {}
-.single-container .main-container .venue-links-pane ul li a {}
+    }
 
-.single-container .tabs-container .row-container .row .title {
+.single .tabs-container .row-container .row .title {
     margin: 0 0 0 105px;
     }
 
-.single-container .tabs-container .row-container .row .attending-button-pane {
+.single .tabs-container .row-container .row .attending-button-pane {
     margin: -18px 0 0 0;
     }
 /*= End Single
@@ -850,7 +861,7 @@ a {
 /*= Hentry -- "Default Posts"
 -------------------------------------------------------------- */
 .hentry h1 {
-    font-size: 32px;
+    font-size: 20px;
     font-weight: 300;
     line-height: 1.2em;
     margin-bottom: 10px;
@@ -956,7 +967,7 @@ a {
     font-size: 12px;
     letter-spacing: 0.1em;
     height: 20px;
-    width: 385px;
+    width: 375px;
     }
 /*= End Comments
 -------------------------------------------------------------- */
@@ -2348,23 +2359,18 @@ body,
 -------------------------------------------------------------- */
 
 
-/*= Start
--------------------------------------------------------------- */
-/*.venue-info {
-    background: #fff;
-    border: solid #ddd;
-    border-width: 1px;
-    margin-bottom: 10px;
-    margin-top: -1px;
-    float: left;
-    width: 100%;
-    }*/
-
 .venue-info .content {
     float: left;
     }
 
-.info-overlay {
+/*= Single Events
+-------------------------------------------------------------- */
+.single-events .main-container {
+    float: left;
+    width: 780px;
+    }
+
+.single-events .info-overlay {
     box-shadow: 138px 0px 73px rgba(0, 0, 0, 0.69) inset;
     border-width: 1px;
     margin-bottom: 10px;
@@ -2378,39 +2384,40 @@ body,
     height: 284px;
     }
 
-.info-overlay h1 {
+.single-events .info-overlay h1 {
+    font-size: 32px;
     margin-bottom: 0;
     }
 
-.info-overlay .date {
+.single-events .info-overlay .date {
     font-size: 16px;
     font-style: italic;;
     color: #fff;
     margin: 0 0 5px;
     }
 
-.info-overlay .venue-info {
+.single-events .info-overlay .venues-address-pane {
     margin: 100px 0 0;
     }
 
-.info-overlay .entry-container {
+.single-events .info-overlay .entry-container {
     font-size: 12px;
     font-weight: 300;
     line-height: 1.2em;
     display: block;
     }
 
-.info-overlay .title {
+.single-events .info-overlay .title {
     text-shadow: none;
     }
 
-#image-pane .image-crop {
+.single-events #image-pane .image-crop {
     overflow: hidden;
     height: 304px;
     width: 640px;
     }
 
-#image-pane .image-crop img {
+.single-events #image-pane .image-crop img {
     position: relative;
     }
 /*= End
@@ -2423,7 +2430,7 @@ body,
     left: 0;
     height: 40px;
     width: 140px;
-}
+    }
 /*= End
 -------------------------------------------------------------- */
 
@@ -2844,7 +2851,7 @@ body.home .header-container {
 
 body.home .W-C {
     padding-top: 30px;
-}
+    }
 
 body.home .image-background {
     height: 350px;
@@ -2943,7 +2950,7 @@ body.archive .loop .image-container {
     font-size: 14px;
     font-weight: bold;
     text-shadow: 1px 1px 0 #fff;
-}
+    }
 
 .loop .image-container img {
     width: 125px;

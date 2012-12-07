@@ -4,7 +4,6 @@
 $event_obj = new Events;
 $current_events = $event_obj->getMonth();
 
-
 $plus_one_month = date( 'M', strtotime( date( "Y-m-d", strtotime( date("Y-m-d") ) ) . "+1 month" ) );
 $next_month_events = $event_obj->getMonth( $plus_one_month );
 
@@ -27,7 +26,7 @@ $three_months_out = $event_obj->getMonth( $plus_three_month );
                             <div class="row">
                                 <div class="image-container">
                                     <a href="<?php the_permalink(); ?>">
-                                        <?php the_post_thumbnail('blue-small'); ?>
+                                        <a href="<?php the_permalink(); ?>"><?php if ( has_post_thumbnail() ) : ?><?php the_post_thumbnail( 'blue-small' ); ?><?php else : ?><?php Venues::staticMap( Events::getVenueId( $post->ID ), 'small' ); ?><?php endif; ?></a>
                                     </a>
                                 </div>
                                 <div class="title">
