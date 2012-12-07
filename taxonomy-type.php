@@ -3,7 +3,6 @@
         <div class="W-C">
             <?php get_sidebar(); ?>
             <div class="main-container">
-                <div class="padding">
                 <div class="tabs-container tabs-handle">
                     <?php
                         $args = array(
@@ -38,7 +37,6 @@
                         <?php endforeach; ?>
                         </div>
                     <?php endif; ?>
-                </div>
                 </div>
             </div>
             <?php get_sidebar( 'wide' ); ?>

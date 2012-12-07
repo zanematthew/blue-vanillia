@@ -4,6 +4,7 @@
 $event_obj = new Events;
 $current_events = $event_obj->getMonth();
 
+
 $plus_one_month = date( 'M', strtotime( date( "Y-m-d", strtotime( date("Y-m-d") ) ) . "+1 month" ) );
 $next_month_events = $event_obj->getMonth( $plus_one_month );
 
@@ -12,11 +13,7 @@ $three_months_out = $event_obj->getMonth( $plus_three_month );
 
 ?>
 <div class="row">
-    <h2 class="title">Upcoming Events</h2>
     <div class="tabs-container tabs-handle">
-        <?php if ( ! $current_events && ! $next_month_events && ! $three_months_out ) : ?>
-            <?php _e( "Sorry there are no Events this month","blue_vanillia" ); ?>
-        <?php else : ?>
             <ul>
                 <li><a href="#locals-current-month"><?php print date('M'); ?> <span class="count"><?php print $current_events['count']; ?></span></a></li>
                 <?php if ( $next_month_events ) : ?><li><a href="#locals-next-month"><?php print $plus_one_month; ?> <span class="count"><?php print $next_month_events['count']; ?></span></a></li><?php endif; ?>
@@ -91,7 +88,7 @@ $three_months_out = $event_obj->getMonth( $plus_three_month );
                     </div>
                 </div>
             <?php endif; ?>
-        <?php endif; ?>
+
     </div>
 </div>
 <!-- End Upcoming Events -->

@@ -1,11 +1,11 @@
 <?php get_header(); ?>
 <span class="zm_ev_venue_zip" style="display: none;"><?php Venues::getAttribute( array( 'key' => 'zip', 'echo' => true ) ); ?></span>
 <div class="events-container">
-    <div class="single-container">
+
         <div class="W-C">
             <?php get_sidebar(); ?>
             <div class="main-container">
-                <div class="padding">
+
                     <div class="row-container">
                         <?php if ( have_posts() ) while ( have_posts() ) : the_post(); ?>
                             <!-- Venue -->
@@ -81,10 +81,9 @@
 
                     <?php endwhile; ?>
                     </div>
-                </div>
+
             </div>
             <?php get_sidebar( 'venues' ); ?>
         </div>
-    </div>
 </div>
 <?php get_footer(); ?>

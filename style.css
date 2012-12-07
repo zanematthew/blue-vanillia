@@ -342,7 +342,9 @@ ul.inline li {
     margin: 15px 0 0;
     }
 
-
+.sidebar-container .zm-weather-container .item:nth-child(2) {
+    display: none;
+    }
 /*= End sidebar container
 -------------------------------------------------------------- */
 
@@ -812,7 +814,7 @@ a {
 
 .single-container .main-container {
     float: left;
-    width: 450px;
+    width: 780px;
     }
 
 .single-container .main-container .right {
@@ -823,6 +825,24 @@ a {
     float: right;
     width: 211px;
     }
+
+.single-container .main-container .venue-links-pane {
+    float: left;
+    }
+
+.single-container .main-container .venue-links-pane ul {
+    list-style-type: none;
+}
+.single-container .main-container .venue-links-pane ul li {}
+.single-container .main-container .venue-links-pane ul li a {}
+
+.single-container .tabs-container .row-container .row .title {
+    margin: 0 0 0 105px;
+    }
+
+.single-container .tabs-container .row-container .row .attending-button-pane {
+    margin: -18px 0 0 0;
+    }
 /*= End Single
 -------------------------------------------------------------- */
 
@@ -830,7 +850,7 @@ a {
 /*= Hentry -- "Default Posts"
 -------------------------------------------------------------- */
 .hentry h1 {
-    font-size: 20px;
+    font-size: 32px;
     font-weight: 300;
     line-height: 1.2em;
     margin-bottom: 10px;
@@ -936,7 +956,7 @@ a {
     font-size: 12px;
     letter-spacing: 0.1em;
     height: 20px;
-    width: 370px;
+    width: 385px;
     }
 /*= End Comments
 -------------------------------------------------------------- */
@@ -2330,7 +2350,7 @@ body,
 
 /*= Start
 -------------------------------------------------------------- */
-.venue-info {
+/*.venue-info {
     background: #fff;
     border: solid #ddd;
     border-width: 1px;
@@ -2338,11 +2358,60 @@ body,
     margin-top: -1px;
     float: left;
     width: 100%;
-    }
+    }*/
 
 .venue-info .content {
     float: left;
+    }
+
+.info-overlay {
+    box-shadow: 138px 0px 73px rgba(0, 0, 0, 0.69) inset;
+    border-width: 1px;
+    margin-bottom: 10px;
+    margin-top: -304px;
+    float: left;
+    width: 620px;
+    color: white;
+    z-index: 1;
     padding: 10px;
+    position: relative;
+    height: 284px;
+    }
+
+.info-overlay h1 {
+    margin-bottom: 0;
+    }
+
+.info-overlay .date {
+    font-size: 16px;
+    font-style: italic;;
+    color: #fff;
+    margin: 0 0 5px;
+    }
+
+.info-overlay .venue-info {
+    margin: 100px 0 0;
+    }
+
+.info-overlay .entry-container {
+    font-size: 12px;
+    font-weight: 300;
+    line-height: 1.2em;
+    display: block;
+    }
+
+.info-overlay .title {
+    text-shadow: none;
+    }
+
+#image-pane .image-crop {
+    overflow: hidden;
+    height: 304px;
+    width: 640px;
+    }
+
+#image-pane .image-crop img {
+    position: relative;
     }
 /*= End
 -------------------------------------------------------------- */
@@ -2876,13 +2945,6 @@ body.archive .loop .image-container {
     text-shadow: 1px 1px 0 #fff;
 }
 
-.entry-container {
-    font-size: 30px;
-    font-weight: 300;
-    line-height: 1.2em;
-    margin-bottom: 10px;
-    }
-
 .loop .image-container img {
     width: 125px;
     height: 82px;
@@ -2913,3 +2975,18 @@ body.archive .loop .image-container {
     }
 /*= End Auto-expando
 -------------------------------------------------------------- */
+
+.top-container .zm-social-twitter-button {
+    margin: 10px 0 15px;
+    }
+.top-container .right {
+    width: 120px;
+    }
+
+.hr {
+    border-top: 1px solid #DDD;
+    border-bottom: 1px solid white;
+    width: 100%;
+    margin: 15px 0;
+    float: left;
+    }

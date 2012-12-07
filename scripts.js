@@ -7,4 +7,11 @@ jQuery( document ).ready(function( $ ){
         $( this ).siblings('.auto-expando-target').slideToggle();
         $( this ).siblings( ".arrow" ).toggleClass("arrow-up");
     });
+
+    $(window).load(function(){
+        $('#image-pane img').animate({
+            "top": "-=250px",
+            "width": "+800px"
+        }, 9000 );
+    });
 });

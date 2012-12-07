@@ -1,25 +1,14 @@
 <div class="sidebar-container">
     <div class="padding">
 
+
         <?php if ( get_option('zm_weather_version') ) : ?>
-            <div class="zm-base-list-terms-container">
-                <?php zm_weather_local_target(); ?>
-            </div>
+            <?php zm_weather_local_target(); ?>
         <?php endif; ?>
 
-        <div class="zm-base-list-terms-container">
-            <div class="zm-base-item">
-                <div class="zm-base-title">Events</div>
-                <?php foreach( get_terms('type') as $type ) : ?>
-                    <div class="zm-base-item">
-                        <?php if ( get_query_var('term') == $type->slug ) $class = 'current'; else $class = null; ?>
-                        <a href="<?php print get_term_link($type->slug, 'type'); ?>" class="<?php print $class; ?>"><?php print $type->name; ?></a>
-                    </div>
-                <?php endforeach; ?>
-            </div>
-        </div>
-
         <?php if ( get_option('zm_geo_location_version') ) zm_geo_location_current_location_target(); ?>
+
+
             <?php
 
             global $post;
@@ -78,6 +67,19 @@
                 <?php endforeach; ?>
             </div>
         <?php endif; ?>
+
+        <div class="zm-base-list-terms-container">
+            <div class="zm-base-item">
+                <div class="zm-base-title">Events</div>
+                <?php foreach( get_terms('type') as $type ) : ?>
+                    <div class="zm-base-item">
+                        <?php if ( get_query_var('term') == $type->slug ) $class = 'current'; else $class = null; ?>
+                        <a href="<?php print get_term_link($type->slug, 'type'); ?>" class="<?php print $class; ?>"><?php print $type->name; ?></a>
+                    </div>
+                <?php endforeach; ?>
+            </div>
+        </div>
+
 
         <!-- Share -->
         <?php if ( get_option( 'zm_social_version' ) ) : ?>
