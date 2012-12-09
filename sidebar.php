@@ -70,7 +70,7 @@
 
         <div class="zm-base-list-terms-container">
             <div class="zm-base-item">
-                <div class="zm-base-title">Events</div>
+                <div class="zm-base-title">Type</div>
                 <?php foreach( get_terms('type') as $type ) : ?>
                     <div class="zm-base-item">
                         <?php if ( get_query_var('term') == $type->slug ) $class = 'current'; else $class = null; ?>

@@ -63,7 +63,7 @@
 
                         <div class="tabs-container tabs-handle">
                             <ul>
-                                <li><a href="#schedule">Events at this Venue <span class="count"><?php Venues::scheduleCount( Events::getVenueId( $post->ID ) ); ?></span></a></li>
+                                <li><a href="#schedule">Events <?php Venues::scheduleCount( Events::getVenueId( $post->ID ) ); ?></a></li>
                                 <li><a href="#comments">Comments</a></li>
                                 <li><a href="#map">Map</a></li>
                             </ul>
@@ -73,9 +73,13 @@
                                 global $post;
                                 $venues = new Venues;
                                 $events = $venues->getSchedule( Events::getVenueId( $post->ID ) );
-                                while ( $events->have_posts() ) : $events->the_post(); setup_postdata( $post ); ?>
-                                    <?php get_template_part('content', 'events' ); ?>
-                                <?php endwhile; ?>
+                                if ( $events ) : ?>
+                                    <?php while ( $events->have_posts() ) : $events->the_post(); setup_postdata( $post ); ?>
+                                        <?php get_template_part('content', 'events' ); ?>
+                                    <?php endwhile; ?>
+                                <?php else : ?>
+                                    <p><?php _e( 'No events message here','blue_vanillia' ); ?>
+                                <?php endif; ?>
                             </div>
 
                             <div id="comments">

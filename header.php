@@ -16,33 +16,6 @@
 </head>
 <body <?php body_class();?>>
 
-<div class="top-bar-container">
-    <div class="left">
-        <div class="primary-navigation">
-            <?php if ( has_nav_menu( 'primary' ) ) : ?>
-                <?php wp_nav_menu( array( 'theme_location' => 'primary', 'menu_class' => 'menu clearfix' ) ); ?>
-            <?php else : ?>
-                <ul class="menu clearfix">
-                <?php
-                    $args = array(
-                        'depth'        => 1,
-                        'title_li'     => '',
-                        'link_before'  => '',
-                        'link_after'   => ''
-                    );
-                    wp_list_pages( $args );
-                ?>
-                </ul>
-            <?php endif; ?>
-        </div>
-    </div>
-    <!-- -->
-    <div class="right">
-        <?php if ( get_option('zm_attend_button_version') ) zm_attend_button_nav(); ?>
-        <?php if ( get_option('zm_login_register_version') ) zm_login_register_nav(); ?>
-    </div>
-    <!-- -->
-</div>
 
 <?php
 
@@ -72,33 +45,51 @@ else
 //
 ?>
 <div class="header-container">
-    <div style="width: 1024px;">
-        <div class="middle">
-            <div class="col-1">
-                <hgroup>
-                <h1 class="site-title">
-                    <a href="<?php echo home_url( '/' ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a>
-                </h1>
-                <h2 class="site-description"><?php bloginfo( 'description' ); ?></h2>
-                </hgroup>
-            </div>
-            <div class="col-2">
-                <div class="search-bar-container">
-                    <form method="get" id="searchform" action="<?php bloginfo('url'); ?>/">
-                        <input type="text" value="<?php the_search_query(); ?>" name="s" id="s" placeholder="<?= $placeholder; ?>" />
-                        <input type="hidden" name="type" value="<?= $current; ?>" id="post_type_target" />
-                        <input type="submit" id="searchsubmit" value="Search" />
-                        <div id="results_count_target"></div>
-                        <div id="results_message_target"></div>
-                    </form>
-                </div>
-            </div>
+    <div class="logo-container">
+        <hgroup>
+            <h1 class="site-title"><a href="<?php echo home_url( '/' ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
+            <h2 class="site-description"><?php bloginfo( 'description' ); ?></h2>
+        </hgroup>
+    </div>
+
+    <div class="search-bar-container">
+        <form method="get" id="searchform" action="<?php bloginfo('url'); ?>/">
+            <input type="text" value="<?php the_search_query(); ?>" name="s" id="s" placeholder="<?= $placeholder; ?>" />
+            <input type="hidden" name="type" value="<?= $current; ?>" id="post_type_target" />
+            <input type="submit" id="searchsubmit" value="" />
+            <div id="results_count_target"></div>
+            <div id="results_message_target"></div>
+        </form>
+    </div>
+
+    <div class="bar"></div>
+
+    <div class="middle">
+        <div class="primary-navigation">
+            <?php if ( has_nav_menu( 'primary' ) ) : ?>
+                <?php wp_nav_menu( array( 'theme_location' => 'primary', 'menu_class' => 'menu clearfix' ) ); ?>
+            <?php else : ?>
+                <ul class="menu clearfix">
+                <?php
+                    $args = array(
+                        'depth'        => 1,
+                        'title_li'     => '',
+                        'link_before'  => '',
+                        'link_after'   => ''
+                    );
+                    wp_list_pages( $args );
+                ?>
+                </ul>
+            <?php endif; ?>
         </div>
+    </div>
+
+    <div class="right">
+        <?php if ( get_option('zm_attend_button_version') ) zm_attend_button_nav(); ?>
+        <?php if ( get_option('zm_login_register_version') ) zm_login_register_nav(); ?>
     </div>
 </div>
 
 <div class="image-background" style="background-image: url('<?php print get_header_image(); ?>');">
-        <div class="banner-wrapper">
-                            <!-- message coming soone -->
-                    </div>
-    </div>
+    <div class="banner-wrapper"></div>
+</div>

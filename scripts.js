@@ -14,4 +14,16 @@ jQuery( document ).ready(function( $ ){
             "width": "+800px"
         }, 9000 );
     });
+
+    $('#searchform input[type="text"]').on('focus', function(){
+        $('.search-bar-container').animate({
+            "width": "335px"
+        }, "fast");
+    });
+
+    $('#searchform input[type="text"]').on('blur', function(){
+        $('.search-bar-container').animate({
+            "width": "187px"
+        }, "fast");
+    });
 });
