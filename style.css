@@ -355,6 +355,11 @@ ul.inline li {
 .sidebar-container .zm-weather-container .item:nth-child(2) {
     display: none;
     }
+
+.sidebar-container .zm-weather-container .meta-container {
+    float: left;
+    width: 80px;
+    }
 /*= End sidebar container
 -------------------------------------------------------------- */
 
@@ -847,8 +852,18 @@ a {
     float: left;
     }
 
-.single .main-container .right {
-    /*width: 465px;*/
+.single-events .top-container .zm-social-twitter-button {
+    float: left;
+    width: 85px;
+    margin: 8px 0 10px;
+    }
+
+.single-events .zm-social-twitter-button {
+    width: 90px;
+    }
+
+.single-events .main-container .right {
+    width: 120px;
     }
 
 .single .main-container .map-container .right {
@@ -2814,11 +2829,6 @@ body.archive .loop .image-container {
 .sidebar-container .zm-social-twitter-button {
     float: left;
     margin-bottom: 10px;
-    }
-
-.main-container .zm-social-twitter-button {
-    float: left;
-    width: 85px;
     }
 
 .pagination-container {
