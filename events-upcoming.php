@@ -11,7 +11,7 @@ $plus_three_month = date( 'M', strtotime( date( "Y-m-d", strtotime( date("Y-m-d"
 $three_months_out = $event_obj->getMonth( $plus_three_month );
 
 ?>
-<div class="row">
+
     <div class="tabs-container tabs-handle">
         <ul>
             <li><a href="#locals-current-month"><?php print date('M'); ?> <span class="count"><?php print $current_events['count']; ?></span></a></li>
@@ -26,7 +26,7 @@ $three_months_out = $event_obj->getMonth( $plus_three_month );
                         <div class="row">
                             <div class="image-container">
                                 <a href="<?php the_permalink(); ?>">
-                                    <a href="<?php the_permalink(); ?>"><?php if ( has_post_thumbnail() ) : ?><?php the_post_thumbnail( 'blue-small' ); ?><?php else : ?><?php Venues::staticMap( Events::getVenueId( $post->ID ), 'small' ); ?><?php endif; ?></a>
+                                    <?php if ( has_post_thumbnail() ) : ?><?php the_post_thumbnail( 'blue-small' ); ?><?php else : ?><?php Venues::staticMap( Events::getVenueId( $post->ID ), 'small' ); ?><?php endif; ?>
                                 </a>
                             </div>
                             <div class="title">
@@ -89,5 +89,5 @@ $three_months_out = $event_obj->getMonth( $plus_three_month );
         <?php endif; ?>
 
     </div>
-</div>
+
 <!-- End Upcoming Events -->

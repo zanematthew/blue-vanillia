@@ -1,3 +1,6 @@
+
+</div>
+
 <div class="bottom-wrapper">
     <div class="bottom-container">
         <div class="left">

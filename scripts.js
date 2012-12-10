@@ -13,6 +13,11 @@ jQuery( document ).ready(function( $ ){
             "top": "-=250px",
             "width": "+800px"
         }, 9000 );
+
+        $('.home .image-pane img').animate({
+            "top": "-20px",
+            "width": "+1400px"
+        }, 9000 );
     });
 
     $('#searchform input[type="text"]').on('focus', function(){

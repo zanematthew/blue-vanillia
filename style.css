@@ -621,7 +621,7 @@ a {
     }
 
 .single .main-container {
-    float: left;
+
     }
 
 .single .main-container .map-container .right {
@@ -643,6 +643,10 @@ a {
 
 .single .tabs-container .row-container .row .attending-button-pane {
     margin: -18px 0 0 0;
+    }
+
+.single .comments-container .profile-pic-container {
+    margin: 0 10px 0 0;
     }
 
 .single-venues .zm-social-twitter-button {
@@ -733,6 +737,32 @@ a {
 
 .single-events #image-pane .image-crop img {
     position: relative;
+    }
+
+.single-events .venue-links-pane {}
+.single-events .venue-links-pane li {
+    margin: 0 0 8px;
+    }
+
+.single-events .venue-links-pane li a {}
+
+.single-events .venue-links-pane .website {
+    background: url("images/1355163297_External-Link.png") no-repeat 1px 3px;
+    padding: 0 0 0 20px;
+    }
+
+.single-events .venue-links-pane .directions {
+    background: url("images/1355163322_car.png") no-repeat 0 -3px;
+    padding: 0 0 0 20px;
+    }
+
+.single-events .venue-links-pane .count {
+    display: none;
+    }
+
+.single-events .venue-links-pane .venue {
+    background: url("images/1355164203_Factory.png") no-repeat;
+    padding: 0 0 0 20px;
     }
 /*= End Single
 -------------------------------------------------------------- */
@@ -1608,7 +1638,7 @@ body,
     }
 
 .tabs-container .row-container .row {
-    padding: 20px 10px;
+    padding: 10px;
     width: 96%;
     -webkit-transition-property: background;
     -moz-transition-property: background;
@@ -2215,7 +2245,7 @@ body.home .W-C {
     }
 
 body.home .image-background {
-    height: 350px;
+    height: 250px;
     width: 100%;
     background-repeat: repeat;
     background-position: center bottom;
@@ -2249,6 +2279,67 @@ body.home .main-container .image-container {
     float: left;
     margin: 0 10px 0 0;
     }
+
+body.home .info-overlay {
+    box-shadow: 340px 0px 75px rgba(0, 0, 0, 0.80) inset;
+    left: 0;
+    margin-top: -205px;
+    float: left;
+    width: 98%;
+    color: white;
+    z-index: 1;
+    padding: 10px;
+    position: relative;
+    height: 185px;
+    }
+
+body.home .info-overlay .content {
+    margin: 0 auto;
+    width: 960px;
+    }
+
+body.home .info-overlay h1 {
+    font-size: 32px;
+    margin-bottom: 0;
+    }
+
+body.home .info-overlay .date {
+    font-size: 16px;
+    font-style: italic;;
+    color: #fff;
+    margin: 0 0 5px;
+    }
+
+body.home .info-overlay .venues-address-pane {
+    margin: 50px 0 0;
+    }
+
+body.home .info-overlay .entry-container {
+    font-size: 12px;
+    font-weight: 300;
+    line-height: 1.2em;
+    display: block;
+    }
+
+body.home .info-overlay .title {
+    text-shadow: none;
+    }
+
+body.home .image-crop {
+    height: 250px;
+    overflow: hidden;
+    box-shadow: 0 0 6px #333;
+    /*border: 1px solid #E4E4E4;
+    box-shadow: 0px 0px 8px #838383;
+    height: 304px;
+    overflow: hidden;
+    width: 640px;*/
+    }
+
+body.home .image-crop img {
+    position: relative;
+    }
+
 /*= End home
 -------------------------------------------------------------- */
 

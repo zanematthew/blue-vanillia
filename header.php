@@ -8,22 +8,17 @@
 <head>
 <meta name="description" content="An Event and Track directory for BMX Racing" />
 <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico">
-
 <!-- Start w head -->
 <?php wp_head(); ?>
 <!-- End w head -->
 <link rel="stylesheet" type="text/css" media="all" href="<?php bloginfo( 'stylesheet_url' ); ?>" />
 </head>
 <body <?php body_class();?>>
-
-
 <?php
-
 // some lame logic to ensure when the user is browsing
 // the /events/my-event/ page and they do a search, the search
 // uses the events json feed, passes the right post type
 $param = $_SERVER['REQUEST_URI'];
-
 $tmp = explode( '/', $param );
 $param = $tmp[1];
 
@@ -90,6 +85,26 @@ else
     </div>
 </div>
 
-<div class="image-background" style="background-image: url('<?php print get_header_image(); ?>');">
-    <div class="banner-wrapper"></div>
+<?php if ( is_home() ) : ?>
+    <div class="image-pane">
+        <div class="image-crop"><img src="<?php print get_header_image(); ?>" /></div>
+        <div class="banner-wrapper"></div>
+    </div>
+<div class="info-overlay">
+<div class="content">
+<div class="post-3305 events type-events status-publish hentry type-17 type-17 type-17 type-17">
+<h1>Disney Cup – Fall Nationals</h1>
 </div>
+<div class="date">October 25, 2013</div>
+<span class="entry-container"><span class="currency-symbol">$</span><span class="fee">35.00-65.00</span></span>
+<div class="venues-address-pane">
+<div class="content">
+<h3><span class="title">ORL BMX</span></h3>
+<span class="street">Pete Parrish Blvd &amp; Ferrand Dr</span>        <br><span class="city">Pine Hills</span>,
+<span class="state">Fl</span>        <span class="zip">32808</span>        <br>
+<a href="https://maps.google.com/maps?saddr=Columbia,Maryland&amp;daddr=Pete Parrish Blvd &amp; Ferrand Dr Pine Hills, Fl 32808" target="_blank">Directions</a>    </div>
+</div>                </div>
+</div>
+<?php endif; ?>
+<div class="W-C">
+    <?php get_sidebar(); ?>
