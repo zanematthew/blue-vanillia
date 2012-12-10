@@ -1,6 +1,5 @@
 <?php get_header(); ?>
 <div class="events-container">
-
         <div class="W-C">
             <?php get_sidebar(); ?>
             <div class="main-container">
@@ -65,7 +64,6 @@
                             <ul>
                                 <li><a href="#schedule">Events <?php Venues::scheduleCount( Events::getVenueId( $post->ID ) ); ?></a></li>
                                 <li><a href="#comments">Comments</a></li>
-                                <li><a href="#map">Map</a></li>
                             </ul>
 
                             <div id="schedule" class="row-container">
@@ -89,14 +87,10 @@
                                     </div>
                                 <?php endif; ?>
                             </div>
-                            <div id="map">
-                                <?php // if ( get_option('zm_gmaps_version') ) zm_gmaps_mini(); ?>
-                            </div>
                         </div>
                         </div>
                     <?php endwhile; ?>
                 </div>
         </div>
-
 </div>
 <?php get_footer(); ?>
