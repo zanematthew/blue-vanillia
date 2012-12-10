@@ -192,10 +192,6 @@ ul.inline li {
     text-decoration: none;
     }
 
-.bar {
-    color: #555;
-    }
-
 .req {
     color: red;
     font-size: 13px;
@@ -473,26 +469,6 @@ ul.inline li {
 
 .my-header {
     background-image: none;
-    }
-
-.main-container th.attending {
-    width: 9%;
-    }
-
-.main-container th.date {
-    width: 9%;
-    }
-
-.main-container th.title {
-    width: 13%;
-    }
-
-.main-container th.track {
-    width: 22%;
-    }
-
-.main-container th.state {
-    width: 12%;
     }
 
 .sidebar-wide-container .row-container .row,
@@ -830,8 +806,9 @@ a {
     text-shadow: 1px 1px 0 #fff;
     }
 
-.single .comments-container {
-/*    margin-top: -10px;*/
+.single-venues .zm-social-twitter-button {
+    float: left;
+    width: 90px;
     }
 
 .single-venues .venues-address-pane {
@@ -956,7 +933,7 @@ a {
 -------------------------------------------------------------- */
 .peach {
     float: left;
-    padding: 10px 10px 0;
+    padding: 10px 10px 7px;
     }
 
 
@@ -974,7 +951,7 @@ a {
 
 .comments-container img {
     float: left;
-    width: 32px;
+    width: 23px;
     height: auto;
     }
 
@@ -998,7 +975,6 @@ a {
 .comments-container textarea {
     font-size: 12px;
     letter-spacing: 0.1em;
-    height: 20px;
     width: 375px;
     }
 /*= End Comments
@@ -2593,16 +2569,21 @@ ul.zm-base li {
     float: left;
     }
 
-.bmx-rs-create-event-container fieldset.type-container {
+.bmx-rs-create-event-container fieldset.venues {
+    float: left;
+    width: 275px;
+    }
+
+.bmx-rs-create-event-container fieldset.type {
     float: left;
     width: 120px;
     }
 
-.bmx-rs-create-event-container fieldset.bmx_rs_tag-container select {
+.bmx-rs-create-event-container fieldset.events_tag-container select {
     width: 100%;
     }
 
-.bmx-rs-create-event-container fieldset.bmx_rs_tag-container {
+.bmx-rs-create-event-container fieldset.events_tag-container {
     float: left;
     margin-right: 0;
     }
@@ -2663,24 +2644,6 @@ fieldset.datetime-end-container input {
 -------------------------------------------------------------- */
 
 
-/*Venues*/
-.main-container th.track {
-    width: 22%;
-    }
-
-.main-container th.state {
-    width: 12%;
-    }
-
-.main-container td.attending {
-    text-align: center;
-    }
-
-.main-container th.attendees {
-    width: 7%;
-    text-align: center;
-    }
-
 h1.site-title a {
     color: #333;
     }
@@ -2705,7 +2668,6 @@ h2.site-description {
 .profile-pic-container {
     display: block;
     float: left;
-    margin-right: 10px;
     }
 
 /*Page Tempalte*/
@@ -2988,3 +2950,73 @@ body.archive .loop .image-container {
     margin: 15px 0;
     float: left;
     }
+
+/*= Start Tax Attendees
+-------------------------------------------------------------- */
+.tax-attendees th.attending {
+    width: 16%;
+    }
+
+.tax-attendees th.date {
+    width: 19%;
+    }
+
+.tax-attendees th.title {
+    width: 35%;
+    }
+
+.tax-attendees th.fee {
+    width: 14%;
+    }
+
+.tax-attendees th.track {
+    width: 22%;
+    }
+
+.tax-attendees th.state {
+    width: 12%;
+    }
+
+.tax-attendees .profile-pic-container {
+    float: left;
+    }
+
+.tax-attendees .total-container {
+    float: left;
+    }
+
+.tax-attendees .total-container .count {
+    font-size: 40px;
+    padding: 10px 0;
+    }
+
+.tax-attendees .type-container .count-container {
+    float: left;
+    min-width: 100px;
+    }
+
+.tax-attendees .type-container {
+    float: left;
+    width: 200px;
+    }
+
+.tax-attendees .share-container {
+    float: left;
+    }
+
+.tax-attendees .main-container .bar {
+    margin: 0 25px;
+    height: 50px;
+    float: left;
+    }
+
+.tax-attendees .zm-social-twitter-button {
+    float: left;
+    margin-bottom: 10px;
+    }
+
+.tax-attendees .callout-container .content {
+    padding-bottom: 5px;
+    }
+/*= End Tax Attendees
+-------------------------------------------------------------- */

@@ -1,17 +1,7 @@
-<?php
-
-$venues = New Venues;
-
-$tmp = $venues->getSchedule( $post->ID );
-
-$count = 0;
-if ( ! empty( $tmp ) && $tmp->post_count != 0 ){
-    $count = $tmp->post_count;
-}
-?>
+<?php $venues = New Venues; ?>
 <div <?php post_class('result row')?>>
     <div class="event-count-horizontal">
-        <span class="count"><?php print $count; ?></span>
+        <?php Venues::scheduleCount( $post->ID ); ?>
         <div class="arrow-bottom"></div>
         <div class="arrow-shadow"></div>
         <div class="title"><?php _e("Events", "blue_vanillia"); ?></div>
