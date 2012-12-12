@@ -196,7 +196,7 @@ function blue_vanillia_assets_init() {
 
     $dependencies[] = 'jquery';
 
-    wp_enqueue_script( 'zm-ui-core-script', get_template_directory_uri() . '/vendor/jquery-ui/js/jquery-ui-1.8.20.custom.min.js', $dependencies );
+    wp_enqueue_script( 'zm-ui-core-script', get_template_directory_uri() . '/vendor/jquery-ui/js/jquery-ui-1.9.2.custom.min.js', $dependencies );
     wp_enqueue_script( 'zm-ui-tabs-script', get_template_directory_uri() . '/vendor/jquery-ui/development-bundle/ui/minified/jquery.ui.tabs.min.js', $dependencies );
     wp_enqueue_style( 'zm-ui-tabs-style', get_template_directory_uri() . '/vendor/jquery-ui/development-bundle/themes/ui-lightness/jquery.ui.tabs.css' );
 
