@@ -90,21 +90,27 @@ else
         <div class="image-crop"><img src="<?php print get_header_image(); ?>" /></div>
         <div class="banner-wrapper"></div>
     </div>
-<div class="info-overlay">
-<div class="content">
-<div class="post-3305 events type-events status-publish hentry type-17 type-17 type-17 type-17">
-<h1>Disney Cup – Fall Nationals</h1>
-</div>
-<div class="date">October 25, 2013</div>
-<span class="entry-container"><span class="currency-symbol">$</span><span class="fee">35.00-65.00</span></span>
-<div class="venues-address-pane">
-<div class="content">
-<h3><span class="title">ORL BMX</span></h3>
-<span class="street">Pete Parrish Blvd &amp; Ferrand Dr</span>        <br><span class="city">Pine Hills</span>,
-<span class="state">Fl</span>        <span class="zip">32808</span>        <br>
-<a href="https://maps.google.com/maps?saddr=Columbia,Maryland&amp;daddr=Pete Parrish Blvd &amp; Ferrand Dr Pine Hills, Fl 32808" target="_blank">Directions</a>    </div>
-</div>                </div>
-</div>
+    <?php
+    $args = array(
+        'post_type' => 'events',
+        'posts_per_page' => 1
+        );
+    $my_query = New WP_Query( $args );
+    ?>
+    <?php while ( $my_query->have_posts() ) : $my_query->the_post(); ?>
+    <div class="info-overlay">
+        <div class="content">
+            <div <?php post_class(); ?>>
+              <h1><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h1>
+            </div>
+            <div class="date"><?php print date('F j, Y', strtotime( Events::getDate() ) ); ?></div>
+            <span class="entry-container"><span class="currency-symbol">$</span><span class="fee"><?php print get_post_meta( $post->ID, 'events_fee', true ); ?></span></span>
+            <?php if ( get_option('zm_ev_version') ) zm_ev_venue_address_pane( $post->ID ); ?>
+        </div>
+    </div>
+    <?php endwhile; ?>
 <?php endif; ?>
 <div class="W-C">
+<?php if ( ! is_page() ) : ?>
     <?php get_sidebar(); ?>
+<?php endif; ?>

@@ -59,7 +59,7 @@
         global $post;
         $venues = new Venues;
         $events = $venues->getSchedule( $post->ID );
-        if ( $events->have_posts() ) :
+        if ( ! empty( $events ) && $events->have_posts() ) :
         while ( $events->have_posts() ) : $events->the_post(); setup_postdata( $post ); ?>
             <?php get_template_part('content', 'events' ); ?>
         <?php endwhile; wp_reset_postdata(); ?>
@@ -79,5 +79,5 @@
     <?php endwhile; ?>
 </div>
 </div>
-<?php get_sidebar( 'venues' ); ?>
+
 <?php get_footer(); ?>

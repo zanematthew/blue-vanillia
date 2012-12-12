@@ -10,7 +10,7 @@ jQuery( document ).ready(function( $ ){
 
     $(window).load(function(){
         $('#image-pane img').animate({
-            "top": "-=250px",
+            "top": "-250px",
             "width": "+800px"
         }, 9000 );
 

@@ -422,6 +422,10 @@ a {
     height: 42px;
     }
 
+.header-container .zm-action-box {
+    padding: 5px 0 0 0;
+    }
+
 .header-container .right .noon {
     font-size: 15px;
     font-weight: 300;
@@ -725,6 +729,11 @@ a {
 
 .single-events .info-overlay .title {
     text-shadow: none;
+    }
+
+.info-overlay .events-tags {
+    color: #6686CA;
+    margin-bottom: 5px;
     }
 
 .single-events #image-pane .image-crop {
@@ -1748,7 +1757,6 @@ body,
 .tabs-container .ui-tabs-nav .ui-tabs-selected a,
 .tabs-container .ui-tabs-nav .ui-tabs-selected a:hover {
     background: #F8F8F8;
-    padding-bottom: 6px;
     border-width: 1px 1px 0;
     font-weight: bold;
     color: black;
@@ -2227,10 +2235,8 @@ h2.site-description {
 /*Page Tempalte*/
 .page .main-container {
     margin: 0 auto;
-    width: 900px;
+    width: 780px;
     }
-
-
 
 
 /*= Home
@@ -2242,42 +2248,6 @@ body.home .header-container {
 
 body.home .W-C {
     padding-top: 30px;
-    }
-
-body.home .image-background {
-    height: 250px;
-    width: 100%;
-    background-repeat: repeat;
-    background-position: center bottom;
-    box-shadow: 0 0 6px #333;
-    }
-
-body.home .banner-wrapper {
-    margin: 0 auto;
-    width: 900px;
-    }
-
-body.home .image-background .info-container {
-    padding: 112px 0 0;
-    background: url('/wp-content/plugins/bmx-race-schedules/assets/images/black-50.png');
-    /*rgba(0, 0, 0, .5);*/
-    width: 300px;
-    color: white;
-    float: left;
-    border: 1px solid #333;
-    }
-
-body.home .image-background .info {
-    font-size: 30px;
-    float: left;
-    padding: 20px;
-    line-height: 1em;
-    margin-bottom: 10px;
-    }
-
-body.home .main-container .image-container {
-    float: left;
-    margin: 0 10px 0 0;
     }
 
 body.home .info-overlay {
@@ -2329,17 +2299,11 @@ body.home .image-crop {
     height: 250px;
     overflow: hidden;
     box-shadow: 0 0 6px #333;
-    /*border: 1px solid #E4E4E4;
-    box-shadow: 0px 0px 8px #838383;
-    height: 304px;
-    overflow: hidden;
-    width: 640px;*/
     }
 
 body.home .image-crop img {
     position: relative;
     }
-
 /*= End home
 -------------------------------------------------------------- */
 
@@ -2617,12 +2581,12 @@ body.home .image-crop img {
 
 .tax-attendees .type-container .count-container {
     float: left;
-    min-width: 100px;
+    width: 135px;
     }
 
 .tax-attendees .type-container {
     float: left;
-    width: 200px;
+    width: 410px;
     }
 
 .tax-attendees .share-container {
@@ -2630,7 +2594,7 @@ body.home .image-crop img {
     }
 
 .tax-attendees .main-container .bar {
-    margin: 0 25px;
+    margin: 0 5px;
     height: 50px;
     float: left;
     }

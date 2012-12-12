@@ -3,3 +3,7 @@ http://www.iconfinder.com/icondetails/82174/16/_icon
 http://www.iconfinder.com/icondetails/70488/10/_icon
 http://www.iconfinder.com/icondetails/70493/10/_icon
 http://www.iconfinder.com/icondetails/70496/10/_icon
+
+https://developers.google.com/maps/documentation/staticmaps/index#Limits
+25k per day static map
+https://code.google.com/apis/console/b/0/?pli=1#project:600503541193:stats:static_maps_backend

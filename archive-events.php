@@ -3,7 +3,7 @@
     <?php dynamic_sidebar( 'main-column-top' ); ?>
     <div class="tabs-container tabs-handle">
         <ul>
-            <li><a href="#locals-current-month">Upcoming Events</a></li>
+            <li><a href="#locals-current-month">Events</a></li>
         </ul>
         <div id="locals-current-month">
             <div class="row-container">

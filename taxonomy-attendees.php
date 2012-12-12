@@ -20,8 +20,6 @@ $fb_id = get_user_meta( $user_id, 'fb_id', true );
 <?php get_header(); ?>
 
 <div class="attendee-dashboard-container taxonomy-container" data-owner_id="<?php print $fb_id; ?>">
-    <div class="W-C">
-        <?php get_sidebar(); ?>
         <div class="main-container">
             <div class="attendee-container">
                 <div class="callout-container">
@@ -100,6 +98,6 @@ $fb_id = get_user_meta( $user_id, 'fb_id', true );
                 <?php endif; ?>
             <?php endif; ?>
         </div>
-    </div>
+
 </div>
 <?php get_footer(); ?>

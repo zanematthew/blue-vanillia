@@ -12,7 +12,8 @@
             <div class="info-overlay">
                 <div class="content">
                     <div <?php post_class(); ?>>
-                      <h1><?php the_title(); ?></h1>
+                      <h1><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h1>
+                      <div class="events-tags"><?php print get_the_term_list( $post->ID, 'events_tag', '', ', ' ); ?></div>
                     </div>
                     <div class="date"><?php print date('F j, Y', strtotime( Events::getDate() ) ); ?></div>
                     <span class="entry-container"><span class="currency-symbol">$</span><span class="fee"><?php print get_post_meta( $post->ID, 'events_fee', true ); ?></span></span>

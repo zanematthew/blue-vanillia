@@ -1,13 +1,11 @@
 <div class="sidebar-container">
     <div class="padding">
 
-
         <?php if ( get_option('zm_weather_version') ) : ?>
             <?php zm_weather_local_target(); ?>
         <?php endif; ?>
 
         <?php if ( get_option('zm_geo_location_version') ) zm_geo_location_current_location_target(); ?>
-
 
             <?php
 
