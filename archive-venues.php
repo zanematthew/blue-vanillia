@@ -15,5 +15,5 @@
     </div>
     <?php blue_vanillia_pagination(); ?>
 </div>
-<?php get_sidebar( 'wide' ); ?>
+
 <?php get_footer(); ?>

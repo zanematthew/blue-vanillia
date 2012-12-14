@@ -21,5 +21,5 @@
         </div>
     </div>
 </div>
-<?php get_sidebar( 'wide' ); ?>
+
 <?php get_footer(); ?>

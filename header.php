@@ -85,31 +85,7 @@ else
     </div>
 </div>
 
-<?php if ( is_home() ) : ?>
-    <div class="image-pane">
-        <div class="image-crop"><img src="<?php print get_header_image(); ?>" /></div>
-        <div class="banner-wrapper"></div>
-    </div>
-    <?php
-    $args = array(
-        'post_type' => 'events',
-        'posts_per_page' => 1
-        );
-    $my_query = New WP_Query( $args );
-    ?>
-    <?php while ( $my_query->have_posts() ) : $my_query->the_post(); ?>
-    <div class="info-overlay">
-        <div class="content">
-            <div <?php post_class(); ?>>
-              <h1><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h1>
-            </div>
-            <div class="date"><?php print date('F j, Y', strtotime( Events::getDate() ) ); ?></div>
-            <span class="entry-container"><span class="currency-symbol">$</span><span class="fee"><?php print get_post_meta( $post->ID, 'events_fee', true ); ?></span></span>
-            <?php if ( get_option('zm_ev_version') ) zm_ev_venue_address_pane( $post->ID ); ?>
-        </div>
-    </div>
-    <?php endwhile; ?>
-<?php endif; ?>
+
 <div class="W-C">
 <?php if ( ! is_page() ) : ?>
     <?php get_sidebar(); ?>

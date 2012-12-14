@@ -2241,15 +2241,6 @@ h2.site-description {
 
 /*= Home
 -------------------------------------------------------------- */
-body.home .header-container {
-    -webkit-box-shadow: 0px 2px 5px #666;
-    box-shadow: 0px 2px 5px #666
-    }
-
-body.home .W-C {
-    padding-top: 30px;
-    }
-
 body.home .info-overlay {
     box-shadow: 340px 0px 75px rgba(0, 0, 0, 0.80) inset;
     left: 0;
@@ -2415,7 +2406,7 @@ body.home .image-crop img {
     cursor: pointer;
     font-weight: bold;
     float: left;
-    margin: 6px 10px 0 5px;
+    margin: 6px 10px 0 10px;
     padding: 3px 10px 6px;
     text-align: center;
     text-shadow: 0 1px 0 #fff;
@@ -2609,3 +2600,7 @@ body.home .image-crop img {
     }
 /*= End Tax Attendees
 -------------------------------------------------------------- */
+
+.zm-create-event {
+    padding: 8px;
+    }
