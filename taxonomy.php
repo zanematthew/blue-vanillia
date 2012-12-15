@@ -50,5 +50,4 @@ $term = $term->name;
     </div>
 <?php blue_vanillia_pagination( $query->max_num_pages ); ?>
 </div>
-<?php get_sidebar( 'wide' ); ?>
 <?php get_footer(); ?>
