@@ -1454,16 +1454,16 @@ input[disabled],
 
 /*= Login Modal
 -------------------------------------------------------------- */
-.bmx-rs-login-dialog input[type="password"],
-.bmx-rs-login-dialog input[type="text"] {
+.zm-login-dialog input[type="password"],
+.zm-login-dialog input[type="text"] {
     width: 90%;
     }
 
-.bmx-rs-login-dialog .button-container .cancel {
+.zm-login-dialog .button-container .cancel {
     float: right;
     }
 
-.bmx-rs-login-dialog .button-container {
+.zm-login-dialog .button-container {
     background: none;
     border: 0;
     box-shadow: none;
@@ -1473,7 +1473,7 @@ input[disabled],
     width: 100%;
     }
 
-.bmx-rs-login-dialog .bar {
+.zm-login-dialog .bar {
     margin: 0 5px;
     }
 
