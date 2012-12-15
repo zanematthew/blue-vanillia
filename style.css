@@ -356,6 +356,17 @@ a {
     width: 100%;
     }
 
+.main-container .row-container .zigzag {
+    float: left;
+    width: 96%;
+    padding: 10px 10px 10px 10px;
+    border-bottom: 1px solid #DDD;
+    text-transform: capitalize;
+    font-size: 13px;
+    color: black;
+    font-weight: bold;
+    }
+
 .sidebar-wide-container .row-container .row:first-child,
 .main-container .row-container .row:first-child {
     }

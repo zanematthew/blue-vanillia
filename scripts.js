@@ -31,4 +31,39 @@ jQuery( document ).ready(function( $ ){
             "width": "187px"
         }, "fast");
     });
+
+    // var monthName = new Array(
+    //     "jan",
+    //     "feb",
+    //     "mar",
+    //     "apr",
+    //     "may",
+    //     "jun",
+    //     "jul",
+    //     "aug",
+    //     "sep",
+    //     "oct",
+    //     "nov",
+    //     "dec"
+    // );
+
+    var monthName = new Array(
+        "january",
+        "february",
+        "march",
+        "april",
+        "may",
+        "june",
+        "july",
+        "august",
+        "september",
+        "october",
+        "november",
+        "december"
+        );
+
+    for (var i=0; i<monthName.length; i++ ) {
+        console.log( monthName[i] );
+        $('.' + monthName[ i ] + ':first:visible').fadeIn().before('<div class="zigzag">'+monthName[ i ]+'</div>');
+    };
 });

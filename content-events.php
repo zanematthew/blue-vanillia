@@ -1,4 +1,6 @@
-<div <?php post_class('result row')?>>
+<div <?php
+$date_class = strtolower( date('F', strtotime( Events::getDate() ) ) );
+post_class('result row ' . $date_class)?>>
     <?php if ( ! is_single() ) : ?>
         <div class="image-container">
             <a href="<?php the_permalink(); ?>"><?php if ( has_post_thumbnail() ) : ?><?php the_post_thumbnail( 'small' ); ?><?php else : ?><?php Venues::staticMap( Events::getVenueId( $post->ID ), 'small' ); ?><?php endif; ?></a>
