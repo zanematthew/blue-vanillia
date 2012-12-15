@@ -1,5 +1,4 @@
 <?php
-
 /**
  * @todo This logic needs to be removed!
  */
