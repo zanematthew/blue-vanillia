@@ -40,7 +40,7 @@ $fb_id = get_user_meta( $user_id, 'fb_id', true );
                         <div class="bar"></div>
 
                         <div class="share-container">
-                            <?php if ( get_option( 'zm_social_version' ) ) : ?>
+                            <?php if ( function_exists('zm_social_twitter_button') || function_exists('zm_social_facebook_button') ) : ?>
                                 <?php zm_social_twitter_button( 'Checkout!', site_url() . $_SERVER['REQUEST_URI'] );?>
                                 <?php zm_social_facebook_button( site_url() . $_SERVER['REQUEST_URI'] ); ?>
                             <?php endif; ?>

@@ -35,7 +35,7 @@
     <!-- -->
 
     <!-- Share -->
-    <?php if ( get_option( 'zm_social_version' ) ) : ?>
+    <?php if ( function_exists('zm_social_twitter_button') || function_exists('zm_social_facebook_button') ) : ?>
     <div class="row">
         <?php zm_social_twitter_button( $post->post_title, get_permalink() ); ?>
         <?php zm_social_facebook_button( get_permalink() ); ?>
