@@ -80,7 +80,7 @@
 
 
         <!-- Share -->
-        <?php if ( ! function_exists('zm_social_twitter_button') || ! function_exists('zm_social_facebook_button') ) : ?>
+        <?php if ( function_exists('zm_social_twitter_button') || function_exists('zm_social_facebook_button') ) : ?>
         <div class="row">
             <?php zm_social_twitter_button(); ?>
             <?php zm_social_facebook_button(); ?>
