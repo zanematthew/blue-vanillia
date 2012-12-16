@@ -63,7 +63,6 @@ jQuery( document ).ready(function( $ ){
         );
 
     for (var i=0; i<monthName.length; i++ ) {
-        console.log( monthName[i] );
         $('.' + monthName[ i ] + ':first:visible').fadeIn().before('<div class="zigzag">'+monthName[ i ]+'</div>');
     };
 });
