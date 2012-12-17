@@ -3,6 +3,7 @@ http://www.iconfinder.com/icondetails/82174/16/_icon
 http://www.iconfinder.com/icondetails/70488/10/_icon
 http://www.iconfinder.com/icondetails/70493/10/_icon
 http://www.iconfinder.com/icondetails/70496/10/_icon
+http://www.iconfinder.com/icondetails/42378/16/settings_tools_wrench_icon
 
 https://developers.google.com/maps/documentation/staticmaps/index#Limits
 25k per day static map

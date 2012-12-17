@@ -441,12 +441,28 @@ a {
     padding: 5px 0 0 0;
     }
 
+.header-container .right {
+    float: right;
+    width: 250px;
+    text-align: right;
+    height: 42px;
+    }
+
 .header-container .right .noon {
     font-size: 15px;
     font-weight: 300;
     text-shadow: 1px 1px 0 white;
     line-height: 2em;
     margin: 0 10px;
+    }
+
+.header-container .right a.zm-ev-settings-icon {
+    background: url("images/1355740242_wrench_plus.png") no-repeat;
+    float: right;
+    height: 20px;
+    margin: 2px 0 0 10px;
+    text-indent: 9999em;
+    width: 20px;
     }
 
 .header-container .profile-pic-container {
@@ -461,13 +477,6 @@ a {
 
 .header-container .zm-login-register-logout-url {
     display: none;
-    }
-
-.header-container .right {
-    float: right;
-    width: 250px;
-    text-align: right;
-    height: 42px;
     }
 
 .header-container .search-bar-container {
@@ -966,12 +975,19 @@ input[type="text"]:focus {
     border-color: #06AEED;
     }
 
+form .row {
+    clear: both;
+    float: left;
+    margin: 0 0 10px;
+    }
+
 form .row input[type="password"],
 form .row input[type="text"],
 form .row textarea {
     float: left;
     font-size: 13px;
     width: 97%;
+    margin: 0 0 5px 0;
     }
 
 textarea,
@@ -2618,4 +2634,8 @@ body.home .image-crop img {
 
 .zm-create-event {
     padding: 8px;
+    }
+
+.zm-ev-settings form .zm-base-title {
+    display: none;
     }

@@ -80,8 +80,11 @@ else
     </div>
 
     <div class="right">
-        <?php if ( get_option('zm_attend_button_version') ) zm_attend_button_nav(); ?>
-        <?php if ( get_option('zm_login_register_version') ) zm_login_register_nav(); ?>
+        <div class="content">
+            <?php zm_ev_settings(); ?>
+            <?php if ( get_option('zm_attend_button_version') ) zm_attend_button_nav(); ?>
+            <?php if ( get_option('zm_login_register_version') ) zm_login_register_nav(); ?>
+        </div>
     </div>
 </div>
 

@@ -65,4 +65,48 @@ jQuery( document ).ready(function( $ ){
     for (var i=0; i<monthName.length; i++ ) {
         $('.' + monthName[ i ] + ':first:visible').fadeIn().before('<div class="zigzag">'+monthName[ i ]+'</div>');
     };
+
+
+    $.ajaxSetup({
+        url: ajaxurl,
+        type: "POST"
+    });
+
+    $('#zm_ev_settings_form input').on('blur', function(){
+        var _this = $( this );
+        var data = {
+            name: $( this ).attr('name'),
+            value: $( this ).val(),
+            action: "zm_ev_save_user_settings"
+        };
+
+        $.ajax({
+            data: data,
+            success: function( msg ){
+                _this.after('<div class="zm-status-saved">Updated!</div>');
+                $('.zm-status-saved').delay('slow').fadeOut();
+            }
+        });
+    });
+
+    $('#zm_ev_settings_form select').on('change', function(){
+        value = $( this, "option:selected").val();
+        name = $(this).attr('name');
+
+        var _this = $( this );
+        var data = {
+            name: name,
+            value: value,
+            action: "zm_ev_save_user_settings"
+        };
+
+        $.ajax({
+            data: data,
+            success: function( msg ){
+                _this.after('<div class="zm-status-saved">Updated!</div>');
+                $('.zm-status-saved').delay('slow').fadeOut();
+            }
+        });
+    });
+
 });
