@@ -244,7 +244,7 @@ a {
     }
 
 .sidebar-container .padding {
-    padding: 0 26px 0 0;
+    padding: 0 20px 0 20px;
     }
 
 .sidebar-container ul {
@@ -754,6 +754,12 @@ a {
 
 .single-events .info-overlay .title {
     text-shadow: none;
+    }
+
+.single-events .tabs-container .ui-tabs-nav li.ui-tabs-selected,
+.single-events .tabs-container .ui-tabs-nav li.ui-tabs-selected a {
+    background: #fff;
+    margin-bottom: 0;
     }
 
 .info-overlay .events-tags {
@@ -1618,7 +1624,7 @@ input[disabled],
 -------------------------------------------------------------- */
 .W-C {
     width: 960px;
-    margin: 0 auto;
+    /*margin: 0 auto;*/
     padding: 51px 0 0;
     }
 /*= End
