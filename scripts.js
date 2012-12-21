@@ -32,21 +32,6 @@ jQuery( document ).ready(function( $ ){
         }, "fast");
     });
 
-    // var monthName = new Array(
-    //     "jan",
-    //     "feb",
-    //     "mar",
-    //     "apr",
-    //     "may",
-    //     "jun",
-    //     "jul",
-    //     "aug",
-    //     "sep",
-    //     "oct",
-    //     "nov",
-    //     "dec"
-    // );
-
     var monthName = new Array(
         "january",
         "february",
@@ -109,4 +94,13 @@ jQuery( document ).ready(function( $ ){
         });
     });
 
+    $('.sample').on('click', function( event ){
+        var hashTag = document.location.hash;
+        results = feeds.doSearch( 'events', hashTag );
+
+console.log(  hashTag );
+
+        // event.preventDefault();
+
+    });
 });

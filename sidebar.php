@@ -24,7 +24,7 @@
 
             $venues = new Venues;
 
-            $auto_expando = 7;
+            $auto_expando = 4;
             $i = 0;
             $len = count( $venues->getVenueByRegion( $region ) );
             $trigger = 6; // Number to trigger "auto expando"
@@ -65,6 +65,8 @@
                 <?php endforeach; ?>
             </div>
         <?php endif; ?>
+
+<a href="#redline-cup" class="sample">sample</a>
 
         <div class="zm-base-list-terms-container">
             <div class="zm-base-item">
