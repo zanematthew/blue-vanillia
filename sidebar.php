@@ -66,13 +66,13 @@
             </div>
         <?php endif; ?>
 
-        <div class="zm-base-list-terms-container zm-type-list">
+        <div class="zm-base-list-terms-container <?php if ( get_option( 'zm_json_preference' ) === true ): ?>zm-type-list<?php endif; ?>">
             <div class="zm-base-item">
                 <div class="zm-base-title">Type</div>
                 <?php foreach( get_terms('type') as $type ) : ?>
                     <div class="zm-base-item">
                         <?php if ( get_query_var('term') == $type->slug ) $class = 'current'; else $class = null; ?>
-                        <?php if ( get_option( 'zm_json_version' ) ) $link = '#'. $type->slug; else $link = get_term_link( $type->slug, 'type'); ?>
+                        <?php if ( get_option( 'zm_json_preference' ) === true ) $link = '#'. $type->slug; else $link = get_term_link( $type->slug, 'type'); ?>
                         <a href="<?php print $link; ?>" class="<?php print $class; ?>"><?php print $type->name; ?></a>
                     </div>
                 <?php endforeach; ?>
