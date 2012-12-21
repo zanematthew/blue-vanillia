@@ -360,6 +360,7 @@ a {
     float: left;
     width: 96%;
     padding: 10px 10px 10px 10px;
+    background: rgba(65, 187, 235, 0.05);
     border-bottom: 1px solid #DDD;
     text-transform: capitalize;
     font-size: 13px;
@@ -1661,6 +1662,7 @@ body,
 .tabs-container {
     float: left;
     width: 100%;
+    padding: 0;
     }
 
 .tabs-container a {
@@ -1690,7 +1692,6 @@ body,
 .tabs-container .row-container .row {
     padding: 15px;
     width: 94%;
-    margin-left: -2px;
     -webkit-transition-property: background;
     -moz-transition-property: background;
     -o-transition-property: background;
@@ -1735,6 +1736,7 @@ body,
 
 .tabs-container .ui-tabs-nav {
     border-bottom: 1px solid #DDD;
+    padding: 10px 0 0 10px;
     }
 
 .tabs-container .ui-tabs-nav .count {
@@ -1842,12 +1844,12 @@ body,
     }
 
 .event-count-horizontal .count {
-    background: white;
     display: block;
     padding: 14px 0px;
     font-size: 28px;
+    background: rgba(235, 235, 235, 0.22);
     box-shadow: 1px 1px 6px #EEE inset;
-    border: 1px solid #E6DEDE;
+    border: 1px solid #d6d6d6;
     border-radius: 5px;
     font-weight: bold;
     text-shadow: 1px 1px 0 white;
@@ -1855,7 +1857,7 @@ body,
 
 .event-count-horizontal .arrow-bottom {
     float: left;
-    border-color: white rgba(255, 255, 255, 0) transparent transparent;
+    border-color: #F8F8F8 rgba(255, 255, 255, 0) transparent transparent;
     border-width: 8px;
     border-style: solid;
     position: absolute;

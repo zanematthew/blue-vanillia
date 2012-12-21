@@ -105,6 +105,8 @@ jQuery( document ).ready(function( $ ){
         $this.addClass('current');
 
         displayResults( results );
+        // $('#search_target').fadeOut( 150 );
+        // $('#search_target').fadeIn( 100 );
 console.log( results );
     });
 });
