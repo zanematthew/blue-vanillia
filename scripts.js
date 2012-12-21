@@ -94,13 +94,16 @@ jQuery( document ).ready(function( $ ){
         });
     });
 
-    $('.sample').on('click', function( event ){
-        var hashTag = document.location.hash;
+    $('.sample').on('click', function(){
+        var $this = $(this);
+        var hashTag = $this.attr('href');
+        if(hashTag[0] !== '#' || hashTag.length < 2) return false;
+        hashTag = hashTag.substr(1).replace("-"," ");
+        console.log(  hashTag );
         results = feeds.doSearch( 'events', hashTag );
+console.log( results );
 
-console.log(  hashTag );
-
-        // event.preventDefault();
+        displayResults( results );
 
     });
 });
