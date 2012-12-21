@@ -349,11 +349,11 @@ a {
 
 .sidebar-wide-container .row-container .row,
 .main-container .row-container .row {
-    border-top: 1px solid white;
+    /*border-top: 1px solid white;*/
     border-bottom: 1px solid #DDD;
     float: left;
-    padding: 15px 0;
-    width: 100%;
+    /*padding: 15px 0;*/
+    /*width: 100%;*/
     }
 
 .main-container .row-container .zigzag {
@@ -1580,10 +1580,18 @@ input[disabled],
 .no { color: red; }
 .yes { color: green; }
 
-.main-container {
+.home .main-container {
     float: left;
-    width: 450px;
-    }
+width: 510px;
+background: white;
+border: 1px solid #DBDBDB;
+box-shadow: 0px 0px 20px #E4E4E4;
+}
+
+    .main-container {
+        float: left;
+width: 450px;
+}
 
 .clear {
     clear: both;
@@ -1608,7 +1616,7 @@ input[disabled],
 .W-C {
     width: 960px;
     margin: 0 auto;
-    padding: 70px 0 0;
+    padding: 51px 0 0;
     }
 /*= End
 -------------------------------------------------------------- */
@@ -1678,8 +1686,9 @@ body,
     }
 
 .tabs-container .row-container .row {
-    padding: 10px;
-    width: 96%;
+    padding: 15px;
+    width: 94%;
+    margin-left: -2px;
     -webkit-transition-property: background;
     -moz-transition-property: background;
     -o-transition-property: background;
@@ -1737,12 +1746,12 @@ body,
     }
 
 .tabs-container .ui-tabs-nav li.ui-tabs-selected {
-    background: #F8F8F8;
+    background: #fff;
     margin-bottom: 0;
     }
 
 .tabs-container .ui-tabs-nav li.ui-tabs-selected a {
-    background: #F8F8F8;
+    background: #fff;
     }
 
 .tabs-container .ui-tabs-nav .ui-state-default {
@@ -1781,13 +1790,11 @@ body,
     }
 
 .tabs-container .ui-tabs-nav .ui-state-default a:hover {
-    background: #dadada;
     color: #888;
     }
 
 .tabs-container .ui-tabs-nav .ui-tabs-selected a,
 .tabs-container .ui-tabs-nav .ui-tabs-selected a:hover {
-    background: #F8F8F8;
     border-width: 1px 1px 0;
     font-weight: bold;
     color: black;
@@ -2639,3 +2646,7 @@ body.home .image-crop img {
 .zm-ev-settings form .zm-base-title {
     display: none;
     }
+
+.form-stacked p {
+    margin: 0 0 10px;
+}

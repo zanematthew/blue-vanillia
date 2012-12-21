@@ -29,17 +29,17 @@ $upcoming_events[ $plus_three_month_date ] = $three_months_out;
             <?php foreach( $events['items'] as $event ) : ?>
                 <div class="row">
                     <div class="image-container">
-                        <a href="<?php the_permalink(); ?>">
+                        <a href="<?php print get_permalink( $event->ID ); ?>">
                             <?php if ( has_post_thumbnail() ) : ?><?php the_post_thumbnail( 'blue-small' ); ?><?php else : ?><?php Venues::staticMap( Events::getVenueId( $event->ID ), 'small' ); ?><?php endif; ?>
                         </a>
                     </div>
                     <div class="title">
-                        <a href="<?php the_permalink(); ?>"><?php print get_the_title( $event->ID ); ?></a>
+                        <a href="<?php print get_permalink( $event->ID ); ?>"><?php print get_the_title( $event->ID ); ?></a>
                     </div>
                     <div class="date">
-                        <a href="<?php the_permalink(); ?>"><?php print date('F j, Y', strtotime( Events::getDate( $event->ID ) ) ); ?></a>
+                        <a href="<?php print get_permalink( $event->ID ); ?>"><?php print date('F j, Y', strtotime( Events::getDate( $event->ID ) ) ); ?></a>
                     </div>
-                    <span class="meta"><em><?php Events::getTrackTitle( $event->ID ); ?></em> in <em><?php Venues::getAttribute( array( 'key'=> 'state', 'echo' => true ) ); ?></em></span>
+                    <span class="meta"><em><?php print Events::getVenueTitle( $event->ID ); ?></em> in <em><?php Venues::getAttribute( array( 'key'=> 'state', 'echo' => true ) ); ?></em></span>
                 </div>
             <?php endforeach; ?>
         </div>
