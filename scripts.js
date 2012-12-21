@@ -99,11 +99,12 @@ jQuery( document ).ready(function( $ ){
         var hashTag = $this.attr('href');
         if(hashTag[0] !== '#' || hashTag.length < 2) return false;
         hashTag = hashTag.substr(1).replace("-"," ");
-        console.log(  hashTag );
         results = feeds.doSearch( 'events', hashTag );
-console.log( results );
+
+        $('.zm-type-list a').removeClass('current');
+        $this.addClass('current');
 
         displayResults( results );
-
+console.log( results );
     });
 });

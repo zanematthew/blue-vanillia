@@ -24,13 +24,14 @@ $args = array(
             'meta_key' => 'events_start-date',
             'orderby' => 'events_start-date',
             'order' => 'ASC',
-            'posts_per_page' => 8,
+            'posts_per_page' => -1,
             'paged' => get_query_var( 'paged' )
         );
 
 $query = new WP_Query( $args );
 
 $count = $query->found_posts;
+print $count;
 $term = $term->name;
 ?>
 <div class="main-container">
