@@ -1580,18 +1580,20 @@ input[disabled],
 .no { color: red; }
 .yes { color: green; }
 
+.archive .main-container,
 .home .main-container {
     float: left;
-width: 510px;
-background: white;
-border: 1px solid #DBDBDB;
-box-shadow: 0px 0px 20px #E4E4E4;
-}
+    width: 510px;
+    background: white;
+    border: 1px solid #DBDBDB;
+    box-shadow: 0px 0px 20px #E4E4E4;
+    margin: -5px 0 0 0;
+    }
 
-    .main-container {
-        float: left;
-width: 450px;
-}
+.main-container {
+    float: left;
+    width: 450px;
+    }
 
 .clear {
     clear: both;
