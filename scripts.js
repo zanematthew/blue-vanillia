@@ -94,7 +94,7 @@ jQuery( document ).ready(function( $ ){
         });
     });
 
-    $('.sample').on('click', function(){
+    $('.zm-type-list a').on('click', function(){
         var $this = $(this);
         var hashTag = $this.attr('href');
         if(hashTag[0] !== '#' || hashTag.length < 2) return false;
