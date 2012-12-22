@@ -95,10 +95,14 @@ jQuery( document ).ready(function( $ ){
     });
 
     $('.zm-type-list a').on('click', function(){
+
         var $this = $(this);
         var hashTag = $this.attr('href');
-        if(hashTag[0] !== '#' || hashTag.length < 2) return false;
-        hashTag = hashTag.substr(1).replace("-"," ");
+
+        if ( hashTag[0] !== '/' || hashTag.length < 2 )
+            return false;
+
+        hashTag = hashTag.substr(2).replace("-"," ");
         results = feeds.doSearch( 'events', hashTag );
 
         $('.zm-type-list a').removeClass('current');
@@ -107,6 +111,6 @@ jQuery( document ).ready(function( $ ){
         displayResults( results );
         // $('#search_target').fadeOut( 150 );
         // $('#search_target').fadeIn( 100 );
-console.log( results );
+// console.log( results );
     });
 });
