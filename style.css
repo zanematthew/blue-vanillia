@@ -360,7 +360,6 @@ a {
     float: left;
     width: 96%;
     padding: 10px 10px 10px 10px;
-    background: rgba(65, 187, 235, 0.05);
     border-bottom: 1px solid #DDD;
     text-transform: capitalize;
     font-size: 13px;
@@ -436,10 +435,6 @@ a {
     margin: 0 10px;
     float: left;
     height: 42px;
-    }
-
-.header-container .zm-action-box {
-    padding: 5px 0 0 0;
     }
 
 .header-container .right {
@@ -697,6 +692,16 @@ a {
     padding: 10px;
     }
 
+.single-venues .main-container .row-container .row {
+    width: 100%;
+    float: left;
+    }
+
+.single-venues .main-container .zm-social-twitter-button,
+.single-venues .main-container .zm-social-facebook-button {
+    margin: 15px;
+    }
+
 .single-events .top-container .zm-social-twitter-button {
     float: left;
     width: 85px;
@@ -756,10 +761,14 @@ a {
     text-shadow: none;
     }
 
-.single-events .tabs-container .ui-tabs-nav li.ui-tabs-selected,
-.single-events .tabs-container .ui-tabs-nav li.ui-tabs-selected a {
-    background: #fff;
+.tabs-container .ui-tabs-nav li.ui-tabs-selected,
+.tabs-container .ui-tabs-nav li.ui-tabs-selected a {
+    background: #f8f8f8;
     margin-bottom: 0;
+    }
+
+.single-events .main-container .row-container .zigzag {
+    background: none;
     }
 
 .info-overlay .events-tags {
@@ -783,8 +792,6 @@ a {
 .single-events .venue-links-pane li {
     margin: 0 0 8px;
     }
-
-.single-events .venue-links-pane li a {}
 
 .single-events .venue-links-pane .website {
     background: url("images/1355163297_External-Link.png") no-repeat 1px 3px;
@@ -1587,7 +1594,6 @@ input[disabled],
 .no { color: red; }
 .yes { color: green; }
 
-.archive .main-container,
 .home .main-container {
     float: left;
     width: 510px;
@@ -1625,7 +1631,7 @@ input[disabled],
 .W-C {
     width: 960px;
     /*margin: 0 auto;*/
-    padding: 51px 0 0;
+    padding: 70px 0 0;
     }
 /*= End
 -------------------------------------------------------------- */
@@ -1715,10 +1721,10 @@ body,
     transition-timing-function: linear;
     }
 
-.tabs-container .row-container .row:hover {
+/*.tabs-container .row-container .row:hover {
     background: #fff;
     box-shadow: 0px 0px 10px #CFCFCF;
-    }
+    }*/
 
 .tabs-container .row-container .row .title {
     margin: 0 0 2px 0;
@@ -1755,13 +1761,12 @@ body,
     box-shadow: 1px 1px 0px #CECECE inset;
     }
 
-.tabs-container .ui-tabs-nav li.ui-tabs-selected {
+.archive .tabs-container .ui-tabs-nav li.ui-tabs-selected,
+.archive .tabs-container .ui-tabs-nav li.ui-tabs-selected a,
+.home .tabs-container .ui-tabs-nav li.ui-tabs-selected,
+.home .tabs-container .ui-tabs-nav li.ui-tabs-selected a {
     background: #fff;
     margin-bottom: 0;
-    }
-
-.tabs-container .ui-tabs-nav li.ui-tabs-selected a {
-    background: #fff;
     }
 
 .tabs-container .ui-tabs-nav .ui-state-default {
@@ -2506,9 +2511,23 @@ body.home .image-crop img {
     float: left;
     }
 
+
+.archive .main-container {
+    float: left;
+    width: 510px;
+    background: white;
+    border: 1px solid #DBDBDB;
+    box-shadow: 0px 0px 20px #E4E4E4;
+    margin: -5px 0 0 0;
+    }
+
 /*= Start Tax Attendees
 -------------------------------------------------------------- */
 .tax-attendees .main-container {
+    float: left;
+    background: none;
+    border: 0;
+    box-shadow: none;
     width: 780px;
     }
 
@@ -2646,6 +2665,8 @@ body.home .image-crop img {
 .tax-attendees .callout-container .content {
     padding-bottom: 5px;
     }
+
+.tax-attendees {}
 /*= End Tax Attendees
 -------------------------------------------------------------- */
 
@@ -2659,4 +2680,33 @@ body.home .image-crop img {
 
 .form-stacked p {
     margin: 0 0 10px;
-}
+    }
+
+/*Part of json plugin*/
+/*.tmp-result {
+    background: white;
+    border: 1px solid #DDD;
+    float: left;
+    padding: 15px;
+    width: 400px;
+    position: absolute;
+    left: 510px;
+    top: -44px;
+    min-height: 400px;
+    z-index: -2;
+    }
+
+.tabs-container .row-container .row {
+    position: relative;
+    border: solid #DDD;
+    float: left;
+    margin-top: -1px;
+    border-width: 1px 0 1px 0;
+    }
+
+.main-container .row-container .tmp-boo {
+    border-right: 0;
+    width: 481px;
+    background: white;
+    box-shadow: 10px 0px 0px white;
+    }*/

@@ -111,6 +111,17 @@ jQuery( document ).ready(function( $ ){
         displayResults( results );
         // $('#search_target').fadeOut( 150 );
         // $('#search_target').fadeIn( 100 );
-// console.log( results );
     });
+
+    // Part of json plugin
+    // $(document).on('mouseenter', '.home .row-container .row', function(){
+    //     if ( $('.tmp-result').length > 0 ){
+    //         $('.tmp-result').remove();
+    //     }
+    //     if ( $('.home .row-container').children().hasClass('tmp-boo') )
+    //         $('.home .row-container').children().removeClass('tmp-boo');
+
+    //     $(this).addClass('tmp-boo');
+    //     $(this).append('<div class="tmp-result">Results</div>');
+    // });
 });

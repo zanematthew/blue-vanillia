@@ -1,3 +1,4 @@
+<?php if ( ! is_user_logged_in() ) header("Location: " . site_url() ); ?>
 <?php get_header(); ?>
 
 <?php
