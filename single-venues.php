@@ -3,7 +3,7 @@
 <div class="row-container">
     <?php if ( have_posts() ) while ( have_posts() ) : the_post(); ?>
     <div class="row">
-        <div <?php post_class()?>>
+        <div <?php post_class('padding')?>>
             <h2 class="title"><?php edit_post_link(); ?></h2>
             <h1><?php the_title(); ?></h1>
             <?php

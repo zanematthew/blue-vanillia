@@ -75,8 +75,11 @@ $fb_id = get_user_meta( $user_id, 'fb_id', true );
                         <td>
                             <h2>
                                 <strong class="title left"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></strong>
-                                <span class="commentClass( $post->ID );"><a href="<?php the_permalink(); ?>#comments_target" title="<?php comments_number(); ?>"><?php comments_number(' '); ?></a></span>
+                                <span class="<?php blue_vanillia_comment_class( $post->ID ); ?>"><a href="<?php the_permalink(); ?>#comments_target" title="<?php comments_number(); ?>"><?php comments_number(' '); ?></a></span>
                             </h2>
+                            <div class="meta">
+                                <a href="<?php print get_permalink( Events::getVenueId( $post->ID ) ); ?>"><?php print Venues::getAttribute( array( 'key' => 'title', 'echo' => false ) ); ?></a> in <?php Venues::getAttribute( array( 'key' => 'state', 'echo' => true ) ); ?>
+                            </div>
                         </td>
 
                         <!-- Fee -->

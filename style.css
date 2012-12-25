@@ -316,7 +316,7 @@ a {
     filter: alpha(opacity=50);
     text-indent: -999em;
     float: left;
-    margin-right: 5px;
+    margin: 0 5px 0 5px;
     -webkit-transition: opacity .5s;
     -moz-transition: opacity .5s;
     -o-transition: opacity .5s;
@@ -358,13 +358,16 @@ a {
 
 .main-container .row-container .zigzag {
     float: left;
-    width: 96%;
-    padding: 10px 10px 10px 10px;
+    width: 100%;
     border-bottom: 1px solid #DDD;
     text-transform: capitalize;
     font-size: 13px;
     color: black;
     font-weight: bold;
+    }
+
+.main-container .row-container .zigzag .padding {
+    padding: 10px 10px 10px 10px;
     }
 
 .sidebar-wide-container .row-container .row:first-child,
@@ -672,7 +675,12 @@ a {
 .single .comments-container .profile-pic-container {
     margin: 0 10px 0 0;
     }
+/*= End Single
+-------------------------------------------------------------- */
 
+
+/*= Single Venues
+-------------------------------------------------------------- */
 .single-venues .zm-social-twitter-button {
     float: left;
     width: 90px;
@@ -696,12 +704,20 @@ a {
     width: 100%;
     float: left;
     }
+.single-venues .main-container .row-container .row .padding {
+    padding: 15px;
+    }
 
 .single-venues .main-container .zm-social-twitter-button,
 .single-venues .main-container .zm-social-facebook-button {
     margin: 15px;
     }
+/*= End Single Venues
+-------------------------------------------------------------- */
 
+
+/*= Single Events
+-------------------------------------------------------------- */
 .single-events .top-container .zm-social-twitter-button {
     float: left;
     width: 85px;
@@ -788,7 +804,6 @@ a {
     position: relative;
     }
 
-.single-events .venue-links-pane {}
 .single-events .venue-links-pane li {
     margin: 0 0 8px;
     }
@@ -1702,8 +1717,7 @@ body,
     }
 
 .tabs-container .row-container .row {
-    padding: 15px;
-    width: 94%;
+    width: 100%;
     -webkit-transition-property: background;
     -moz-transition-property: background;
     -o-transition-property: background;
@@ -1719,6 +1733,12 @@ body,
     -o-transition-timing-function: linear;
     -ms-transition-timing-function: linear;
     transition-timing-function: linear;
+    }
+
+.tabs-container .row-container .row .padding {
+    float: left;
+    padding: 15px;
+    width: 100%;
     }
 
 /*.tabs-container .row-container .row:hover {
@@ -2356,7 +2376,7 @@ body.home .image-crop img {
 .pagination-container {
     color: #ddd;
     text-align: center;
-    margin: 40px 0 0;
+    margin: 20px 0 20px;
     float: left;
     width: 100%;
     }
@@ -2592,6 +2612,18 @@ body.home .image-crop img {
     box-shadow: 0px 0px 10px #E6E6E6;
     }
 
+.tax-attendees .main-container tbody tr a {
+    text-decoration: none;
+    }
+
+.tax-attendees .main-container tbody tr:hover .meta a {
+    background: #FFFFD0;
+    }
+
+.tax-attendees .main-container tbody tr .meta {
+    clear: both;
+    }
+
 .tax-attendees .main-container th {
     padding: 10px;
     text-shadow: 0 1px 0 #fff;
@@ -2665,8 +2697,6 @@ body.home .image-crop img {
 .tax-attendees .callout-container .content {
     padding-bottom: 5px;
     }
-
-.tax-attendees {}
 /*= End Tax Attendees
 -------------------------------------------------------------- */
 
@@ -2710,3 +2740,5 @@ body.home .image-crop img {
     background: white;
     box-shadow: 10px 0px 0px white;
     }*/
+
+

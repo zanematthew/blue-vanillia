@@ -224,3 +224,18 @@ function blue_vanillia_pagination( $total=null ){
 
     print '<div class="pagination-container">' . $links . '</div>';
 }
+
+function blue_vanillia_comment_class( $post_id=null ){
+
+    $comments_count = wp_count_comments( $post_id );
+
+    if ( $comments_count->total_comments == 1 )
+        $comment_class = 'comment-count';
+
+    elseif ( $comments_count->total_comments > 1 )
+        $comment_class = 'comments-count';
+    else
+        $comment_class = '';
+
+    print $comment_class;
+}
