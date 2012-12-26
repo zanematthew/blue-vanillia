@@ -7,7 +7,7 @@
         <!-- Event -->
         <div class="left">
             <div id="image-pane">
-                <div class="image-crop"><?php Venues::staticMap( Events::getVenueId( $post->ID ), 'wide' ); ?></div>
+                <div class="image-crop"><?php zm_google_static_map_image( Events::getVenueId( $post->ID ), 'wide' ); ?></div>
             </div>
             <div class="info-overlay">
                 <div class="content">

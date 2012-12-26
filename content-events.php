@@ -2,7 +2,13 @@
     <div class="padding">
         <?php if ( ! is_single() ) : ?>
             <div class="image-container">
-                <a href="<?php the_permalink(); ?>"><?php if ( has_post_thumbnail() ) : ?><?php the_post_thumbnail( 'small' ); ?><?php else : ?><?php Venues::staticMap( Events::getVenueId( $post->ID ), 'small' ); ?><?php endif; ?></a>
+                <a href="<?php the_permalink(); ?>">
+                    <?php if ( has_post_thumbnail() ) : ?>
+                        <?php the_post_thumbnail( 'small' ); ?>
+                    <?php else : ?>
+                        <?php zm_google_static_map_image( Events::getVenueId( $post->ID ) ); ?>
+                    <?php endif; ?>
+                </a>
             </div>
         <?php endif; ?>
         <div class="title">

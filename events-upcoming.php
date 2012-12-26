@@ -30,7 +30,7 @@ $upcoming_events[ $plus_three_month_date ] = $three_months_out;
                 <div class="row">
                     <div class="image-container">
                         <a href="<?php print get_permalink( $event->ID ); ?>">
-                            <?php if ( has_post_thumbnail() ) : ?><?php the_post_thumbnail( 'blue-small' ); ?><?php else : ?><?php Venues::staticMap( Events::getVenueId( $event->ID ), 'small' ); ?><?php endif; ?>
+                            <?php if ( has_post_thumbnail() ) : ?><?php the_post_thumbnail( 'blue-small' ); ?><?php else : ?><?php zm_google_static_map_image( Events::getVenueId( $event->ID ), 'small' ); ?><?php endif; ?>
                         </a>
                     </div>
                     <div class="title">

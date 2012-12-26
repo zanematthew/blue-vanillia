@@ -11,7 +11,7 @@
             <?php if ( has_post_thumbnail() ) : ?>
                 <a href="<?php the_permalink(); ?>"><?php the_post_thumbnail(); ?></a>
             <?php else : ?>
-                <a href="<?php the_permalink(); ?>"><?php $venues->staticMap( $post->ID, 'small' ); ?></a>
+                <a href="<?php the_permalink(); ?>"><?php zm_google_static_map_image( $post->ID, 'small' ); ?></a>
             <?php endif; ?>
         </div>
         <div class="title">
