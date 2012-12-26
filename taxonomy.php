@@ -6,7 +6,6 @@ $taxonomy = $wp_query->query_vars['taxonomy'];
 $term = get_term_by( 'slug', $wp_query->query_vars[ $taxonomy ], $taxonomy );
 
 $args = array(
-            'posts_per_page' => -1,
             'tax_query' => array(
                 array(
                     'taxonomy' => $taxonomy,
@@ -24,7 +23,6 @@ $args = array(
             'meta_key' => 'events_start-date',
             'orderby' => 'events_start-date',
             'order' => 'ASC',
-            'posts_per_page' => -1,
             'paged' => get_query_var( 'paged' )
         );
 
