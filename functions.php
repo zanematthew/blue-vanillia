@@ -15,7 +15,9 @@ function blue_vanillia_custom_header_setup() {
 
     add_theme_support( 'custom-header', $args );
     add_theme_support( 'post-thumbnails' );
-    add_image_size( 'blue-small', 108, 74 );
+
+    add_image_size( 'small', 129, 86 );
+    add_image_size( 'wide', 800, 800 );
 }
 add_action( 'after_setup_theme', 'blue_vanillia_custom_header_setup' );
 
@@ -239,3 +241,16 @@ function blue_vanillia_comment_class( $post_id=null ){
 
     print $comment_class;
 }
+
+function blue_vanillia_content_image( $post_id=null, $size=null ){
+    $image = get_the_post_thumbnail( $post_id, $size ); ?>
+    <div class="image-container">
+        <a href="<?php the_permalink(); ?>">
+            <?php if ( $image == "" ) : ?>
+                <?php if ( get_option('zm_get_static_google_map_version') ) zm_google_static_map_image( $post_id, $size ); ?>
+            <?php else : ?>
+                <?php print $image; ?>
+            <?php endif; ?>
+        </a>
+    </div>
+<?php }

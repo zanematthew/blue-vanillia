@@ -7,13 +7,7 @@
             <div class="arrow-shadow"></div>
             <div class="title"><?php _e("Events", "blue_vanillia"); ?></div>
         </div>
-        <div class="image-container">
-            <?php if ( has_post_thumbnail() ) : ?>
-                <a href="<?php the_permalink(); ?>"><?php the_post_thumbnail(); ?></a>
-            <?php else : ?>
-                <a href="<?php the_permalink(); ?>"><?php zm_google_static_map_image( $post->ID, 'small' ); ?></a>
-            <?php endif; ?>
-        </div>
+        <?php blue_vanillia_content_image( $post->ID, 'small' ); ?>
         <div class="title">
             <h2><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h2>
         </div>

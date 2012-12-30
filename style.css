@@ -374,6 +374,10 @@ a {
 .main-container .row-container .row:first-child {
     }
 
+.sidebar-wide-container .row-container .row .padding {
+    padding: 10px;
+    }
+
 .row-container .row:first-child {
     padding-top: 0;
     border-top: 0;
@@ -664,12 +668,12 @@ a {
     list-style-type: none;
     }
 
-.single .tabs-container .row-container .row .title {
-    margin: 0 0 0 105px;
-    }
-
 .single .tabs-container .row-container .row .attending-button-pane {
     margin: -18px 0 0 0;
+    }
+
+.single .tabs-container .row-container .zm-attend-helper .title {
+    margin-left: 110px;
     }
 
 .single .comments-container .profile-pic-container {
@@ -1646,7 +1650,7 @@ input[disabled],
 .W-C {
     width: 960px;
     /*margin: 0 auto;*/
-    padding: 70px 0 0;
+    padding: 50px 0 0;
     }
 /*= End
 -------------------------------------------------------------- */
@@ -1754,7 +1758,6 @@ body,
 .tabs-container .row-container .row .meta .title {
     display: block;
     width: 100%;
-    margin: 0 0 10px;
     font-size: 12px;
     }
 
@@ -1764,6 +1767,10 @@ body,
 
 .tabs-container .row-container .row:hover .meta a {
     background: #FFFFD0;
+    }
+
+.tabs-container .row-container .row .attending-button-pane {
+    margin: 10px 0 0;
     }
 
 .tabs-container .ui-tabs-nav {
@@ -1836,7 +1843,7 @@ body,
     }
 
 .tabs-container .ui-tabs-panel {
-    padding: 10px 0 0 0;
+    padding: 0;
     }
 
 .tabs-container .ui-tabs-panel ul {
@@ -2532,7 +2539,8 @@ body.home .image-crop img {
     }
 
 
-.archive .main-container {
+.archive .main-container,
+.search .main-container {
     float: left;
     width: 510px;
     background: white;

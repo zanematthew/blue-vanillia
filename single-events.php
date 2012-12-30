@@ -1,13 +1,14 @@
 <?php get_header(); ?>
-<div class="main-container">
-    <?php dynamic_sidebar( 'main-column-top' ); ?>
+<?php dynamic_sidebar( 'main-column-top' ); ?>
 <?php if ( have_posts() ) while ( have_posts() ) : the_post(); ?>
     <?php edit_post_link(); ?>
     <div class="top-container">
         <!-- Event -->
         <div class="left">
             <div id="image-pane">
-                <div class="image-crop"><?php zm_google_static_map_image( Events::getVenueId( $post->ID ), 'wide' ); ?></div>
+                <div class="image-crop">
+                    <?php blue_vanillia_content_image( Events::getVenueId( $post->ID ), 'wide'); ?>
+                </div>
             </div>
             <div class="info-overlay">
                 <div class="content">
@@ -33,21 +34,24 @@
             <!-- Attend -->
             <?php if ( get_option('zm_attend_button_version') ) : ?>
                 <?php zm_attending_button_container(); ?>
+                <div class="hr"></div>
             <?php endif; ?>
             <!-- -->
+
             <!-- Share -->
             <?php if ( function_exists('zm_social_twitter_button') || function_exists('zm_social_facebook_button') ) : ?>
                 <?php zm_social_twitter_button( $post->post_title, get_permalink() ); ?>
                 <?php zm_social_facebook_button( get_permalink() ); ?>
+                <div class="hr"></div>
             <?php endif; ?>
             <!-- -->
 
-            <div class="hr"></div>
             <?php if ( get_option('zm_weather_version') ) : ?>
                 <?php zm_weather_venue_target( Venues::getAttribute( array( 'key' => 'city' ) ) . ', ' . Venues::getAttribute( array( 'key' => 'state' ) ) ); ?>
+                <div class="hr"></div>
             <?php endif; ?>
 
-            <div class="hr"></div>
+
             <?php zm_ev_venue_links_pane( $post->ID ); ?>
 
         </div>
@@ -82,5 +86,4 @@
         </div>
     </div>
 <?php endwhile; ?>
-</div>
 <?php get_footer(); ?>

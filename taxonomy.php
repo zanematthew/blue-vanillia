@@ -29,10 +29,8 @@ $args = array(
 $query = new WP_Query( $args );
 
 $count = $query->found_posts;
-print $count;
 $term = $term->name;
 ?>
-<div class="main-container">
     <div class="tabs-container tabs-handle">
         <ul>
             <li><a href="#locals-current-month"><?php print $term; ?><span class="count"><?php print $count; ?></span></a></li>
@@ -48,5 +46,4 @@ $term = $term->name;
         <?php endif; ?>
     </div>
 <?php blue_vanillia_pagination( $query->max_num_pages ); ?>
-</div>
 <?php get_footer(); ?>

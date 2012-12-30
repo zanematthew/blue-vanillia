@@ -1,15 +1,8 @@
-<div <?php post_class('result row ' . strtolower( date('F', strtotime( Events::getDate() ) ) ) ); ?>>
+<?php if ( get_option('zm_attend_button_version') ) $css_helper = 'zm-attend-helper'; else $css_helper = null; ?>
+<div <?php post_class( $css_helper . ' result row ' . strtolower( date('F', strtotime( Events::getDate() ) ) ) ); ?>>
     <div class="padding">
         <?php if ( ! is_single() ) : ?>
-            <div class="image-container">
-                <a href="<?php the_permalink(); ?>">
-                    <?php if ( has_post_thumbnail() ) : ?>
-                        <?php the_post_thumbnail( 'small' ); ?>
-                    <?php else : ?>
-                        <?php zm_google_static_map_image( Events::getVenueId( $post->ID ) ); ?>
-                    <?php endif; ?>
-                </a>
-            </div>
+            <?php blue_vanillia_content_image( Events::getVenueId( $post->ID ), 'small'); ?>
         <?php endif; ?>
         <div class="title">
             <h2><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a> <span class="date"><?php print date( 'M d, Y', strtotime( Events::getDate() ) ); ?></span></h2>

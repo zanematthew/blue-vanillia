@@ -50,7 +50,7 @@ else
     <div class="search-bar-container">
         <form method="get" id="searchform" action="<?php bloginfo('url'); ?>/">
             <input type="text" value="<?php the_search_query(); ?>" name="s" id="s" placeholder="<?= $placeholder; ?>" />
-            <input type="hidden" name="type" value="<?= $current; ?>" id="post_type_target" />
+            <!-- <input type="hidden" name="type" value="<?= $current; ?>" id="post_type_target" /> -->
             <input type="submit" id="searchsubmit" value="" />
             <div id="results_count_target"></div>
             <div id="results_message_target"></div>
@@ -93,3 +93,4 @@ else
 <?php if ( ! is_page() ) : ?>
     <?php get_sidebar(); ?>
 <?php endif; ?>
+<div class="main-container">

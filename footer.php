@@ -1,3 +1,4 @@
+</div>
 <?php if ( ! empty( $post_type ) && $post_type == 'venues' ) : ?>
     <div class="sidebar-wide-container">
         <div class="row-container">

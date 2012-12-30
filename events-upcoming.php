@@ -28,18 +28,16 @@ $upcoming_events[ $plus_three_month_date ] = $three_months_out;
         <div id="<?php print strtolower( $date ); ?>" class="row-container">
             <?php foreach( $events['items'] as $event ) : ?>
                 <div class="row">
-                    <div class="image-container">
-                        <a href="<?php print get_permalink( $event->ID ); ?>">
-                            <?php if ( has_post_thumbnail() ) : ?><?php the_post_thumbnail( 'blue-small' ); ?><?php else : ?><?php zm_google_static_map_image( Events::getVenueId( $event->ID ), 'small' ); ?><?php endif; ?>
-                        </a>
+                    <div class="padding">
+                        <?php blue_vanillia_content_image( Events::getVenueId( $event->ID ), 'small' ); ?>
+                        <div class="title">
+                            <a href="<?php print get_permalink( $event->ID ); ?>"><?php print get_the_title( $event->ID ); ?></a>
+                        </div>
+                        <div class="date">
+                            <a href="<?php print get_permalink( $event->ID ); ?>"><?php print date('F j, Y', strtotime( Events::getDate( $event->ID ) ) ); ?></a>
+                        </div>
+                        <span class="meta"><em><?php print Events::getVenueTitle( $event->ID ); ?></em> in <em><?php Venues::getAttribute( array( 'key'=> 'state', 'echo' => true ) ); ?></em></span>
                     </div>
-                    <div class="title">
-                        <a href="<?php print get_permalink( $event->ID ); ?>"><?php print get_the_title( $event->ID ); ?></a>
-                    </div>
-                    <div class="date">
-                        <a href="<?php print get_permalink( $event->ID ); ?>"><?php print date('F j, Y', strtotime( Events::getDate( $event->ID ) ) ); ?></a>
-                    </div>
-                    <span class="meta"><em><?php print Events::getVenueTitle( $event->ID ); ?></em> in <em><?php Venues::getAttribute( array( 'key'=> 'state', 'echo' => true ) ); ?></em></span>
                 </div>
             <?php endforeach; ?>
         </div>
