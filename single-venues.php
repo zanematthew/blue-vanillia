@@ -63,7 +63,9 @@
             <?php get_template_part('content', 'events' ); ?>
         <?php endwhile; wp_reset_postdata(); ?>
         <?php else : ?>
-            <p>No Events Message Here</p>
+            <div class="padding">
+                <?php _e('Currently no Events listed', 'blue_vanillia'); ?>
+            </div>
         <?php endif; ?>
         </div>
     </div>

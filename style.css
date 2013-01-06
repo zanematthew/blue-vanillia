@@ -61,8 +61,6 @@ label {
     line-height: 1.2em;
     }
 
-.zm-register-handle,
-.zm-login-handle,
 button,
 .button {
     background: #e0e0e0;
@@ -71,19 +69,15 @@ button,
     border: 0;
     cursor: pointer;
     float: left;
+    margin: 0 10px 0 0;
     padding: 5px 10px;
     }
 
-a.zm-register-handle,
-a.zm-login-handle {
+a.button {
     font-weight: bold;
     text-transform: uppercase;
     text-align: center;
     text-shadow: 0 1px 0 #fff;
-    }
-
-.zm-register-handle {
-    margin: 0 10px 0 0;
     }
 
 .header-container .zm-login-handle {
@@ -1003,6 +997,10 @@ form hr {
     float: left;
     width: 100%;
     border: 0;
+    }
+
+form p {
+    margin-bottom: 15px;
     }
 
 textarea:hover,
