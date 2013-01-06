@@ -656,7 +656,7 @@ a {
     }
 
 .single .main-container {
-    padding-top: 40px;
+    padding-top: 32px;
     }
 
 .single .main-container .map-container .right {
@@ -693,6 +693,10 @@ a {
 
 /*= Single Venues
 -------------------------------------------------------------- */
+.single-venues .main-container {
+    margin-top: -20px;
+    }
+
 .single-venues .zm-social-twitter-button {
     float: left;
     width: 90px;
@@ -715,10 +719,6 @@ a {
 .single-venues .main-container .row-container .row {
     width: 100%;
     float: left;
-    }
-
-.single-venues .main-container .row-container .row .padding {
-    padding: 15px;
     }
 
 .single-venues .main-container .zm-social-twitter-button,
@@ -1936,6 +1936,10 @@ body,
     float: right;
     min-height: 200px;
     width: 300px;
+    }
+
+.sidebar-wide-container .padding {
+    padding: 30px 0;
     }
 
 .sidebar-wide-container .tabs-container .ui-tabs-panel .row-container .row {

@@ -3,7 +3,6 @@
     <?php if ( have_posts() ) while ( have_posts() ) : the_post(); ?>
     <div class="row">
         <div <?php post_class('padding')?>>
-            <h2 class="title"><?php edit_post_link(); ?></h2>
             <h1><?php the_title(); ?></h1>
             <?php
             $venues = New Venues();
@@ -29,6 +28,7 @@
                 <?php print $website; ?></a>
             <?php endif; ?>
             <?php the_content(); ?>
+            <br /><?php edit_post_link(); ?>
         </div>
     </div>
     <!-- -->
