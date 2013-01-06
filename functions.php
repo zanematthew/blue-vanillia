@@ -210,7 +210,7 @@ function blue_vanillia_pagination( $total=null ){
 
     global $wp_query;
 
-    if ( empty( $total ) )
+    if ( $total != 0 )
         $total = $wp_query->max_num_pages;
 
     $big = 999999999; // need an unlikely integer

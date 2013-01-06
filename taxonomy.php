@@ -27,7 +27,6 @@ $args = array(
         );
 
 $query = new WP_Query( $args );
-
 $count = $query->found_posts;
 $term = $term->name;
 ?>
@@ -36,7 +35,7 @@ $term = $term->name;
             <li><a href="#locals-current-month"><?php print $term; ?><span class="count"><?php print $count; ?></span></a></li>
         </ul>
         <?php if ( $query->post_count == 0 ) : ?>
-            <h1>Sorry, currently there are no <?php print get_query_var('term'); ?> listed for <?php print date('Y', strtotime('+1 year')); ?></h1>
+            <h1 class="padding"><?php _e( sprintf( 'Sorry, currently there are no %s(s) listed for %d', get_query_var('term'), date('Y')), 'blue_vanillia'); ?></h1>
         <?php else : ?>
             <div class="row-container">
                 <?php foreach( $query->posts as $post ) : setup_postdata( $post ); ?>

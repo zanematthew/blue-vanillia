@@ -21,25 +21,29 @@ $upcoming_events[ $plus_three_month_date ] = $three_months_out;
 <div class="tabs-container tabs-handle">
     <ul>
         <?php foreach( $upcoming_events as $date => $e ) : $date = date('M', strtotime( $date ) ); ?>
-            <li><a href="#<?php print strtolower( $date ); ?>"><?php print $date; ?> <span class="count"><?php print $e['count']; ?></span></a></li>
+            <?php if ( $e['count'] ) : ?>
+                <li><a href="#<?php print strtolower( $date ); ?>"><?php print $date; ?> <span class="count"><?php print $e['count']; ?></span></a></li>
+            <?php endif; ?>
         <?php endforeach; ?>
     </ul>
     <?php foreach( $upcoming_events as $date => $events ) : $date = date('M', strtotime( $date ) ); ?>
         <div id="<?php print strtolower( $date ); ?>" class="row-container">
-            <?php foreach( $events['items'] as $event ) : ?>
-                <div class="row">
-                    <div class="padding">
-                        <?php blue_vanillia_content_image( Events::getVenueId( $event->ID ), 'small' ); ?>
-                        <div class="title">
-                            <a href="<?php print get_permalink( $event->ID ); ?>"><?php print get_the_title( $event->ID ); ?></a>
+            <?php if ( $events ) : ?>
+                <?php foreach( $events['items'] as $event ) : ?>
+                    <div class="row">
+                        <div class="padding">
+                            <?php blue_vanillia_content_image( Events::getVenueId( $event->ID ), 'small' ); ?>
+                            <div class="title">
+                                <a href="<?php print get_permalink( $event->ID ); ?>"><?php print get_the_title( $event->ID ); ?></a>
+                            </div>
+                            <div class="date">
+                                <a href="<?php print get_permalink( $event->ID ); ?>"><?php print date('F j, Y', strtotime( Events::getDate( $event->ID ) ) ); ?></a>
+                            </div>
+                            <span class="meta"><em><?php print Events::getVenueTitle( $event->ID ); ?></em> in <em><?php Venues::getAttribute( array( 'venues_id' => $event->ID, 'key'=> 'state', 'echo' => true ) ); ?></em></span>
                         </div>
-                        <div class="date">
-                            <a href="<?php print get_permalink( $event->ID ); ?>"><?php print date('F j, Y', strtotime( Events::getDate( $event->ID ) ) ); ?></a>
-                        </div>
-                        <span class="meta"><em><?php print Events::getVenueTitle( $event->ID ); ?></em> in <em><?php Venues::getAttribute( array( 'key'=> 'state', 'echo' => true ) ); ?></em></span>
                     </div>
-                </div>
-            <?php endforeach; ?>
+                <?php endforeach; ?>
+            <?php endif; ?>
         </div>
     <?php endforeach; ?>
 </div>
