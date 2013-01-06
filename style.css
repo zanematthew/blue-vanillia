@@ -187,6 +187,9 @@ a {
     text-decoration: none;
     }
 
+.padding {
+    padding: 15px;
+}
 /*= Base Page styling
 -------------------------------------------------------------- */
 .page-content h1 {
@@ -244,7 +247,7 @@ a {
     }
 
 .sidebar-container .padding {
-    padding: 0 20px 0 20px;
+    padding: 30px 20px 0 20px;
     }
 
 .sidebar-container ul {
@@ -367,7 +370,8 @@ a {
     }
 
 .main-container .row-container .zigzag .padding {
-    padding: 10px 10px 10px 10px;
+    padding-top: 10px;
+    padding-bottom: 10px;
     }
 
 .sidebar-wide-container .row-container .row:first-child,
@@ -652,7 +656,7 @@ a {
     }
 
 .single .main-container {
-
+    padding-top: 40px;
     }
 
 .single .main-container .map-container .right {
@@ -674,6 +678,10 @@ a {
 
 .single .tabs-container .row-container .zm-attend-helper .title {
     margin-left: 110px;
+    }
+
+.single .comments-container {
+    margin-top: 10px;
     }
 
 .single .comments-container .profile-pic-container {
@@ -708,6 +716,7 @@ a {
     width: 100%;
     float: left;
     }
+
 .single-venues .main-container .row-container .row .padding {
     padding: 15px;
     }
@@ -2312,11 +2321,19 @@ h2.site-description {
     float: left;
     }
 
-/*Page Tempalte*/
+
+/*= Default Page
+-------------------------------------------------------------- */
+.page .W-C {
+    margin: 0 auto;
+    }
+
 .page .main-container {
     margin: 0 auto;
-    width: 780px;
+    width: 100%;
     }
+/*= Default Page
+-------------------------------------------------------------- */
 
 
 /*= Home

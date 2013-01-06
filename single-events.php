@@ -1,7 +1,6 @@
 <?php get_header(); ?>
 <?php dynamic_sidebar( 'main-column-top' ); ?>
 <?php if ( have_posts() ) while ( have_posts() ) : the_post(); ?>
-    <?php edit_post_link(); ?>
     <div class="top-container">
         <!-- Event -->
         <div class="left">
@@ -25,6 +24,7 @@
             <div class="image-container">
                 <?php the_post_thumbnail( 'medium' ); ?>
             </div>
+            <?php edit_post_link(); ?>
 
             <div <?php post_class(); ?>><?php the_content(); ?></div>
         </div>
@@ -57,6 +57,7 @@
         </div>
         <!-- -->
     </div>
+
     <div class="tabs-container tabs-handle">
         <ul>
             <li><a href="#schedule">Events <?php Venues::scheduleCount( Events::getVenueId( $post->ID ) ); ?></a></li>
@@ -71,7 +72,7 @@
             if ( $events ) : ?>
                 <?php while ( $events->have_posts() ) : $events->the_post(); setup_postdata( $post ); ?>
                     <?php get_template_part('content', 'events' ); ?>
-                <?php endwhile; ?>
+                <?php endwhile; wp_reset_postdata(); ?>
             <?php else : ?>
                 <p><?php _e( 'No events message here','blue_vanillia' ); ?>
             <?php endif; ?>
