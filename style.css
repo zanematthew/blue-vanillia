@@ -2331,7 +2331,7 @@ h2.site-description {
     }
 
 .page .main-container {
-    margin: 0 auto;
+    margin: 40px auto;
     width: 100%;
     }
 /*= Default Page
@@ -2698,12 +2698,13 @@ body.home .image-crop img {
 
 .tax-attendees .type-container .count-container {
     float: left;
+    margin: 0 10px 0 0;
     width: 135px;
     }
 
 .tax-attendees .type-container {
     float: left;
-    width: 410px;
+    width: 510px;
     }
 
 .tax-attendees .share-container {

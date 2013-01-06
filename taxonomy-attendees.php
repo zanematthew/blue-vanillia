@@ -92,12 +92,6 @@ $fb_id = get_user_meta( $user_id, 'fb_id', true );
                     <?php endwhile; wp_reset_postdata(); ?>
                     </tbody>
                 </table>
-            <?php else: ?>
-                <?php if ( is_user_logged_in() ) : ?>
-                    <div class="callout-container">
-                        <div class="content">Hey, <?php print $current_user->user_login; ?> Attending a few Locals, thought about going to a National?</div>
-                    </div>
-                <?php endif; ?>
             <?php endif; ?>
         </div>
 
