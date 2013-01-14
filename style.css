@@ -833,6 +833,15 @@ a {
     background: url("images/1355164203_Factory.png") no-repeat;
     padding: 0 0 0 20px;
     }
+
+.single-events .zm-profile-pic {
+    float: left;
+    margin: 0 10px 10px 0;
+    }
+
+.single-events .zm-profile-pic:last-child {
+    margin: 0 0 10px 0;
+    }
 /*= End Single
 -------------------------------------------------------------- */
 

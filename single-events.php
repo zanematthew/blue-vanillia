@@ -60,10 +60,16 @@
 
     <div class="tabs-container tabs-handle">
         <ul>
+            <li><a href="#attendees">Attendess <span class="count"><?php print zm_attend_count_event( $post->ID, false ); ?></span></a></li>
             <li><a href="#schedule">Events <?php Venues::scheduleCount( Events::getVenueId( $post->ID ) ); ?></a></li>
             <li><a href="#comments">Comments</a></li>
         </ul>
 
+        <div id="attendees">
+            <div class="padding">
+                <?php zm_attend_event_attendees( $post->ID ); ?>
+            </div>
+        </div>
         <div id="schedule" class="row-container">
             <?php
             global $post;
