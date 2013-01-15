@@ -9,7 +9,9 @@
         </div>
         <?php if ( ! is_single() ) : ?>
         <span class="meta">
-            <a href="<?php print get_permalink( Events::getVenueId( $post->ID ) ); ?>"><?php print Venues::getAttribute( array( 'key' => 'title', 'echo' => false ) ); ?></a> in <?php Venues::getAttribute( array( 'key' => 'state', 'echo' => true ) ); ?>
+            <a href="<?php print get_permalink( Events::getVenueId( $post->ID ) ); ?>">
+                <?php print Venues::getAttribute( array( 'key' => 'title', 'echo' => false ) ); ?></a> in
+                <?php Venues::getAttribute( array( 'key' => 'state', 'echo' => true ) ); ?>
         </span>
         <?php endif; ?>
         <?php if ( get_option('zm_attend_button_version') ) : ?>

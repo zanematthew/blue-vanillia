@@ -183,7 +183,7 @@ a {
 
 .padding {
     padding: 15px;
-}
+    }
 /*= Base Page styling
 -------------------------------------------------------------- */
 .page-content h1 {
@@ -1732,7 +1732,7 @@ body,
     margin: 0 10px 0 0;
     }
 
-.tabs-container .row-container .row .state {
+.tabs-container .row-container .row .state-abbr {
     text-transform: uppercase;
     }
 
@@ -1758,7 +1758,7 @@ body,
 .tabs-container .row-container .row .padding {
     float: left;
     padding: 15px;
-    width: 100%;
+    width: 94%;
     }
 
 /*.tabs-container .row-container .row:hover {
@@ -1783,6 +1783,7 @@ body,
 
 .tabs-container .row-container .row:hover .meta a {
     background: #FFFFD0;
+    color: red;
     }
 
 .tabs-container .row-container .row .attending-button-pane {
