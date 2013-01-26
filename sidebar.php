@@ -9,14 +9,31 @@
 
 
         <!-- Type -->
-        <?php $zm_json_preference = get_option( 'zm_json_preference' ); ?>
+        <?php $zm_json_preference = get_option( 'zm_json_version' ); ?>
         <div class="zm-base-list-terms-container <?php if ( $zm_json_preference ) : ?>zm-type-list<?php endif; ?>">
             <div class="zm-base-item">
                 <div class="zm-base-title">Type</div>
                 <?php foreach( get_terms('type') as $type ) : ?>
                     <div class="zm-base-item">
-                        <?php if ( get_query_var('term') == $type->slug ) $class = 'current'; else $class = null; ?>
-                        <?php if ( $zm_json_preference ) $link = '/#'. $type->slug; else $link = get_term_link( $type->slug, 'type'); ?>
+                        <?php
+
+                        $term = get_query_var('term');
+
+                        if ( empty( $term ) && ! empty( $_GET['s'] ) ){
+                            $term = str_replace(' ', '-', strtolower( $_GET['s'] ) );
+                            $slug = str_replace('-', '+', $type->slug );
+                        } else{
+                            $term = get_query_var('term');
+                            $slug = $type->slug;
+                        }
+
+                        if ( $term == $type->slug ){
+                            $class = 'current';
+                        } else {
+                            $class = null;
+                        }
+                        ?>
+                        <?php if ( $zm_json_preference ) $link = '/#'. $slug; else $link = get_term_link( $type->slug, 'type'); ?>
                         <a href="<?php print $link; ?>" class="<?php print $class; ?>"><?php print $type->name; ?></a>
                     </div>
                 <?php endforeach; ?>

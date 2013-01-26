@@ -385,7 +385,9 @@ a {
 .row-container .row:last-child {
     border-bottom: 0;
     }
-
+.row-container .state {
+    text-transform: uppercase;
+}
 .main-container .container .row-container *:last-child {
     border-bottom: 0;
     }
@@ -417,7 +419,7 @@ a {
     }
 
 .header-container .logo-container {
-    width: 175px;
+    width: 200px;
     float: left;
     padding: 8px 0 0 5px;
     }
@@ -430,7 +432,7 @@ a {
     float: left;
     min-height: 42px;
     position: absolute;
-    left: 385px;
+    left: 405px;
     z-index: 1;
     }
 
@@ -1783,7 +1785,6 @@ body,
 
 .tabs-container .row-container .row:hover .meta a {
     background: #FFFFD0;
-    color: red;
     }
 
 .tabs-container .row-container .row .attending-button-pane {
@@ -2780,3 +2781,5 @@ body.home .image-crop img {
     }*/
 
 
+/*temp*/
+#results_message_target { display: none; }

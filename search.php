@@ -7,12 +7,14 @@
         <?php endwhile; ?>
         <?php blue_vanillia_pagination(); ?>
     <?php else : ?>
-        <div class="row">
-            <div class="padding">
-            <h1><?php _e( 'Nothing Found', 'blue_vanillia' ); ?></h1>
-            <p><?php _e( 'Sorry, but nothing matched your search criteria. <br />Please try again with some different keywords.', 'blue_vanillia' ); ?></p>
+        <?php if ( ! get_option( 'zm_json_version' ) ) : ?>
+            <div class="row">
+                <div class="padding">
+                <h1><?php _e( 'Nothing Found', 'blue_vanillia' ); ?></h1>
+                <p><?php _e( 'Sorry, but nothing matched your search criteria. <br />Please try again with some different keywords.', 'blue_vanillia' ); ?></p>
+            </div>
         </div>
-    </div>
+        <?php endif; ?>
     <?php endif; ?>
     </div>
 </div>

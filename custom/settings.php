@@ -8,6 +8,7 @@ $venues = New Venues;
 
 $default_obj = get_term_by( 'id', get_user_meta( $current_user->ID, 'zm_type_preference', true ), 'type' );
 if ( ! empty( $default_obj ) ) $default = $default_obj->name;
+
 ?>
 <div class="zm-ev-settings">
     <div class="main-container">
@@ -18,10 +19,11 @@ if ( ! empty( $default_obj ) ) $default = $default_obj->name;
             </div>
 
             <div class="row">
-                <label>View Only the Following Events</label>
-                <?php $venues->stateSelect( get_user_meta( $current_user->ID, 'zm_state_preference', true ) ); ?>
+                <label>View only the following Events</label>
+                <?php $venues->stateSelect( array( 'current' => get_user_meta( $current_user->ID, 'zm_state_preference', true ),'multiple'=>true) ); ?>
                 <?php if ( ! empty( $default ) ) Events::typeSelectBox( $default ); ?>
-                <?php print $venues->locationDropDown(get_user_meta( $current_user->ID, 'zm_venues_id_preference', true )); ?>
+                <?php print $venues->locationSelect( array( 'current'=>get_user_meta( $current_user->ID, 'zm_venue_preference', true ),'multiple'=>true ) ); ?>
+                <?php print $venues->locationDropDown(get_user_meta( $current_user->ID, 'zm_venue_preference', true )); ?>
             </div>
 
             <div class="row">

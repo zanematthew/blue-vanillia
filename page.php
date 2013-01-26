@@ -5,12 +5,5 @@
         <?php edit_post_link(); ?>
         <?php the_content(); ?>
     </div>
-    <div id="comments">
-            <?php if ( get_option('zm_ajax_comments_version') ) : ?>
-                <div name="comments">
-                    <?php zm_comments(); ?>
-                </div>
-            <?php endif; ?>
-        </div>
 <?php endwhile; ?>
 <?php get_footer(); ?>
