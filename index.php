@@ -1,4 +1,5 @@
 <?php get_header(); $my_cpt = array('events','venues'); ?>
+
 <div class="tabs-container tabs-handle">
     <ul>
         <?php foreach( $my_cpt as $cpt ) : ?>
