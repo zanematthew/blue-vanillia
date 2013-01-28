@@ -210,20 +210,17 @@ function blue_vanillia_pagination( $total=null ){
 
     global $wp_query;
 
-    if ( $total != 0 )
+    if ( empty( $total ) )
         $total = $wp_query->max_num_pages;
 
     $big = 999999999; // need an unlikely integer
-
-    $links = paginate_links(
-        array(
+    $args = array(
         'base' => str_replace( $big, '%#%', esc_url( get_pagenum_link( $big ) ) ),
         'format' => '?paged=%#%',
         'current' => max( 1, get_query_var('paged') ),
         'total' => $total
-        )
-    );
-
+        );
+    $links = paginate_links( $args );
     print '<div class="pagination-container">' . $links . '</div>';
 }
 
