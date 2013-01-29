@@ -10,7 +10,7 @@
         <div id="<?php print $cpt; ?>-tab">
             <div class="row-container" id="search_target">
                 <?php $my_posts = zm_ev_venues_by_user_pref_args( $cpt ); ?>
-                <?php  if ( $posts ) : ?>
+                <?php  if ( $my_posts ) : ?>
                     <?php foreach( $my_posts as $post ) : setup_postdata( $post ); ?>
                         <?php get_template_part( 'content', $cpt ); ?>
                     <?php endforeach; ?>
