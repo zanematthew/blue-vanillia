@@ -2799,3 +2799,8 @@ body.home .image-crop img {
 
 /*temp*/
 #results_message_target { display: none; }
+
+.zm-form .button-pane {
+    clear: both;
+    float: left;
+    }
