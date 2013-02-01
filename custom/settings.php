@@ -8,7 +8,7 @@ $venues = New Venues;
 $events = New Events;
 ?>
 <div class="zm-ev-settings">
-    <div class="main-container">
+    <div class="padding">
         <form action="" method="POST" id="zm_ev_settings_form" class="zm-form">
             <div class="row">
                 <label>Default Location</label>
