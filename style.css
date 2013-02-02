@@ -427,7 +427,6 @@ a {
 .header-container {
     background: #F3F3F3;
     border-bottom: 1px solid #fff;
-    border-top: 2px solid #06aeed;
     -webkit-box-shadow: 0px 2px 5px #CCC;
     -moz-box-shadow: 0px 2px 5px #ccc;
     box-shadow: 0px 2px 5px #ccc;
@@ -435,6 +434,18 @@ a {
     position: fixed;
     width: 100%;
     z-index: 9;
+    }
+
+.header-container .alert {
+    text-align: center;
+    font-size: 12px;
+    font-weight: bold;
+    text-shadow: 1px 1px 0px white;
+    padding: 20px;
+    }
+
+.header-container .border {
+    border-top: 2px solid #06aeed;
     }
 
 .header-container .content {
@@ -512,7 +523,7 @@ a {
 .header-container .search-bar-container {
     background: #F3F3F3;
     float: left;
-    width: 187px;
+    width: 157px;
     position: relative;
     z-index: 22;
     margin-right: 10px;
@@ -1694,7 +1705,8 @@ input[disabled],
 .W-C {
     width: 960px;
     /*margin: 0 auto;*/
-    padding: 50px 0 0;
+    /*padding: 50px 0 0;*/
+    padding: 108px 0 0;
     }
 /*= End
 -------------------------------------------------------------- */
