@@ -80,56 +80,19 @@ jQuery( document ).ready(function( $ ){
         // $('#search_target').fadeIn( 100 );
     });
 
-    function zm_user_settings_update( my_obj, msg ){
-        my_obj.after('<div class="zm-status-saved">Updated!</div>');
-        $('.zm-status-saved').delay('slow').fadeOut();
-        _user.settings = $.parseJSON( msg );
-    }
-
-    // $('#zm_ev_settings_form input').on('blur', function(){
-    //     var _this = $( this );
-    //     var data = {
-    //         name: $( this ).attr('name'),
-    //         value: $( this ).val(),
-    //         action: "zm_ev_save_user_settings"
-    //     };
-
-    //     $.ajax({
-    //         data: data,
-    //         success: function( msg ){
-    //             zm_user_settings_update( _this, msg );
-    //         }
-    //     });
-    // });
-
-    // $('#zm_ev_settings_form select').on('change', function(){
-    //     value = $( this, "option:selected").val();
-    //     name = $(this).attr('name');
-
-    //     var _this = $( this );
-    //     var data = {
-    //         name: name,
-    //         value: value,
-    //         action: "zm_ev_save_user_settings"
-    //     };
-
-    //     $.ajax({
-    //         data: data,
-    //         success: function( msg ){
-    //             zm_user_settings_update( _this, msg );
-    //         }
-    //     });
-    // });
-
     $('#zm_ev_settings_form').on('submit', function( event ){
         event.preventDefault();
         var _this = $(this);
 
+        $('#zm_ev_settings_form .row').css("opacity",".25");
+        $('#zm_ev_settings_form input[type="submit"]').val('Updating...');
+
         $.ajax({
             data: _this.serialize() + '&action=zm_ev_save_user_settings',
             success: function( msg ){
-                zm_user_settings_update( _this, msg );
-                location.reload();
+                _user.settings = $.parseJSON( msg );
+                $('#zm_ev_settings_form .row').css("opacity","1");
+                $('#zm_ev_settings_form input[type="submit"]').val('Updated!');
             }
         });
     });
