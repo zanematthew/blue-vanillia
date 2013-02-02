@@ -6,6 +6,8 @@ global $current_user;
 get_currentuserinfo();
 $venues = New Venues;
 $events = New Events;
+wp_enqueue_script('zm-chosen-script');
+wp_enqueue_style('zm-chosen-style');
 ?>
 <div class="zm-ev-settings">
     <div class="padding">
@@ -16,9 +18,13 @@ $events = New Events;
             </div>
 
             <div class="row">
-                <label>View only the following Events</label>
-                <?php print $venues->stateSelect( array( 'current' => get_user_meta( $current_user->ID, 'state', true ),'multiple'=>true) ); ?>
-                <?php $events->typeSelectBox( get_user_meta( $current_user->ID, 'type', true ) ); ?>
+                <label>States</label>
+                <?php print $venues->stateSelect( get_user_meta( $current_user->ID, 'state', true ) ); ?>
+
+                <label>Types</label>
+                <?php print $events->typeSelectBox( get_user_meta( $current_user->ID, 'type', true ) ); ?>
+
+                <label>Venues</label>
                 <?php print $venues->locationSelect( get_user_meta( $current_user->ID, 'venues', true ) ); ?>
             </div>
 

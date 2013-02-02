@@ -1,4 +1,7 @@
 jQuery( document ).ready(function( $ ){
+
+    $(".chzn-select").chosen();
+
     /**
      * Slide toggle the items
      */

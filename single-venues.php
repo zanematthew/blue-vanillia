@@ -44,10 +44,10 @@
 
     <!-- Weather -->
     <?php if ( get_option('zm_weather_version') ) : ?>
-    <!-- <div class="row"> -->
+    <div class="row">
         <!-- <h2 class="title">Weather Conditions</h2> -->
-        <?php // zm_weather_venue_target( Venues::getAttribute( array( 'key' => 'city' ) ) . ',' . Venues::getAttribute( array( 'key' => 'state' ) ) ); ?>
-    <!-- </div> -->
+        <?php zm_weather_venue_target( Venues::getAttribute( array( 'key' => 'city' ) ) . ',' . Venues::getAttribute( array( 'key' => 'state' ) ) ); ?>
+    </div>
     <?php endif; ?>
     <!-- -->
 
@@ -57,7 +57,7 @@
         <?php
         global $post;
         $venues = new Venues;
-        $events = $venues->getSchedule( $post->ID );
+        $events = $venues->getSchedule( $post->ID, false );
         if ( ! empty( $events ) && $events->have_posts() ) :
         while ( $events->have_posts() ) : $events->the_post(); setup_postdata( $post ); ?>
             <?php get_template_part('content', 'events' ); ?>

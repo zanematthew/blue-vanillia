@@ -42,7 +42,7 @@ $term = $term->name;
                     <?php get_template_part( 'content', 'events' ); ?>
                 <?php endforeach; ?>
             </div>
+            <?php blue_vanillia_pagination( $query->max_num_pages ); ?>
         <?php endif; ?>
     </div>
-<?php blue_vanillia_pagination( $query->max_num_pages ); ?>
 <?php get_footer(); ?>

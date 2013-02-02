@@ -1297,7 +1297,6 @@ input[disabled],
     border: 1px solid #DDD;
     border-radius: 2px;
     font-size: 12px;
-    padding: 5px 8px;
     }
 
 .chzn-results { width: 100%; }
