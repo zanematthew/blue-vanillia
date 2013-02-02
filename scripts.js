@@ -1,6 +1,7 @@
 jQuery( document ).ready(function( $ ){
 
-    $(".chzn-select").chosen();
+    if ( jQuery().chosen )
+        $(".chzn-select").chosen();
 
     /**
      * Slide toggle the items

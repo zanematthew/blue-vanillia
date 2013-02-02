@@ -61,13 +61,13 @@
 
         $auto_expando = 4;
         $i = 0;
-        $len = count( $venues->getVenueByCountry( $region ) );
+        $len = count( $venues->getVenueByState( $region ) );
         $trigger = 6; // Number to trigger "auto expando"
 
-        if ( $venues->getVenueByCountry( $region ) ) : ?>
+        if ( $venues->getVenueByState( $region ) ) : ?>
             <div class="zm-base-list-terms-container">
                 <div class="zm-base-title">Venues</div>
-                <?php foreach( $venues->getVenueByCountry( $region ) as $venue ): ?>
+                <?php foreach( $venues->getVenueByState( $region ) as $venue ): ?>
                     <?php if ( get_query_var('name') == $venue->post_name ) $class = 'current'; else $class = null; ?>
 
                     <?php
