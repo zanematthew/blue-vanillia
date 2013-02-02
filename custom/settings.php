@@ -19,13 +19,13 @@ wp_enqueue_style('zm-chosen-style');
 
             <div class="row">
                 <label>States</label>
-                <?php print $venues->stateSelect( get_user_meta( $current_user->ID, 'state', true ) ); ?>
+                <?php $venues->stateSelect( get_user_meta( $current_user->ID, 'state', true ), false ); ?>
 
                 <label>Types</label>
-                <?php print $events->typeSelectBox( get_user_meta( $current_user->ID, 'type', true ) ); ?>
+                <?php $events->typeSelectBox( get_user_meta( $current_user->ID, 'type', true ) ); ?>
 
                 <label>Venues</label>
-                <?php print $venues->locationSelect( get_user_meta( $current_user->ID, 'venues', true ) ); ?>
+                <?php $venues->locationSelect( get_user_meta( $current_user->ID, 'venues', true ) ); ?>
             </div>
 
             <div class="row">
