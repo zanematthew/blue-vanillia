@@ -40,7 +40,7 @@ else
 //
 ?>
 <div class="header-container">
-    <?php zm_ev_user_pref_message( get_current_user_id() ); ?>
+    <?php if ( get_option('zm_ev_version') ) zm_ev_user_pref_message( get_current_user_id() ); ?>
     <div class="border"></div>
     <div class="logo-container">
         <hgroup>
@@ -83,7 +83,7 @@ else
 
     <div class="right">
         <div class="content">
-            <?php zm_ev_settings(); ?>
+            <?php if ( get_option('zm_ev_version') ) zm_ev_settings(); ?>
             <?php if ( get_option('zm_attend_button_version') ) zm_attend_button_nav(); ?>
             <?php if ( get_option('zm_login_register_version') ) zm_login_register_nav(); ?>
         </div>

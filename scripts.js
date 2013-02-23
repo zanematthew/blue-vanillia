@@ -1,7 +1,8 @@
 jQuery( document ).ready(function( $ ){
 
-    if ( jQuery().chosen )
+    if ( jQuery().chosen ){
         $(".chzn-select").chosen();
+    }
 
     /**
      * Slide toggle the items
@@ -62,7 +63,8 @@ jQuery( document ).ready(function( $ ){
     });
 
 
-    $('.zm-type-list a').on('click', function(){
+    $('.zm-type-list a').on('click', function(event){
+        event.preventDefault();
 
         var $this = $(this);
         var hashTag = $this.attr('href');

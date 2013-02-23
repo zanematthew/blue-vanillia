@@ -727,27 +727,22 @@ a {
 
 /*= Single Venues
 -------------------------------------------------------------- */
-.single-venues .main-container {
-    margin-top: -20px;
-    }
-
 .single-venues .zm-social-twitter-button {
     float: left;
     width: 90px;
     }
 
 .single-venues .venues-address-pane {
-    background: #fff;
-    border: solid #ddd;
-    border-width: 1px;
-    margin-bottom: 10px;
-    margin-top: -1px;
     float: left;
-    width: 100%;
+    margin: 10px 10px 10px 0;
     }
 
-.single-venues .venues-address-pane .content {
-    padding: 10px;
+.single-venues .contact {
+    margin: 10px 0 10px;
+    }
+
+.single-venues .main-container {
+    padding-top: 0;
     }
 
 .single-venues .main-container .row-container .row {
@@ -758,6 +753,24 @@ a {
 .single-venues .main-container .zm-social-twitter-button,
 .single-venues .main-container .zm-social-facebook-button {
     margin: 15px;
+    }
+
+.single-venues .type-venues {
+    padding: 10px 15px 15px;
+    }
+
+.single-venues .main-container .tabs-container .row-container .row .date {
+    float: left;
+    font-size: 22px;
+    margin: 0 20px 0 0;
+    }
+
+.single-venues .main-container .tabs-container .row-container .row .attending-button-pane {
+    margin: 0 20px 0 0;
+    }
+
+.single-venues .main-container .tabs-container .row-container .row .title {
+    padding: 2px 0 0 0;
     }
 /*= End Single Venues
 -------------------------------------------------------------- */
@@ -1660,9 +1673,10 @@ input[disabled],
 .map-container .left { width: 64%; height: 240px; background: ghostwhite; }
 
 #mini_map_target {
-    height: 240px;
-    width: 450px;
-    border: 1px solid #ddd;
+border: 1px solid #ddd;
+height: 240px;
+width: 510px;
+margin-left: -16px;
     }
 
 .no { color: red; }
@@ -1703,7 +1717,7 @@ input[disabled],
 /*= Start Wrapper Container -- Used to center sidebar and wrapper
 -------------------------------------------------------------- */
 .W-C {
-    width: 960px;
+    width: 1025px;
     /*margin: 0 auto;*/
     /*padding: 50px 0 0;*/
     padding: 108px 0 0;
@@ -1822,7 +1836,9 @@ body,
     }
 
 .tabs-container .row-container .row:hover .meta a {
-    background: #FFFFD0;
+    /*background: #FFFFD0;*/
+background: rgb(255, 255, 163);
+color: rgb(36, 62, 255);
     }
 
 .tabs-container .row-container .row .attending-button-pane {
@@ -1844,10 +1860,10 @@ body,
     box-shadow: 1px 1px 0px #CECECE inset;
     }
 
-.archive .tabs-container .ui-tabs-nav li.ui-tabs-selected,
-.archive .tabs-container .ui-tabs-nav li.ui-tabs-selected a,
-.home .tabs-container .ui-tabs-nav li.ui-tabs-selected,
-.home .tabs-container .ui-tabs-nav li.ui-tabs-selected a {
+.archive .main-container .tabs-container .ui-tabs-nav li.ui-tabs-selected,
+.archive .main-container .tabs-container .ui-tabs-nav li.ui-tabs-selected a,
+.home .main-container .tabs-container .ui-tabs-nav li.ui-tabs-selected,
+.home .main-container .tabs-container .ui-tabs-nav li.ui-tabs-selected a {
     background: #fff;
     margin-bottom: 0;
     }
@@ -1982,11 +1998,11 @@ body,
 .sidebar-wide-container {
     float: right;
     min-height: 200px;
-    width: 300px;
+    width: 320px;
     }
 
 .sidebar-wide-container .padding {
-    padding: 30px 0;
+    padding: 0 10px;
     }
 
 .sidebar-wide-container .tabs-container .ui-tabs-panel .row-container .row {
@@ -2608,7 +2624,8 @@ body.home .image-crop img {
 
 
 .archive .main-container,
-.search .main-container {
+.search .main-container,
+.single-venues .main-container {
     float: left;
     width: 510px;
     background: white;
@@ -2789,35 +2806,6 @@ body.home .image-crop img {
     margin: 0 0 10px;
     }
 
-/*Part of json plugin*/
-/*.tmp-result {
-    background: white;
-    border: 1px solid #DDD;
-    float: left;
-    padding: 15px;
-    width: 400px;
-    position: absolute;
-    left: 510px;
-    top: -44px;
-    min-height: 400px;
-    z-index: -2;
-    }
-
-.tabs-container .row-container .row {
-    position: relative;
-    border: solid #DDD;
-    float: left;
-    margin-top: -1px;
-    border-width: 1px 0 1px 0;
-    }
-
-.main-container .row-container .tmp-boo {
-    border-right: 0;
-    width: 481px;
-    background: white;
-    box-shadow: 10px 0px 0px white;
-    }*/
-
 
 /*temp*/
 #results_message_target { display: none; }
@@ -2826,3 +2814,10 @@ body.home .image-crop img {
     clear: both;
     float: left;
     }
+
+#zm_weather_venue_target .padding {
+    padding: 10px 10px 0;
+    }
+
+#zm_weather_venue_target .item:last-child {
+    margin-left: 5px;

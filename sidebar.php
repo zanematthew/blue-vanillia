@@ -13,7 +13,7 @@
         <div class="zm-base-list-terms-container <?php if ( $zm_json_preference ) : ?>zm-type-list<?php endif; ?>">
             <div class="zm-base-item">
                 <div class="zm-base-title">Type</div>
-                <?php foreach( get_terms('type') as $type ) : ?>
+                <?php if ( get_option('zm_ev_version') ) : foreach( get_terms('type') as $type ) : ?>
                     <div class="zm-base-item">
                         <?php
 
@@ -36,12 +36,14 @@
                         <?php if ( $zm_json_preference ) $link = '/#'. $slug; else $link = get_term_link( $type->slug, 'type'); ?>
                         <a href="<?php print $link; ?>" class="<?php print $class; ?>"><?php print $type->name; ?></a>
                     </div>
-                <?php endforeach; ?>
+                <?php endforeach; endif; ?>
+
             </div>
         </div>
         <!--  -->
 
         <!-- Venues -->
+        <?php if ( get_option('zm_ev_version') ) : ?>
         <?php
 
         global $post;
@@ -99,6 +101,7 @@
 
                 <?php endforeach; ?>
             </div>
+        <?php endif; ?>
         <?php endif; ?>
         <!--  -->
 

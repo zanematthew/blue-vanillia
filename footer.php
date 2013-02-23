@@ -1,19 +1,12 @@
-</div>
-<?php if ( ! empty( $post_type ) && $post_type == 'venues' ) : ?>
-    <div class="sidebar-wide-container">
-        <div class="padding">
-            <div class="row-container">
-                <!-- Info Pane -->
-                <?php if ( get_option('zm_ev_version') && is_single() ) : ?>
-                    <?php if ( get_option('zm_gmaps_version') ) zm_gmaps_mini(); ?>
-                    <?php zm_ev_venue_address_pane( $post->ID ); ?>
-                <?php endif; ?>
-                <!-- -->
-                <?php get_template_part('events','upcoming'); ?>
-            </div>
+</div> <!-- .main-container -->
+<div class="sidebar-wide-container">
+    <div class="padding">
+        <div class="row-container">
+            <?php if ( is_single() && ! empty( $post_type ) && $post_type != 'events' ) get_template_part('events','upcoming'); ?>
         </div>
     </div>
-<?php endif; ?>
+</div>
+
 
 </div> <!-- End W-C -->
 
