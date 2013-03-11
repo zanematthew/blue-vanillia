@@ -506,11 +506,11 @@ a {
     width: 20px;
     }
 
-.header-container .profile-pic-container {
+.header-container .zm-profile-pic-container {
     margin: 0 10px 0 15px;
     }
 
-.header-container .profile-pic-container img {
+.header-container .zm-profile-pic-container img {
     float: left;
     height: 20px;
     width: 20px;
@@ -677,6 +677,13 @@ a {
     float: right;
     margin: 0 5px 0 3px;
     }
+
+.header-container .profile-pic-container {}
+.header-container .profile-pic-container img {
+    width: 23px;
+    float: left;
+    margin: 0 10px 0 0;
+    }
 /*= End Top bar container
 -------------------------------------------------------------- */
 
@@ -718,9 +725,9 @@ a {
     margin-top: 10px;
     }
 
-.single .comments-container .profile-pic-container {
+/*.single .comments-container .zm-profile-pic-container {
     margin: 0 10px 0 0;
-    }
+    }*/
 /*= End Single
 -------------------------------------------------------------- */
 
@@ -771,6 +778,10 @@ a {
 
 .single-venues .main-container .tabs-container .row-container .row .title {
     padding: 2px 0 0 0;
+    }
+
+.single-venues .zm-comments-container .zm-content {
+    background: #F3F3F3;
     }
 /*= End Single Venues
 -------------------------------------------------------------- */
@@ -887,13 +898,8 @@ a {
     padding: 0 0 0 20px;
     }
 
-.single-events .zm-profile-pic {
-    float: left;
-    margin: 0 10px 10px 0;
-    }
-
-.single-events .zm-profile-pic:last-child {
-    margin: 0 0 10px 0;
+.single-events .zm-comments-container .zm-content:first-child {
+    border-top: 0;
     }
 /*= End Single
 -------------------------------------------------------------- */
@@ -907,6 +913,14 @@ a {
     line-height: 1.2em;
     margin-bottom: 10px;
     }
+
+.hentry h1 {
+}
+.hentry h2 {}
+.hentry h3 {}
+.hentry h4 {}
+.hentry h5 {}
+.hentry h6 {}
 
 .hentry p {
     font-size: 14px;
@@ -989,53 +1003,9 @@ a {
 /*= Fruit
 -------------------------------------------------------------- */
 .peach {
-    float: left;
     padding: 10px 10px 7px;
     }
 
-
-/*= Comments
--------------------------------------------------------------- */
-.comments-container .zm-profile-pic-container {
-    background: silver;
-    height: 32px;
-    width: 32px;
-    }
-
-.comments-container .callout-container {
-    width: 100%;
-    }
-
-.comments-container img {
-    float: left;
-    width: 23px;
-    height: auto;
-    }
-
-.comments-container p {
-    padding: 10px;
-    margin: 0;
-    }
-
-.comments-container .content {
-    background: #F3F3F3;
-    border-top: 1px solid #fff;
-    border-bottom: 1px solid #ddd;
-    float: left;
-    width: 100%;
-    }
-
-.comments-container .content:first-child {
-    border-top: 1px solid #ddd;
-    }
-
-.comments-container textarea {
-    font-size: 12px;
-    letter-spacing: 0.1em;
-    width: 375px;
-    }
-/*= End Comments
--------------------------------------------------------------- */
 
 
 /*= Form
@@ -1576,10 +1546,6 @@ input[disabled],
     padding-bottom: 10px;
     }
 
-.zm-profile-pic-container {
-    float: left;
-    margin-right: 10px;
-    }
 /*= End zm base
 -------------------------------------------------------------- */
 
@@ -2383,10 +2349,10 @@ h2.site-description {
     font-size: 10px;
     }
 
-.profile-pic-container {
+/*.zm-profile-pic-container {
     display: block;
     float: left;
-    }
+    }*/
 
 
 /*= Default Page
@@ -2749,7 +2715,7 @@ body.home .image-crop img {
     width: 12%;
     }
 
-.tax-attendees .profile-pic-container {
+.tax-attendees .zm-profile-pic-container {
     float: left;
     }
 
@@ -2821,3 +2787,4 @@ body.home .image-crop img {
 
 #zm_weather_venue_target .item:last-child {
     margin-left: 5px;
+    }

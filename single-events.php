@@ -60,14 +60,14 @@
 
     <div class="tabs-container tabs-handle">
         <ul>
-            <li><a href="#attendees">Attendess <span class="count"><?php print zm_attend_count_event( $post->ID, false ); ?></span></a></li>
+            <li><a href="#attendees">Attendess <span class="count"><?php if ( get_option('zm_attend_button_version') ) print zm_attend_count_event( $post->ID, false ); ?></span></a></li>
             <li><a href="#schedule">Events <?php Venues::scheduleCount( Events::getVenueId( $post->ID ) ); ?></a></li>
             <li><a href="#comments">Comments</a></li>
         </ul>
 
         <div id="attendees">
             <div class="padding">
-                <?php zm_attend_event_attendees( $post->ID ); ?>
+                <?php if ( get_option('zm_attend_button_version') )  zm_attend_event_attendees( $post->ID ); ?>
             </div>
         </div>
         <div id="schedule" class="row-container">
@@ -84,12 +84,8 @@
             <?php endif; ?>
         </div>
 
-        <div id="comments">
-            <?php if ( get_option('zm_ajax_comments_version') ) : ?>
-                <div name="comments">
-                    <?php zm_comments(); ?>
-                </div>
-            <?php endif; ?>
+        <div id="comments" name="comments">
+            <?php if ( get_option('zm_ajax_comments_version') ) zm_ajax_comments(); ?>
         </div>
     </div>
 <?php endwhile; ?>

@@ -85,7 +85,7 @@
 
     <!-- Comments -->
     <div name="comments">
-        <?php if ( function_exists( 'zm_comments' ) ) zm_comments(); ?>
+        <?php if ( function_exists( 'zm_ajax_comments' ) ) zm_ajax_comments(); ?>
     </div>
     <!-- -->
 
