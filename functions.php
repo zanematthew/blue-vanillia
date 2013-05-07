@@ -250,3 +250,137 @@ function blue_vanillia_content_image( $post_id=null, $size=null ){
         </a>
     </div>
 <?php }
+
+
+
+////////////////////////////////////// Events & Venues
+// Functions to be used in themes files
+
+function zm_ev_settings(){
+    if ( ! is_user_logged_in() ) return;
+    global $current_user;
+    ?><a href="<?php print site_url(); ?>/attendees/<?php print $current_user->user_login; ?>/settings/" class="zm-ev-settings-icon">Settings</a>
+<?php }
+
+
+function zm_ev_venue_links_pane( $post_id=null ){
+
+    global $post_type;
+
+    if ( $post_type == 'events' ){
+        $venue_id = Events::getVenueId( $post_id );
+    } else {
+        $venue_id = $post_id;
+    }
+
+    if ( get_option('zm_geo_location_version' ) ){
+        $location = zm_geo_location_get();
+        $directions = '<a href="https://maps.google.com/maps?saddr='.$location['city'].','.$location['region_full'].'&daddr='.Venues::getAttribute( array( 'key' => 'LatLong' ) ).'"target="_blank">Directions</a>';
+    } else {
+        $directions = null;
+    }
+
+    ?>
+    <div class="venue-links-pane">
+        <ul>
+            <li class="website"><a href="<?php print Venues::getAttribute( array( 'key' => 'website' ) ); ?>" target="_blank">Website</a></li>
+            <li class="directions"><?php print $directions; ?></li>
+            <li class="venue"><?php print Events::getTrackLink( $post_id, 'Venue' ); ?>
+            <span class="count">
+                <?php if ( Venues::getSchedule( $venue_id ) ) {
+                    print Venues::getSchedule( $venue_id )->post_count;
+                } else {
+                    print 0;
+                }
+                ?>
+            </span>
+            </li>
+        </ul>
+</div><?php }
+
+/**
+ * @package This function makes use of the 'zm_geo_location' plugin
+ * to return the users current location for directions.
+ * @subpackage Makes use of the zM Geo Location to derive the directions
+ * link.
+ */
+function zm_ev_venue_address_pane( $post_id=null ){
+
+    global $post_type;
+    $venues = New Venues;
+
+    if ( $post_type == 'events' ){
+        $venue_id = Events::getVenueId( $post_id );
+    } else {
+        $venue_id = $post_id;
+    }
+
+    if ( get_option('zm_geo_location_version' ) ){
+        $location = zm_geo_location_get();
+
+        $street = $venues->getAttribute( array( 'key' => 'street' ) );
+        $city = $venues->getAttribute( array( 'key' => 'city' ) );
+        $state = $venues->getAttribute( array( 'key' => 'state' ) );
+        $zip = $venues->getAttribute( array( 'key' => 'zip' ) );
+
+        $destination = "{$street} {$city}, {$state} {$zip}";
+
+        $directions = '<a href="https://maps.google.com/maps?saddr='.$location['city'].','.$location['region_full'].'&daddr='.$destination.'"target="_blank">Directions</a>';
+    } else {
+        $directions = null;
+    }
+
+    ?>
+    <div class="venues-address-pane">
+    <div class="content">
+        <h3><?php print $venues->getAttribute( array( 'key' => 'title', 'venue_id' => $venue_id, 'echo' => true ) ); ?></h3>
+        <?php $venues->getAttribute( array( 'key' => 'street', 'echo' => true ) ); ?>
+        <br /><?php $venues->getAttribute( array( 'key' => 'city', 'echo' => true ) ); ?>,
+        <?php $venues->getAttribute( array( 'key' => 'state', 'echo' => true ) ); ?>
+        <?php $venues->getAttribute( array( 'key' => 'zip', 'echo' => true ) ); ?>
+        <br />
+        <?php print $directions; ?>
+    </div>
+</div><?php }
+
+/**
+ * Gets the custom date for an Event given the current $post->ID.
+ *
+ * Either returns the date from the $prefix_postmeta table
+ * for a single event OR for Events that span multiple dates
+ * will return start date and end date.
+ *
+ * @param $post_id
+ * @param $both bool, display start and end date, or just start date
+ * @uses get_post_custom_values();
+ */
+function zm_event_date( $post_id=null, $both=true ){
+
+    if ( is_null( $post_id ) ) {
+        global $post;
+        $post_id = $post->ID;
+    }
+
+    $start = get_post_meta( $post_id, 'events_start-date', true );
+    $end = get_post_meta( $post_id, 'events_end-date', true );
+
+    if ( $end && $both ){
+        $date = date( 'M j', strtotime( $start ) ) . date( ' - M j, Y', strtotime( $end ) );
+    } else {
+        $date = date( 'M j, Y', strtotime( $start ) );
+    }
+
+    print $date;
+}
+
+function zm_user_setting_link( $text='Personalize' ){
+    if ( is_user_logged_in() ){
+        $current_user = wp_get_current_user();
+        $href = site_url() .'/attendees/' . $current_user->user_login . '/settings/';
+        $class = null;
+    } else {
+        $class = 'zm-login-handle';
+        $href = null;
+    }
+    return '<a href="'.$href.'" class="'.$class.'"> ' . $text . ' </a>';
+}
