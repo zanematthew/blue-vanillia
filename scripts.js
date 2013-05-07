@@ -5,6 +5,13 @@ jQuery( document ).ready(function( $ ){
     }
 
     /**
+     * Load tabs
+     */
+    if ( jQuery().tabs )
+        $( ".tabs-handle" ).tabs();
+
+
+    /**
      * Slide toggle the items
      */
     $( '.auto-expando-handle').on( 'click', function( event ){

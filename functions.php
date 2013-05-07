@@ -92,7 +92,6 @@ function blue_vanillia_init(){
     register_nav_menus(
         array(
             'primary' => __( 'Primary Menu', 'blue-vanillia' ),
-            'top-menu' => __( 'Top Menu', 'blue-vanillia' ),
             'footer-menu' => __( 'Footer Menu', 'blue-vanillia' ),
         )
     );
@@ -191,7 +190,7 @@ function blue_vanillia_widgets_init() {
         'after_title' => '</span></h3>'
     ) );
 }
-add_action( 'widgets_init', 'blue_vanillia_widgets_init' );
+// add_action( 'widgets_init', 'blue_vanillia_widgets_init' );
 
 
 function blue_vanillia_assets_init() {

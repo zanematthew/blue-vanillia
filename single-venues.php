@@ -4,12 +4,12 @@
     <div class="row">
         <div class="padding">
 
-<!-- Info Pane -->
-<?php if ( get_option('zm_ev_version') && is_single() ) : ?>
-    <?php if ( get_option('zm_gmaps_version') ) zm_gmaps_mini(); ?>
-    <?php zm_ev_venue_address_pane( $post->ID ); ?>
-<?php endif; ?>
-<!-- -->
+            <!-- Info Pane -->
+            <?php if ( is_single() ) : ?>
+                <?php if ( get_option('zm_gmaps_version') ) zm_gmaps_mini(); ?>
+                <?php zm_ev_venue_address_pane( $post->ID ); ?>
+            <?php endif; ?>
+            <!-- -->
 
             <div class="contact">
                 <?php
@@ -68,7 +68,7 @@
         <?php
         global $post;
         $venues = new Venues;
-        $events = $venues->getSchedule( $post->ID, false );
+        $events = $venues->getSchedule( $post->ID, true );
         if ( ! empty( $events ) && $events->have_posts() ) :
         while ( $events->have_posts() ) : $events->the_post(); setup_postdata( $post ); ?>
             <?php get_template_part('content', 'events-schedule' ); ?>
